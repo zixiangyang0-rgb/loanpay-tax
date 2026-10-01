@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Student Loan Interest Deduction 2026 (Up to $2,500) | LoanPay Tax",
@@ -22,6 +24,7 @@ const CHECKLIST = [
 export default function StudentLoanPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Student Loan Interest Deduction 2026 (Up to $2,500) | LoanPay Tax" description="How the 2026 student-loan interest deduction works: up to $2,500 above-the-line, income phase-outs, eligible loans, and coordination with credits." url="https://tax.loanpaylogic.com/student-loan-interest-deduction" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Schedule 1 &middot; up to $2,500
@@ -35,7 +38,10 @@ export default function StudentLoanPage() {
           the break with credits and repayment strategy.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
+
+      <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -116,27 +122,31 @@ export default function StudentLoanPage() {
           </p>
         </section>
 
+        <GuideInArticleAds />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I need to itemize to claim it?</h3>
-              <p className="mt-1">No — it is an above-the-line adjustment on Schedule 1, available with the standard deduction.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">My parents pay my loans — who deducts?</h3>
-              <p className="mt-1">Whoever is legally obligated and meets the tests; payments by others on your behalf are generally treated as paid by you if you qualify — see Pub. 970.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does refinancing kill eligibility?</h3>
-              <p className="mt-1">Refinancing qualified education debt into another qualified loan preserves it; consolidating into non-education debt (credit cards, HELOCs) ends it.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I claim both a credit and this deduction?</h3>
-              <p className="mt-1">Yes — credits cover tuition and fees while the deduction covers interest: different expenses, same return, fully stackable.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I need to itemize to claim it?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No — it is an above-the-line adjustment on Schedule 1, available with the standard deduction.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">My parents pay my loans — who deducts?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Whoever is legally obligated and meets the tests; payments by others on your behalf are generally treated as paid by you if you qualify — see Pub. 970.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does refinancing kill eligibility?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Refinancing qualified education debt into another qualified loan preserves it; consolidating into non-education debt (credit cards, HELOCs) ends it.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I claim both a credit and this deduction?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — credits cover tuition and fees while the deduction covers interest: different expenses, same return, fully stackable.</p>
+            </details>
           </div>
         </section>
+
+        <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import IllinoisTaxCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Illinois Income Tax Calculator 2026 (4.95% Flat) | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function IllinoisPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Illinois Income Tax Calculator 2026 (4.95% Flat) | LoanPay Tax" description="Estimate 2026 Illinois income tax at the flat 4.95% rate, with exemptions, credits, property-tax reality, and Chicago-area comparisons." url="https://tax.loanpaylogic.com/illinois-income-tax-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Illinois Dept. of Revenue &middot; 2026
@@ -27,13 +34,19 @@ export default function IllinoisPage() {
           property tax dominates every Chicago budget conversation.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <IllinoisTaxCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <IllinoisTaxCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">How the 4.95% flat tax works</h2>
           <p className="mt-3">
@@ -124,22 +137,22 @@ export default function IllinoisPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does Illinois tax retirement income?</h3>
-              <p className="mt-1">No. Pensions, 401(k)/IRA distributions, and Social Security are fully subtracted — retirees often owe $0 Illinois tax.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Is there a Chicago city income tax?</h3>
-              <p className="mt-1">No. Chicago levies no income tax, but Cook County property taxes are among America&rsquo;s highest — budget for both.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is the Illinois personal exemption?</h3>
-              <p className="mt-1">About $2,775 per filer and dependent for 2026 (inflation-adjusted yearly) — a joint family of four shields roughly $11,100.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I owe Illinois tax working remotely?</h3>
-              <p className="mt-1">Illinois-source workdays are taxable here; reciprocal-state residents (IA, KY, MI, WI) are exempt via Form IL-W-5-E.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does Illinois tax retirement income?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Pensions, 401(k)/IRA distributions, and Social Security are fully subtracted — retirees often owe $0 Illinois tax.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Is there a Chicago city income tax?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Chicago levies no income tax, but Cook County property taxes are among America&rsquo;s highest — budget for both.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is the Illinois personal exemption?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">About $2,775 per filer and dependent for 2026 (inflation-adjusted yearly) — a joint family of four shields roughly $11,100.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I owe Illinois tax working remotely?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Illinois-source workdays are taxable here; reciprocal-state residents (IA, KY, MI, WI) are exempt via Form IL-W-5-E.</p>
+            </details>
           </div>
         </section>
 

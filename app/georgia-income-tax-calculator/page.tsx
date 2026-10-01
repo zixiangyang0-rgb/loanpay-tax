@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import GeorgiaTaxCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Georgia Income Tax Calculator 2026 (5.19% Flat) | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function GeorgiaPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Georgia Income Tax Calculator 2026 (5.19% Flat) | LoanPay Tax" description="Estimate 2026 Georgia tax at the flat 5.19% rate, with deductions, retirement exclusions, credits, and Atlanta-area homeowner math." url="https://tax.loanpaylogic.com/georgia-income-tax-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Georgia Dept. of Revenue &middot; 2026
@@ -27,13 +34,19 @@ export default function GeorgiaPage() {
           dynamics that define Peach State budgets.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <GeorgiaTaxCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <GeorgiaTaxCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">From brackets to a falling flat rate</h2>
           <p className="mt-3">
@@ -122,22 +135,22 @@ export default function GeorgiaPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Is Georgia&rsquo;s rate still falling?</h3>
-              <p className="mt-1">Yes — 5.19% for 2026 with further 0.1-point annual cuts while revenue triggers are met, heading toward a much lower floor.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How are retirees treated in Georgia?</h3>
-              <p className="mt-1">Very well: up to $65,000 per person 65+ of retirement income excluded ($35,000 at 62–64), plus fully exempt Social Security.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does Georgia tax capital gains specially?</h3>
-              <p className="mt-1">No. Gains face the same 5.19% as wages — there is no state-level 0/15/20% preference.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What sales tax will I pay in Georgia?</h3>
-              <p className="mt-1">4% state plus county add-ons — most metro Atlanta shoppers pay 7–8.9% combined at the register.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Is Georgia&rsquo;s rate still falling?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — 5.19% for 2026 with further 0.1-point annual cuts while revenue triggers are met, heading toward a much lower floor.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How are retirees treated in Georgia?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Very well: up to $65,000 per person 65+ of retirement income excluded ($35,000 at 62–64), plus fully exempt Social Security.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does Georgia tax capital gains specially?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Gains face the same 5.19% as wages — there is no state-level 0/15/20% preference.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What sales tax will I pay in Georgia?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">4% state plus county add-ons — most metro Atlanta shoppers pay 7–8.9% combined at the register.</p>
+            </details>
           </div>
         </section>
 

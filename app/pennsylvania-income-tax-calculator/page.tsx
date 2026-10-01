@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PennsylvaniaTaxCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Pennsylvania Income Tax Calculator 2026 (3.07%) | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function PennsylvaniaPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Pennsylvania Income Tax Calculator 2026 (3.07%) | LoanPay Tax" description="Estimate 2026 PA tax at 3.07% across 8 income classes, with local EIT, retirement exemptions, and Tax Forgiveness credits explained." url="https://tax.loanpaylogic.com/pennsylvania-income-tax-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           PA Dept. of Revenue &middot; 2026
@@ -27,13 +34,19 @@ export default function PennsylvaniaPage() {
           your 2026 bill and learn the quirks that trip up newcomers.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <PennsylvaniaTaxCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <PennsylvaniaTaxCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">Eight classes, one rate, no offsets</h2>
           <p className="mt-3">
@@ -137,22 +150,22 @@ export default function PennsylvaniaPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can rental losses offset my wages in PA?</h3>
-              <p className="mt-1">No. Each of the 8 classes is computed separately — losses in one class never offset gains in another.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Are 401(k) contributions deductible in PA?</h3>
-              <p className="mt-1">No — PA taxes contributions upfront, then exempts qualifying withdrawals later. The reverse of the federal pattern.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is PA Tax Forgiveness?</h3>
-              <p className="mt-1">Schedule SP relief erasing 10–100% of liability for lower-income households, scaled by income and dependent count.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do retirees pay PA income tax?</h3>
-              <p className="mt-1">Generally no on retirement income — pensions, Social Security, and qualifying IRA/401(k) withdrawals are fully exempt.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can rental losses offset my wages in PA?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Each of the 8 classes is computed separately — losses in one class never offset gains in another.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Are 401(k) contributions deductible in PA?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No — PA taxes contributions upfront, then exempts qualifying withdrawals later. The reverse of the federal pattern.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is PA Tax Forgiveness?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Schedule SP relief erasing 10–100% of liability for lower-income households, scaled by income and dependent count.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do retirees pay PA income tax?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Generally no on retirement income — pensions, Social Security, and qualifying IRA/401(k) withdrawals are fully exempt.</p>
+            </details>
           </div>
         </section>
 

@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HomeOfficeCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Home Office Deduction Calculator 2026 | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function HomeOfficePage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Home Office Deduction Calculator 2026 | LoanPay Tax" description="Compare the 2026 simplified ($5/sq ft) vs. actual-expense home-office methods, pass the exclusive-use test, and document without audit fear." url="https://tax.loanpaylogic.com/home-office-deduction-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Form 8829 &middot; 2026
@@ -27,13 +34,19 @@ export default function HomeOfficePage() {
           April is boring.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <HomeOfficeCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <HomeOfficeCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">The two tests every office must pass</h2>
           <p className="mt-3">
@@ -125,22 +138,22 @@ export default function HomeOfficePage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can employees claim a home office?</h3>
-              <p className="mt-1">Rarely through 2026 — unreimbursed employee expenses are suspended federally, and employer-convenience rules are strict. Some states allow it; check yours.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does claiming trigger an audit?</h3>
-              <p className="mt-1">Not by itself. Reasonable, documented percentages within norms draw no special attention — round-number guesses do.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Kitchen-table workers — any deduction?</h3>
-              <p className="mt-1">No, without exclusive space. Carve a genuinely exclusive zone (even part of a room) with photos and measurements to qualify.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What happens when I sell the home?</h3>
-              <p className="mt-1">Simplified method: nothing. Actual method with depreciation: gain up to depreciation claimed faces up to 25% unrecaptured tax.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can employees claim a home office?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Rarely through 2026 — unreimbursed employee expenses are suspended federally, and employer-convenience rules are strict. Some states allow it; check yours.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does claiming trigger an audit?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Not by itself. Reasonable, documented percentages within norms draw no special attention — round-number guesses do.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Kitchen-table workers — any deduction?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No, without exclusive space. Carve a genuinely exclusive zone (even part of a room) with photos and measurements to qualify.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What happens when I sell the home?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Simplified method: nothing. Actual method with depreciation: gain up to depreciation claimed faces up to 25% unrecaptured tax.</p>
+            </details>
           </div>
         </section>
 

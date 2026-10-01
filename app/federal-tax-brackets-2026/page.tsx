@@ -1,5 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../../components/schema";
+
+const FAQS = [
+  {
+    question: "What are the 2026 federal tax rates?",
+    answer:
+      "Seven rates: 10, 12, 22, 24, 32, 35, and 37 percent, each applying only to income inside its band.",
+  },
+  {
+    question: "Where does the 37% rate start in 2026?",
+    answer:
+      "At $640,600 of taxable income single ($384,350 separate), $768,700 joint, and $640,600 head of household.",
+  },
+  {
+    question: "Do brackets apply to gross or taxable income?",
+    answer:
+      "Taxable income — gross income minus adjustments and then the standard or itemized deduction. Subtract first, then read the table.",
+  },
+  {
+    question: "Should I compare brackets or effective rates?",
+    answer:
+      "Effective rates (total tax ÷ gross income) for comparing burdens; marginal rates for judging the next dollar of earnings or deductions.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Federal Tax Brackets 2026: Full Tables & Examples | LoanPay Tax",
@@ -22,6 +47,12 @@ const CHECKLIST = [
 export default function FederalBracketsPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd
+        title="Federal Tax Brackets 2026: Full Tables & Examples | LoanPay Tax"
+        description="Every 2026 federal tax bracket for single, joint, and head-of-household filers, with marginal-rate math, bracket-creep explainers, and worked examples."
+        url="https://tax.loanpaylogic.com/federal-tax-brackets-2026"
+      />
+      <FaqJsonLd faqs={FAQS} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           2026 tax year &middot; IRS Rev. Proc. 2025-32
@@ -35,7 +66,10 @@ export default function FederalBracketsPage() {
           worth it, and how inflation adjustments protect part of each paycheck.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
+
+      <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -158,6 +192,8 @@ export default function FederalBracketsPage() {
           </p>
         </section>
 
+        <GuideInArticleAds />
+
         <section>
           <h2 className="text-xl font-bold text-white">Three worked examples across the schedule</h2>
           <p className="mt-3">
@@ -195,24 +231,21 @@ export default function FederalBracketsPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What are the 2026 federal tax rates?</h3>
-              <p className="mt-1">Seven rates: 10, 12, 22, 24, 32, 35, and 37 percent, each applying only to income inside its band.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Where does the 37% rate start in 2026?</h3>
-              <p className="mt-1">At $640,600 of taxable income single ($384,350 separate), $768,700 joint, and $640,600 head of household.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do brackets apply to gross or taxable income?</h3>
-              <p className="mt-1">Taxable income — gross income minus adjustments and then the standard or itemized deduction. Subtract first, then read the table.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should I compare brackets or effective rates?</h3>
-              <p className="mt-1">Effective rates (total tax ÷ gross income) for comparing burdens; marginal rates for judging the next dollar of earnings or deductions.</p>
-            </div>
+            {FAQS.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-xl border border-white/10 bg-white/[0.02] p-4"
+              >
+                <summary className="cursor-pointer font-semibold text-white">
+                  {faq.question}
+                </summary>
+                <p className="mt-2 text-sm leading-relaxed text-slate-300">{faq.answer}</p>
+              </details>
+            ))}
           </div>
         </section>
+
+        <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

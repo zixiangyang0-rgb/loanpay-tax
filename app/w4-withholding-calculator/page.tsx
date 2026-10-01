@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import W4Calculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "W-4 Withholding Calculator 2026 | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function W4Page() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="W-4 Withholding Calculator 2026 | LoanPay Tax" description="Check 2026 paycheck withholding against real liability, learn every W-4 step, and fix over- or under-withholding before April." url="https://tax.loanpaylogic.com/w4-withholding-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           paycheck checkup &middot; Form W-4 2026
@@ -27,13 +34,19 @@ export default function W4Page() {
           &mdash; keeping your money during the year instead of waiting for April.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <W4Calculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <W4Calculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">What the W-4 actually controls</h2>
           <p className="mt-3">
@@ -128,22 +141,22 @@ export default function W4Page() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does the W-4 go to the IRS?</h3>
-              <p className="mt-1">No. It stays with your employer, who uses it only to compute withholding. File a new one anytime.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How do two-earner couples avoid owing?</h3>
-              <p className="mt-1">Check the Step 2 multiple-jobs box on both forms or complete the worksheet — otherwise each job withholds as if it were the only income.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is Step 4(c) extra withholding?</h3>
-              <p className="mt-1">A flat extra dollar amount per paycheck — the simplest way to cover side income or reach a safe harbor without touching other steps.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">When does a new W-4 take effect?</h3>
-              <p className="mt-1">By the first payroll period ending on or after 30 days from submission — usually the next one or two paychecks.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does the W-4 go to the IRS?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. It stays with your employer, who uses it only to compute withholding. File a new one anytime.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How do two-earner couples avoid owing?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Check the Step 2 multiple-jobs box on both forms or complete the worksheet — otherwise each job withholds as if it were the only income.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is Step 4(c) extra withholding?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">A flat extra dollar amount per paycheck — the simplest way to cover side income or reach a safe harbor without touching other steps.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">When does a new W-4 take effect?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">By the first payroll period ending on or after 30 days from submission — usually the next one or two paychecks.</p>
+            </details>
           </div>
         </section>
 

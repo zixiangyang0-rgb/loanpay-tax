@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RefundEstimator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Tax Refund Estimator 2026: Will You Get a Refund? | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function RefundEstimatorPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Tax Refund Estimator 2026: Will You Get a Refund? | LoanPay Tax" description="Estimate your 2026 federal tax refund or balance due from withholding, income, and credits — plus refund timelines, tracking, and adjustment tips." url="https://tax.loanpaylogic.com/tax-refund-estimator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           refund preview &middot; 2026 tax year
@@ -27,13 +34,19 @@ export default function RefundEstimatorPage() {
           to steer next year&rsquo;s result on purpose.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <RefundEstimator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <RefundEstimator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">Where refunds come from</h2>
           <p className="mt-3">
@@ -131,22 +144,22 @@ export default function RefundEstimatorPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How fast do 2026 refunds arrive?</h3>
-              <p className="mt-1">Most e-filed refunds with direct deposit arrive within 21 days; paper returns take 6–8 weeks or more.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Is a big refund good?</h3>
-              <p className="mt-1">It is safe but interest-free forced savings. A small refund or modest balance due means your money worked for you all year.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Why did my refund shrink after a raise?</h3>
-              <p className="mt-1">Higher income raises liability faster than flat withholding keeps up, especially with bonuses withheld at 22% or a second job.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What if I cannot pay the balance due?</h3>
-              <p className="mt-1">File on time anyway, pay what you can, then request an IRS installment plan — penalties for not filing dwarf penalties for not paying.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How fast do 2026 refunds arrive?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Most e-filed refunds with direct deposit arrive within 21 days; paper returns take 6–8 weeks or more.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Is a big refund good?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">It is safe but interest-free forced savings. A small refund or modest balance due means your money worked for you all year.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Why did my refund shrink after a raise?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Higher income raises liability faster than flat withholding keeps up, especially with bonuses withheld at 22% or a second job.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What if I cannot pay the balance due?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">File on time anyway, pay what you can, then request an IRS installment plan — penalties for not filing dwarf penalties for not paying.</p>
+            </details>
           </div>
         </section>
 

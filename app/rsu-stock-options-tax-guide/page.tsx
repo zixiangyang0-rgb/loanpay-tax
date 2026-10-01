@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "RSU & Stock Options Tax Guide 2026 | LoanPay Tax",
@@ -22,6 +24,7 @@ const CHECKLIST = [
 export default function RsuPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="RSU & Stock Options Tax Guide 2026 | LoanPay Tax" description="How RSUs, NSOs, and ISOs are taxed in 2026: vest withholding, estimated payments, AMT, 83(b), and a selling checklist for tech employees." url="https://tax.loanpaylogic.com/rsu-stock-options-tax-guide" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           equity compensation &middot; 2026
@@ -35,7 +38,10 @@ export default function RsuPage() {
           sell-or-hold framework that survives volatile markets.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
+
+      <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -126,27 +132,31 @@ export default function RsuPage() {
           </p>
         </section>
 
+        <GuideInArticleAds />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should I sell RSUs immediately?</h3>
-              <p className="mt-1">Usually yes — at vest they are cash-equivalent wages; holding concentrates risk in your employer. Keep shares only as a deliberate investment decision.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What triggers ISO AMT?</h3>
-              <p className="mt-1">The exercise spread counts as AMT income — large exercises can owe thousands next April with no cash received. Model before exercising.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is an 83(b) election?</h3>
-              <p className="mt-1">A 30-day, no-extension election to tax early-exercised unvested shares at today&rsquo;s low value instead of at each future vest price.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Why did my 1099-B basis look wrong?</h3>
-              <p className="mt-1">Brokers often report sale proceeds without the vest-date basis already taxed as wages — adjust basis upward using your W-2/3921 records to avoid double tax.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should I sell RSUs immediately?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Usually yes — at vest they are cash-equivalent wages; holding concentrates risk in your employer. Keep shares only as a deliberate investment decision.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What triggers ISO AMT?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">The exercise spread counts as AMT income — large exercises can owe thousands next April with no cash received. Model before exercising.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is an 83(b) election?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">A 30-day, no-extension election to tax early-exercised unvested shares at today&rsquo;s low value instead of at each future vest price.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Why did my 1099-B basis look wrong?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Brokers often report sale proceeds without the vest-date basis already taxed as wages — adjust basis upward using your W-2/3921 records to avoid double tax.</p>
+            </details>
           </div>
         </section>
+
+        <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

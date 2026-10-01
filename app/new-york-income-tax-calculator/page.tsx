@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import NewYorkTaxCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "New York Income Tax Calculator 2026 | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function NewYorkPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="New York Income Tax Calculator 2026 | LoanPay Tax" description="Estimate 2026 New York State tax (4%–10.9%), NYC and Yonkers add-ons, standard deductions, credits, and residency rules for movers and remote workers." url="https://tax.loanpaylogic.com/new-york-income-tax-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           NY Dept. of Taxation &middot; 2026 tax year
@@ -27,13 +34,19 @@ export default function NewYorkPage() {
           famous convenience rule for remote work.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <NewYorkTaxCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <NewYorkTaxCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">The state ladder: 4% to 10.9%</h2>
           <p className="mt-3">
@@ -134,22 +147,22 @@ export default function NewYorkPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I pay NYC tax if I only work there?</h3>
-              <p className="mt-1">No — NYC tax follows residence, not workplace. Commuters pay state tax on NY-source wages but no city tax.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is the convenience-of-employer rule?</h3>
-              <p className="mt-1">Remote days for a NY employer count as NY workdays unless your employer requires you at an out-of-state office — a top audit trap.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does NY tax Social Security?</h3>
-              <p className="mt-1">No. New York fully excludes Social Security, plus up to $20,000 of pension/annuity income for residents over 59½.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What are 2026 NY filing deadlines?</h3>
-              <p className="mt-1">April 15, 2027 for 2026 returns (extension to October 15), matching the federal calendar; estimated payments follow the same quarterly dates.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I pay NYC tax if I only work there?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No — NYC tax follows residence, not workplace. Commuters pay state tax on NY-source wages but no city tax.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is the convenience-of-employer rule?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Remote days for a NY employer count as NY workdays unless your employer requires you at an out-of-state office — a top audit trap.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does NY tax Social Security?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. New York fully excludes Social Security, plus up to $20,000 of pension/annuity income for residents over 59½.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What are 2026 NY filing deadlines?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">April 15, 2027 for 2026 returns (extension to October 15), matching the federal calendar; estimated payments follow the same quarterly dates.</p>
+            </details>
           </div>
         </section>
 

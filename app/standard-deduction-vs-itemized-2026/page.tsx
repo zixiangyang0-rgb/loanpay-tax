@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Standard Deduction vs. Itemized 2026: Which Wins? | LoanPay Tax",
@@ -22,6 +24,7 @@ const CHECKLIST = [
 export default function StandardVsItemizedPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Standard Deduction vs. Itemized 2026: Which Wins? | LoanPay Tax" description="Compare the 2026 standard deduction ($16,100 single, $32,200 joint) against itemizing SALT, mortgage interest, charity, and medical costs — with a decision checklist." url="https://tax.loanpaylogic.com/standard-deduction-vs-itemized-2026" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           deduction guide &middot; 2026 tax year
@@ -35,7 +38,10 @@ export default function StandardVsItemizedPage() {
           in fifteen minutes with 2026 figures.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
+
+      <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -164,27 +170,31 @@ export default function StandardVsItemizedPage() {
           </p>
         </section>
 
+        <GuideInArticleAds />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I switch methods every year?</h3>
-              <p className="mt-1">Yes. Choose fresh each return — standardize one year, itemize the next, or bunch deductions to alternate.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is the 2026 SALT cap?</h3>
-              <p className="mt-1">$40,400 for all filers, phasing out above $505,000 of income, rising 1% yearly through 2029 before reverting to $10,000 in 2030.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I lose my charity deduction if I take the standard?</h3>
-              <p className="mt-1">No. A permanent $1,000 single / $2,000 joint above-the-line charity deduction is available to non-itemizers.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Is mortgage interest always deductible?</h3>
-              <p className="mt-1">Only on up to $750,000 of acquisition debt on a first or second home, and only if you itemize. Home-equity interest counts only when used to buy, build, or improve the home.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I switch methods every year?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes. Choose fresh each return — standardize one year, itemize the next, or bunch deductions to alternate.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is the 2026 SALT cap?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">$40,400 for all filers, phasing out above $505,000 of income, rising 1% yearly through 2029 before reverting to $10,000 in 2030.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I lose my charity deduction if I take the standard?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. A permanent $1,000 single / $2,000 joint above-the-line charity deduction is available to non-itemizers.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Is mortgage interest always deductible?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Only on up to $750,000 of acquisition debt on a first or second home, and only if you itemize. Home-equity interest counts only when used to buy, build, or improve the home.</p>
+            </details>
           </div>
         </section>
+
+        <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

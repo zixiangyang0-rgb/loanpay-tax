@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import NorthCarolinaTaxCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "North Carolina Income Tax Calculator 2026 (3.99% Flat) | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function NorthCarolinaPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="North Carolina Income Tax Calculator 2026 (3.99% Flat) | LoanPay Tax" description="Estimate 2026 NC tax at the flat 3.99% rate with $12,750/$25,500 standard deduction, child deduction, and scheduled future cuts." url="https://tax.loanpaylogic.com/north-carolina-income-tax-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           NCDOR &middot; 2026 tax year
@@ -27,13 +34,19 @@ export default function NorthCarolinaPage() {
           Charlotte keep winning transplant budgets.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <NorthCarolinaTaxCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <NorthCarolinaTaxCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">A decade of cuts lands at 3.99%</h2>
           <p className="mt-3">
@@ -112,22 +125,22 @@ export default function NorthCarolinaPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Will the NC rate fall below 3.99%?</h3>
-              <p className="mt-1">Possibly — Session Law 2023-134 cuts 0.5 points toward a 2.49% floor whenever revenue triggers are met, starting 2027.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does NC have local income taxes?</h3>
-              <p className="mt-1">No. No city or county levies an income tax — the 3.99% state rate plus property and sales taxes are the full local picture.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Are there personal exemptions in NC?</h3>
-              <p className="mt-1">No — eliminated with the 2014 flat-tax reform. Families use the standard deduction and child deduction instead.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does NC tax Social Security?</h3>
-              <p className="mt-1">No. Social Security benefits are fully excluded from North Carolina taxable income.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Will the NC rate fall below 3.99%?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Possibly — Session Law 2023-134 cuts 0.5 points toward a 2.49% floor whenever revenue triggers are met, starting 2027.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does NC have local income taxes?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. No city or county levies an income tax — the 3.99% state rate plus property and sales taxes are the full local picture.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Are there personal exemptions in NC?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No — eliminated with the 2014 flat-tax reform. Families use the standard deduction and child deduction instead.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does NC tax Social Security?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Social Security benefits are fully excluded from North Carolina taxable income.</p>
+            </details>
           </div>
         </section>
 

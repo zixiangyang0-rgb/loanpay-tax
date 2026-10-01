@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "When Are Taxes Due in 2027? All Deadlines | LoanPay Tax",
@@ -24,6 +26,7 @@ const FEDERAL = [
 export default function TaxesDuePage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="When Are Taxes Due in 2027? All Deadlines | LoanPay Tax" description="Every 2027 tax deadline: April 15 filing day for 2026 returns, extension to October 15, quarterly estimates, IRA contributions, and state dates." url="https://tax.loanpaylogic.com/when-are-taxes-due-2027" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           2026 tax year &middot; filed in 2027
@@ -37,7 +40,10 @@ export default function TaxesDuePage() {
           &mdash; so every obligation lands on time.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
+
+      <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -122,27 +128,31 @@ export default function TaxesDuePage() {
           </p>
         </section>
 
+        <GuideInArticleAds />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">When are 2026 taxes due?</h3>
-              <p className="mt-1">April 15, 2027 for most individuals — file, pay, request extension, fund IRAs, and submit Q1 2027 estimates by that date.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does an extension delay payment?</h3>
-              <p className="mt-1">No. Extensions grant paperwork time to October 15, 2027 — tax owed still accrues penalties and interest from April 15.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What if Tax Day falls on a weekend?</h3>
-              <p className="mt-1">The deadline shifts to the next business day. April 15, 2027 is a Thursday, so no shift is expected absent new holidays.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How long do I have to claim a refund?</h3>
-              <p className="mt-1">Three years from the filing deadline — late but refund-due returns face no penalties, only a wait for the check.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">When are 2026 taxes due?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">April 15, 2027 for most individuals — file, pay, request extension, fund IRAs, and submit Q1 2027 estimates by that date.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does an extension delay payment?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Extensions grant paperwork time to October 15, 2027 — tax owed still accrues penalties and interest from April 15.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What if Tax Day falls on a weekend?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">The deadline shifts to the next business day. April 15, 2027 is a Thursday, so no shift is expected absent new holidays.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How long do I have to claim a refund?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Three years from the filing deadline — late but refund-due returns face no penalties, only a wait for the check.</p>
+            </details>
           </div>
         </section>
+
+        <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

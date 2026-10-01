@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Washington Has No Income Tax: 2026 Guide (But 7% on Gains) | LoanPay Tax",
@@ -22,6 +24,7 @@ const CHECKLIST = [
 export default function WashingtonPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Washington Has No Income Tax: 2026 Guide (But 7% on Gains) | LoanPay Tax" description="Washington levies no wage income tax in 2026 but taxes large capital gains at 7% — plus sales, property, B&O, and estate taxes explained for movers." url="https://tax.loanpaylogic.com/washington-no-income-tax-guide" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           no wage income tax &middot; 2026
@@ -35,7 +38,10 @@ export default function WashingtonPage() {
           2026 ledger for movers, investors, and business owners.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
+
+      <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -125,27 +131,31 @@ export default function WashingtonPage() {
           </p>
         </section>
 
+        <GuideInArticleAds />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does Washington tax my salary?</h3>
-              <p className="mt-1">No. Wages, pensions, and Social Security face 0% — there is no individual return, withholding, or estimated system.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What gains does the 7% tax hit?</h3>
-              <p className="mt-1">Net long-term capital gains above ~$270,000 yearly (indexed), after deductions for charity, qualifying business sales, and real estate.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is the B&O tax?</h3>
-              <p className="mt-1">A gross-receipts tax (0.13%–3.3% by activity) on Washington businesses — revenue is taxed even when the business loses money.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does WA have an estate tax?</h3>
-              <p className="mt-1">Yes — 10–20% above roughly $2.19M, far below the $15M federal threshold. Mid-size estates need WA-specific planning.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does Washington tax my salary?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Wages, pensions, and Social Security face 0% — there is no individual return, withholding, or estimated system.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What gains does the 7% tax hit?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Net long-term capital gains above ~$270,000 yearly (indexed), after deductions for charity, qualifying business sales, and real estate.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is the B&O tax?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">A gross-receipts tax (0.13%–3.3% by activity) on Washington businesses — revenue is taxed even when the business loses money.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does WA have an estate tax?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — 10–20% above roughly $2.19M, far below the $15M federal threshold. Mid-size estates need WA-specific planning.</p>
+            </details>
           </div>
         </section>
+
+        <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

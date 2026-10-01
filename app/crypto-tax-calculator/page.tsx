@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CryptoTaxCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Crypto Tax Calculator 2026: Bitcoin & Coin Gains | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function CryptoPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Crypto Tax Calculator 2026: Bitcoin & Coin Gains | LoanPay Tax" description="Estimate 2026 crypto tax on coin sales: short vs. long-term rates, cost-basis methods, staking and mining income, $3,000 loss limits, and record rules." url="https://tax.loanpaylogic.com/crypto-tax-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           digital assets &middot; 2026
@@ -27,13 +34,19 @@ export default function CryptoPage() {
           record rules that decide it.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <CryptoTaxCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <CryptoTaxCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">What counts as taxable in crypto</h2>
           <p className="mt-3">
@@ -115,22 +128,22 @@ export default function CryptoPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Is swapping BTC for ETH taxable?</h3>
-              <p className="mt-1">Yes — every crypto-to-crypto trade is a sale of the first coin at market value, with gain or loss due that year.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do wash-sale rules apply to crypto?</h3>
-              <p className="mt-1">Currently no for most crypto (unlike stocks) — but legislation keeps proposing to add them, so verify before harvesting losses.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Are staking rewards taxed twice?</h3>
-              <p className="mt-1">They are taxed as ordinary income on receipt, then again only on later appreciation when sold — not double-taxed on the same dollars.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What if I lost money overall?</h3>
-              <p className="mt-1">Net losses offset gains, then up to $3,000 of wages yearly, with the rest carried forward — never wasted, just deferred.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Is swapping BTC for ETH taxable?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — every crypto-to-crypto trade is a sale of the first coin at market value, with gain or loss due that year.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do wash-sale rules apply to crypto?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Currently no for most crypto (unlike stocks) — but legislation keeps proposing to add them, so verify before harvesting losses.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Are staking rewards taxed twice?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">They are taxed as ordinary income on receipt, then again only on later appreciation when sold — not double-taxed on the same dollars.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What if I lost money overall?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Net losses offset gains, then up to $3,000 of wages yearly, with the rest carried forward — never wasted, just deferred.</p>
+            </details>
           </div>
         </section>
 

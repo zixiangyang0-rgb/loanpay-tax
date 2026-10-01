@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import NewJerseyTaxCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "New Jersey Income Tax Calculator 2026 (1.4%–10.75%) | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function NewJerseyPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="New Jersey Income Tax Calculator 2026 (1.4%–10.75%) | LoanPay Tax" description="Estimate 2026 NJ tax across 7 brackets, with retirement exclusions, property-tax deduction, ANCHOR relief, and NYC-commuter guidance." url="https://tax.loanpaylogic.com/new-jersey-income-tax-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           NJ Division of Taxation &middot; 2026
@@ -27,13 +34,19 @@ export default function NewJerseyPage() {
           your 2026 NJ bill and learn the relief programs that actually move the needle.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <NewJerseyTaxCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <NewJerseyTaxCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">Seven bands, low floor, high ceiling</h2>
           <p className="mt-3">
@@ -112,22 +125,22 @@ export default function NewJerseyPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Is there a NJ standard deduction?</h3>
-              <p className="mt-1">No. New Jersey offers no standard deduction — only personal exemptions and narrow exclusions, so nearly everyone pays from dollar one.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is ANCHOR?</h3>
-              <p className="mt-1">Direct state relief of up to $1,500 for homeowners ($450 renters) at qualifying incomes, applied for separately each fall.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do retirees pay NJ income tax?</h3>
-              <p className="mt-1">Often $0: up to $75K/$100K of retirement income excluded at 62+ under $100K total income, and Social Security always exempt.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">I work in NYC but live in NJ?</h3>
-              <p className="mt-1">File both states; NJ grants a resident credit for NY tax paid on the same wages so the same dollar is not taxed twice.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Is there a NJ standard deduction?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. New Jersey offers no standard deduction — only personal exemptions and narrow exclusions, so nearly everyone pays from dollar one.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is ANCHOR?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Direct state relief of up to $1,500 for homeowners ($450 renters) at qualifying incomes, applied for separately each fall.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do retirees pay NJ income tax?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Often $0: up to $75K/$100K of retirement income excluded at 62+ under $100K total income, and Social Security always exempt.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">I work in NYC but live in NJ?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">File both states; NJ grants a resident credit for NY tax paid on the same wages so the same dollar is not taxed twice.</p>
+            </details>
           </div>
         </section>
 

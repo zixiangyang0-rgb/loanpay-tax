@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import MichiganTaxCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Michigan Income Tax Calculator 2026 (4.25% Flat) | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function MichiganPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Michigan Income Tax Calculator 2026 (4.25% Flat) | LoanPay Tax" description="Estimate 2026 Michigan tax at 4.25%, with personal exemptions, pension subtraction, city taxes, property-tax credit, and filing rules." url="https://tax.loanpaylogic.com/michigan-income-tax-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Michigan Treasury &middot; 2026
@@ -27,13 +34,19 @@ export default function MichiganPage() {
           bill and learn where the real savings hide.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <MichiganTaxCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <MichiganTaxCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">Flat rate, fat exemptions</h2>
           <p className="mt-3">
@@ -122,22 +135,22 @@ export default function MichiganPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does Michigan tax pensions?</h3>
-              <p className="mt-1">Partially — qualifying pension/IRA income subtracts up to scheduled limits (~$64K single / ~$128K joint), and Social Security is fully exempt.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I owe Detroit city tax?</h3>
-              <p className="mt-1">Detroit residents pay 2.4% and nonresident workers 1.2%, withheld at work and filed on city forms separate from the state return.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is the homestead property-tax credit?</h3>
-              <p className="mt-1">A state refund (up to ~$1,700+) when property tax — or 23% of rent — exceeds 3.5% of household income. Renters qualify too.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is Michigan&rsquo;s personal exemption?</h3>
-              <p className="mt-1">Roughly $6,000 per filer and dependent for 2026 (indexed yearly) — a family of four shields about $24,000 before the 4.25% rate.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does Michigan tax pensions?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Partially — qualifying pension/IRA income subtracts up to scheduled limits (~$64K single / ~$128K joint), and Social Security is fully exempt.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I owe Detroit city tax?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Detroit residents pay 2.4% and nonresident workers 1.2%, withheld at work and filed on city forms separate from the state return.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is the homestead property-tax credit?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">A state refund (up to ~$1,700+) when property tax — or 23% of rent — exceeds 3.5% of household income. Renters qualify too.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is Michigan&rsquo;s personal exemption?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Roughly $6,000 per filer and dependent for 2026 (indexed yearly) — a family of four shields about $24,000 before the 4.25% rate.</p>
+            </details>
           </div>
         </section>
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Tax Filing Checklist 2027 (for 2026 Returns) | LoanPay Tax",
@@ -33,6 +35,7 @@ const STEPS = [
 export default function FilingChecklistPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Tax Filing Checklist 2027 (for 2026 Returns) | LoanPay Tax" description="A step-by-step 2027 filing checklist: documents to gather, W-2/1099 matching, deduction sweep, credit review, e-file error fixes, and audit-proof storage." url="https://tax.loanpaylogic.com/tax-filing-checklist" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           filing season 2027 &middot; 2026 returns
@@ -46,7 +49,10 @@ export default function FilingChecklistPage() {
           without errors or missed money.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
+
+      <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -139,27 +145,31 @@ export default function FilingChecklistPage() {
           </p>
         </section>
 
+        <GuideInArticleAds />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">When should I start gathering documents?</h3>
-              <p className="mt-1">Early January — open one folder and file forms as they arrive; most W-2s and 1099s land by January 31, brokerages by mid-February.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">My 1099 never arrived — can I file?</h3>
-              <p className="mt-1">Yes, and you must — report the income from invoices and deposits. Missing forms never excuse missing income.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">E-file rejected — what now?</h3>
-              <p className="mt-1">Fix the flagged field (usually SSN, dependent, or prior-year AGI) and retransmit. Do not mail a duplicate return.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How long do I keep tax records?</h3>
-              <p className="mt-1">Three years minimum from filing (six with large understatements, seven for bad debts) — digital copies are fine if legible.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">When should I start gathering documents?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Early January — open one folder and file forms as they arrive; most W-2s and 1099s land by January 31, brokerages by mid-February.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">My 1099 never arrived — can I file?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes, and you must — report the income from invoices and deposits. Missing forms never excuse missing income.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">E-file rejected — what now?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Fix the flagged field (usually SSN, dependent, or prior-year AGI) and retransmit. Do not mail a duplicate return.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How long do I keep tax records?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Three years minimum from filing (six with large understatements, seven for bad debts) — digital copies are fine if legible.</p>
+            </details>
           </div>
         </section>
+
+        <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

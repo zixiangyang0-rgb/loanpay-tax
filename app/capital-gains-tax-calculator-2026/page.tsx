@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CapitalGainsCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Capital Gains Tax Calculator 2026 (0/15/20%) | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function CapitalGainsPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Capital Gains Tax Calculator 2026 (0/15/20%) | LoanPay Tax" description="Estimate 2026 capital-gains tax with 0/15/20% stacking, NIIT, short-term rules, loss harvesting, and state treatment — with worked examples." url="https://tax.loanpaylogic.com/capital-gains-tax-calculator-2026" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Schedule D &middot; 2026 thresholds
@@ -27,13 +34,19 @@ export default function CapitalGainsPage() {
           harvesting, loss, and NIIT rules around it.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <CapitalGainsCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <CapitalGainsCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">The stacking secret behind 0/15/20</h2>
           <p className="mt-3">
@@ -129,22 +142,22 @@ export default function CapitalGainsPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can a gain be taxed at two rates?</h3>
-              <p className="mt-1">Yes — a gain straddling a threshold is split: the part filling the lower band gets the lower rate, the rest the higher one.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do gains push me into a higher bracket?</h3>
-              <p className="mt-1">Gains raise taxable income and MAGI — they can lift ordinary income&rsquo;s marginal band and trigger NIIT even when taxed at 0% themselves.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is the $3,000 loss limit?</h3>
-              <p className="mt-1">Net capital losses beyond gains can offset up to $3,000 of ordinary income yearly ($1,500 separate); the rest carries forward.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How are inherited stocks taxed?</h3>
-              <p className="mt-1">Heirs get a stepped-up basis to date-of-death value — prior appreciation escapes income tax entirely if sold promptly.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can a gain be taxed at two rates?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — a gain straddling a threshold is split: the part filling the lower band gets the lower rate, the rest the higher one.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do gains push me into a higher bracket?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Gains raise taxable income and MAGI — they can lift ordinary income&rsquo;s marginal band and trigger NIIT even when taxed at 0% themselves.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is the $3,000 loss limit?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Net capital losses beyond gains can offset up to $3,000 of ordinary income yearly ($1,500 separate); the rest carries forward.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How are inherited stocks taxed?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Heirs get a stepped-up basis to date-of-death value — prior appreciation escapes income tax entirely if sold promptly.</p>
+            </details>
           </div>
         </section>
 

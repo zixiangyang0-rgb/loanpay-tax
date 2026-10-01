@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Florida Has No Income Tax: 2026 Guide to the Real Costs | LoanPay Tax",
@@ -22,6 +24,7 @@ const CHECKLIST = [
 export default function FloridaPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Florida Has No Income Tax: 2026 Guide to the Real Costs | LoanPay Tax" description="Florida has no individual income tax in 2026 — see how sales, property, insurance, and homestead rules shape the true cost for movers and retirees." url="https://tax.loanpaylogic.com/florida-no-income-tax-guide" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           no individual income tax &middot; 2026
@@ -35,7 +38,10 @@ export default function FloridaPage() {
           reshape the bargain. Here is the honest 2026 accounting.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
+
+      <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -150,27 +156,31 @@ export default function FloridaPage() {
           </p>
         </section>
 
+        <GuideInArticleAds />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Is there really zero Florida income tax?</h3>
-              <p className="mt-1">Yes for individuals — wages, pensions, Social Security, and investment income all face 0%. Corporations separately pay 5.5%.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How do I prove Florida domicile?</h3>
-              <p className="mt-1">File a Declaration of Domicile, get a Florida license and plates within 30 days, register to vote, and spend 183+ days in-state.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is Save Our Homes?</h3>
-              <p className="mt-1">A cap limiting homestead assessed-value growth to 3% or CPI yearly — the longer you stay, the bigger the discount vs. market value.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does Florida tax my 401(k) withdrawals?</h3>
-              <p className="mt-1">No. Withdrawals face only federal tax, which is why Florida hosts so many retirees drawing down large accounts.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Is there really zero Florida income tax?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes for individuals — wages, pensions, Social Security, and investment income all face 0%. Corporations separately pay 5.5%.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How do I prove Florida domicile?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">File a Declaration of Domicile, get a Florida license and plates within 30 days, register to vote, and spend 183+ days in-state.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is Save Our Homes?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">A cap limiting homestead assessed-value growth to 3% or CPI yearly — the longer you stay, the bigger the discount vs. market value.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does Florida tax my 401(k) withdrawals?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Withdrawals face only federal tax, which is why Florida hosts so many retirees drawing down large accounts.</p>
+            </details>
           </div>
         </section>
+
+        <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

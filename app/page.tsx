@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
 
 export const metadata: Metadata = {
   title: "LoanPay Tax | Federal & State Tax Estimators and Guides",
@@ -258,6 +259,8 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      <AdSlot format="display" slot="TODO-tax-home-top" minHeight={280} label="Advertisement - homepage" />
 
       {clusters.map((cluster) => (
         <section key={cluster.id} className="mt-12">

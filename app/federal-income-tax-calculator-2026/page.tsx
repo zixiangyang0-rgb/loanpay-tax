@@ -1,6 +1,35 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FederalTaxCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../../components/schema";
+
+const FAQS = [
+  {
+    question: "Do higher brackets tax all my income more?",
+    answer:
+      "No. Only the dollars inside each new layer face the higher rate. A raise can never reduce after-tax pay through brackets alone.",
+  },
+  {
+    question: "What is the 2026 standard deduction?",
+    answer:
+      " $16,100 single or married filing separately, $32,200 married filing jointly, and $24,150 head of household, plus extra amounts for age 65+, blindness, and the temporary senior bonus.",
+  },
+  {
+    question: "Why does my bonus withholding look wrong?",
+    answer:
+      "Bonuses are withheld at a flat 22 percent (up to $1 million), which rarely matches your layered marginal rate. Your return corrects the difference.",
+  },
+  {
+    question: "Is this calculator my official tax bill?",
+    answer:
+      "No. It is a simplified educational estimate that omits credits, AMT, investment surtaxes, and state tax. Use IRS forms or software for the official figure.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Federal Income Tax Calculator 2026 | LoanPay Tax",
@@ -13,7 +42,13 @@ export const metadata: Metadata = {
 
 export default function FederalIncomeTaxCalculatorPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd
+        title="Federal Income Tax Calculator 2026 | LoanPay Tax"
+        description="Estimate your 2026 federal income tax with current IRS brackets, standard deductions of $16,100 single / $32,200 joint, and marginal vs effective rate explainers."
+        url="https://tax.loanpaylogic.com/federal-income-tax-calculator-2026"
+      />
+      <FaqJsonLd faqs={FAQS} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           2026 tax year &middot; filed in 2027
@@ -27,13 +62,19 @@ export default function FederalIncomeTaxCalculatorPage() {
           examples, so a pay stub stops feeling like a mystery and starts looking like a plan.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <FederalTaxCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <FederalTaxCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">How federal income tax actually works</h2>
           <p className="mt-3">
@@ -215,22 +256,17 @@ export default function FederalIncomeTaxCalculatorPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do higher brackets tax all my income more?</h3>
-              <p className="mt-1">No. Only the dollars inside each new layer face the higher rate. A raise can never reduce after-tax pay through brackets alone.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is the 2026 standard deduction?</h3>
-              <p className="mt-1">$16,100 single or married filing separately, $32,200 married filing jointly, and $24,150 head of household, plus extra amounts for age 65+, blindness, and the temporary senior bonus.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Why does my bonus withholding look wrong?</h3>
-              <p className="mt-1">Bonuses are withheld at a flat 22 percent (up to $1 million), which rarely matches your layered marginal rate. Your return corrects the difference.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Is this calculator my official tax bill?</h3>
-              <p className="mt-1">No. It is a simplified educational estimate that omits credits, AMT, investment surtaxes, and state tax. Use IRS forms or software for the official figure.</p>
-            </div>
+            {FAQS.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-xl border border-white/10 bg-white/[0.02] p-4"
+              >
+                <summary className="cursor-pointer font-semibold text-white">
+                  {faq.question}
+                </summary>
+                <p className="mt-2 text-sm leading-relaxed text-slate-300">{faq.answer}</p>
+              </details>
+            ))}
           </div>
         </section>
 

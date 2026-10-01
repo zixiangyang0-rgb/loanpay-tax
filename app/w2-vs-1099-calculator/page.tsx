@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import W2Vs1099Calculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "W-2 vs. 1099 Calculator 2026: Employee or Contractor? | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function W2Vs1099Page() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="W-2 vs. 1099 Calculator 2026: Employee or Contractor? | LoanPay Tax" description="Compare 2026 W-2 vs. 1099 take-home pay with SE tax, benefits value, QBI deduction, and the 15–20% contractor premium rule — plus misclassification risks." url="https://tax.loanpaylogic.com/w2-vs-1099-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           job-offer math &middot; 2026
@@ -27,13 +34,19 @@ export default function W2Vs1099Page() {
           offer letter.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <W2Vs1099Calculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <W2Vs1099Calculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">The tax wedge between the two checks</h2>
           <p className="mt-3">
@@ -132,22 +145,22 @@ export default function W2Vs1099Page() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How much more should a contractor charge?</h3>
-              <p className="mt-1">Roughly 15–20% above equivalent salary — covering the 7.65-point tax wedge, lost benefits, and unpaid admin time.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I be both W-2 and 1099?</h3>
-              <p className="mt-1">Yes — common and legal. Wages use up the $184,500 Social Security base first; freelance profit fills the remainder.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do contractors get the QBI deduction?</h3>
-              <p className="mt-1">Usually — 20% of qualified business income off income tax (not SE tax), within income thresholds and service-business rules.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What if my employer forces 1099 status?</h3>
-              <p className="mt-1">Status follows control, not paperwork. File SS-8 for a ruling and Form 8919 to pay only the employee tax share meanwhile.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How much more should a contractor charge?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Roughly 15–20% above equivalent salary — covering the 7.65-point tax wedge, lost benefits, and unpaid admin time.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I be both W-2 and 1099?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — common and legal. Wages use up the $184,500 Social Security base first; freelance profit fills the remainder.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do contractors get the QBI deduction?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Usually — 20% of qualified business income off income tax (not SE tax), within income thresholds and service-business rules.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What if my employer forces 1099 status?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Status follows control, not paperwork. File SS-8 for a ruling and Form 8919 to pay only the employee tax share meanwhile.</p>
+            </details>
           </div>
         </section>
 

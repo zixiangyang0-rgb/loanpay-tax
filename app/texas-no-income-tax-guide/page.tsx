@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Texas Has No Income Tax: The Full 2026 Guide | LoanPay Tax",
@@ -22,6 +24,7 @@ const CHECKLIST = [
 export default function TexasPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Texas Has No Income Tax: The Full 2026 Guide | LoanPay Tax" description="Texas levies no individual income tax in 2026 — learn what replaces it (sales, property, franchise taxes), who still files, and the true cost-vs-California math." url="https://tax.loanpaylogic.com/texas-no-income-tax-guide" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           no individual income tax &middot; 2026
@@ -35,7 +38,10 @@ export default function TexasPage() {
           income tax, who still owes Texas business taxes, and whether moving pencils out.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
+
+      <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -148,27 +154,31 @@ export default function TexasPage() {
           </p>
         </section>
 
+        <GuideInArticleAds />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I file a Texas tax return?</h3>
-              <p className="mt-1">Individuals file nothing with Texas. Businesses above the franchise-tax threshold file margin-tax reports instead.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Are Texas property taxes the highest in the US?</h3>
-              <p className="mt-1">Among the highest effective rates (~1.6% statewide, up to ~2.2% in big metros) — the direct trade for having no income tax.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do retirees benefit most from Texas?</h3>
-              <p className="mt-1">Usually yes: pensions, 401(k) withdrawals, and Social Security face zero Texas tax, and homestead caps protect longtime owners.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is the Texas franchise tax?</h3>
-              <p className="mt-1">A 0.375%–0.75% tax on business margin above roughly $2.47M revenue. Employees, sole proprietors, and small firms generally owe nothing.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I file a Texas tax return?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Individuals file nothing with Texas. Businesses above the franchise-tax threshold file margin-tax reports instead.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Are Texas property taxes the highest in the US?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Among the highest effective rates (~1.6% statewide, up to ~2.2% in big metros) — the direct trade for having no income tax.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do retirees benefit most from Texas?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Usually yes: pensions, 401(k) withdrawals, and Social Security face zero Texas tax, and homestead caps protect longtime owners.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is the Texas franchise tax?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">A 0.375%–0.75% tax on business margin above roughly $2.47M revenue. Employees, sole proprietors, and small firms generally owe nothing.</p>
+            </details>
           </div>
         </section>
+
+        <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

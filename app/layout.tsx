@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
+import ConsentBanner from "../components/consent";
+import { OrgJsonLd, WebSiteJsonLd } from "../components/schema";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -66,9 +68,20 @@ function Footer() {
             {link.label}
           </Link>
         ))}
+        <Link href="/privacy-policy" className="transition hover:text-white">
+          Privacy Policy
+        </Link>
       </div>
       <p className="mt-4">
         &copy; {new Date().getFullYear()} tax.loanpaylogic.com. Educational estimates only, not tax advice.
+      </p>
+      <p className="mt-2 text-xs leading-relaxed text-slate-500">
+        We use Google AdSense to show ads. Google may use cookies to personalize or measure ads.
+        Manage your choice via the cookie banner or Google Ads Settings. See our{" "}
+        <Link href="/privacy-policy" className="underline underline-offset-2">
+          Privacy Policy
+        </Link>
+        .
       </p>
     </footer>
   );
@@ -82,12 +95,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <OrgJsonLd />
+        <WebSiteJsonLd />
+        {/* Google Funding Choices CMP: paste the Funding Choices tag from
+            AdSense > Privacy & messaging here to enforce EEA/UK consent.
+            The ConsentBanner below stores NPA choice at loanpay-tax-consent. */}
         <Header />
         <main>{children}</main>
         <Footer />
+        <ConsentBanner />
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4906207495792820"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           crossOrigin="anonymous"
         />
       </body>

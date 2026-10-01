@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import OhioTaxCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Ohio Income Tax Calculator 2026 | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function OhioPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Ohio Income Tax Calculator 2026 | LoanPay Tax" description="Estimate 2026 Ohio tax (first $26,050 exempt, 2.75%–3.125% above), municipal taxes, credits, and filing rules for residents and commuters." url="https://tax.loanpaylogic.com/ohio-income-tax-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Ohio Dept. of Taxation &middot; 2026
@@ -27,13 +34,19 @@ export default function OhioPage() {
           below and learn to navigate the municipal maze.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <OhioTaxCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <OhioTaxCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">Ohio&rsquo;s two-rate system</h2>
           <p className="mt-3">
@@ -116,22 +129,22 @@ export default function OhioPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I pay Ohio tax on the first $26,050?</h3>
-              <p className="mt-1">No — the first $26,050 of taxable income is fully exempt for every filer in 2026.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Why is my city tax bigger than my state tax?</h3>
-              <p className="mt-1">Normal in Ohio — municipal rates of 1–2.5% with no exemption often exceed the gentle 2.75–3.125% state schedule.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does Ohio tax Social Security?</h3>
-              <p className="mt-1">No. Social Security is fully exempt, and retirees get additional senior and retirement-income credits.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">I live and work in different Ohio cities?</h3>
-              <p className="mt-1">Your residence city usually credits workplace withholding up to its own rate — file both city returns via RITA/CCA to reconcile.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I pay Ohio tax on the first $26,050?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No — the first $26,050 of taxable income is fully exempt for every filer in 2026.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Why is my city tax bigger than my state tax?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Normal in Ohio — municipal rates of 1–2.5% with no exemption often exceed the gentle 2.75–3.125% state schedule.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does Ohio tax Social Security?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Social Security is fully exempt, and retirees get additional senior and retirement-income credits.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">I live and work in different Ohio cities?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Your residence city usually credits workplace withholding up to its own rate — file both city returns via RITA/CCA to reconcile.</p>
+            </details>
           </div>
         </section>
 

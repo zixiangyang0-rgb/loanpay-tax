@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "SEP IRA vs. Solo 401(k) 2026: Tax Comparison | LoanPay Tax",
@@ -22,6 +24,7 @@ const CHECKLIST = [
 export default function SepVsSoloPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="SEP IRA vs. Solo 401(k) 2026: Tax Comparison | LoanPay Tax" description="Compare 2026 SEP-IRA vs. Solo 401(k) contribution limits ($72,000 SEP max), deadlines, Roth options, and which freelance retirement plan saves more tax." url="https://tax.loanpaylogic.com/sep-ira-vs-solo-401k-tax" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           freelance retirement &middot; 2026 limits
@@ -35,7 +38,10 @@ export default function SepVsSoloPage() {
           correctly once and the tax savings compound for decades.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
+
+      <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -114,27 +120,31 @@ export default function SepVsSoloPage() {
           </p>
         </section>
 
+        <GuideInArticleAds />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I have both a SEP and a Solo 401(k)?</h3>
-              <p className="mt-1">Yes, but combined employer contributions share one $72,000 cap per business — most people pick one and fund it fully.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Which is better under $50K profit?</h3>
-              <p className="mt-1">Solo 401(k), by far — the $24,500 elective deferral shelters far more than the SEP&rsquo;s ~20% of profit at modest incomes.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do contributions reduce self-employment tax?</h3>
-              <p className="mt-1">No — only income tax. Schedule C expenses cut both taxes; retirement contributions cut income tax alone.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What if I hire an employee mid-year?</h3>
-              <p className="mt-1">Solo 401(k) eligibility ends (except spouse) — convert to a SEP, SIMPLE, or Safe Harbor 401(k) covering the new hire.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I have both a SEP and a Solo 401(k)?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes, but combined employer contributions share one $72,000 cap per business — most people pick one and fund it fully.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Which is better under $50K profit?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Solo 401(k), by far — the $24,500 elective deferral shelters far more than the SEP&rsquo;s ~20% of profit at modest incomes.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do contributions reduce self-employment tax?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No — only income tax. Schedule C expenses cut both taxes; retirement contributions cut income tax alone.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What if I hire an employee mid-year?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Solo 401(k) eligibility ends (except spouse) — convert to a SEP, SIMPLE, or Safe Harbor 401(k) covering the new hire.</p>
+            </details>
           </div>
         </section>
+
+        <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

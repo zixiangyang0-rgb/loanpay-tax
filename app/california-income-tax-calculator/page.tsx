@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CaliforniaTaxCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "California Income Tax Calculator 2026 | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function CaliforniaPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="California Income Tax Calculator 2026 | LoanPay Tax" description="Estimate 2026 California income tax across 1%–13.3% brackets, $5,706 standard deduction, renter's credit, and why Californians itemize more often." url="https://tax.loanpaylogic.com/california-income-tax-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Franchise Tax Board &middot; 2026 tax year
@@ -27,13 +34,19 @@ export default function CaliforniaPage() {
           nine brackets, tiny standard deduction, and generous credits interact.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <CaliforniaTaxCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <CaliforniaTaxCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">How California taxes income</h2>
           <p className="mt-3">
@@ -131,22 +144,22 @@ export default function CaliforniaPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does California tax Social Security?</h3>
-              <p className="mt-1">No. California fully excludes Social Security benefits and unemployment compensation from taxable income.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I itemize for the state but not federal?</h3>
-              <p className="mt-1">Yes. The two returns decide independently, and California&rsquo;s $5,706 / $11,412 standard amounts make state-only itemizing common.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is the 13.3% rate I keep hearing about?</h3>
-              <p className="mt-1">12.3% top bracket plus a 1% Mental Health Services Tax on income above $1 million — the highest marginal state rate in the nation.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Are capital gains taxed differently in CA?</h3>
-              <p className="mt-1">No. California taxes capital gains as ordinary income at your regular bracket — there is no 0/15/20% preference like the federal code.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does California tax Social Security?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. California fully excludes Social Security benefits and unemployment compensation from taxable income.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I itemize for the state but not federal?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes. The two returns decide independently, and California&rsquo;s $5,706 / $11,412 standard amounts make state-only itemizing common.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is the 13.3% rate I keep hearing about?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">12.3% top bracket plus a 1% Mental Health Services Tax on income above $1 million — the highest marginal state rate in the nation.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Are capital gains taxed differently in CA?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. California taxes capital gains as ordinary income at your regular bracket — there is no 0/15/20% preference like the federal code.</p>
+            </details>
           </div>
         </section>
 

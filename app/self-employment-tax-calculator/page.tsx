@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SelfEmploymentCalculator from "./calculator";
+import {
+  CalculatorAnchorAds,
+  CalculatorInArticleAds,
+  CalculatorSidebarAds,
+} from "../../components/CalculatorAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Self-Employment Tax Calculator 2026 (15.3%) | LoanPay Tax",
@@ -13,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function SelfEmploymentPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Self-Employment Tax Calculator 2026 (15.3%) | LoanPay Tax" description="Estimate 2026 self-employment tax: 12.4% Social Security to $184,500, 2.9% Medicare, 0.9% surtax, half-SE deduction, and quarterly payment setup." url="https://tax.loanpaylogic.com/self-employment-tax-calculator" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Schedule SE &middot; 2026
@@ -27,13 +34,19 @@ export default function SelfEmploymentPage() {
           quarterly rhythm that keep it manageable.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
 
-      <div className="mt-8">
-        <SelfEmploymentCalculator />
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <SelfEmploymentCalculator />
+          <CalculatorInArticleAds />
+        </div>
+        <CalculatorSidebarAds />
       </div>
+      <CalculatorAnchorAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
           <h2 className="text-xl font-bold text-white">Why freelancers pay 15.3%</h2>
           <p className="mt-3">
@@ -127,22 +140,22 @@ export default function SelfEmploymentPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Is SE tax on gross or net income?</h3>
-              <p className="mt-1">Net profit after business expenses, multiplied by 92.35% — every legitimate deduction lowers SE tax directly.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I owe SE tax with a full-time job too?</h3>
-              <p className="mt-1">Yes on freelance profit — wages use up the $184,500 Social Security base first, so side income mostly faces the 12.4% piece only below the cap.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does an S-corp eliminate SE tax?</h3>
-              <p className="mt-1">Only on distributions — owners still owe payroll tax on reasonable W-2 salary. Below ~$60–80K profit the extra admin rarely pays.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What if I lose money?</h3>
-              <p className="mt-1">No SE tax on a net loss — and the loss can offset other income (within limits), cutting income tax too.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Is SE tax on gross or net income?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Net profit after business expenses, multiplied by 92.35% — every legitimate deduction lowers SE tax directly.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I owe SE tax with a full-time job too?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes on freelance profit — wages use up the $184,500 Social Security base first, so side income mostly faces the 12.4% piece only below the cap.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does an S-corp eliminate SE tax?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Only on distributions — owners still owe payroll tax on reasonable W-2 salary. Below ~$60–80K profit the extra admin rarely pays.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What if I lose money?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No SE tax on a net loss — and the loss can offset other income (within limits), cutting income tax too.</p>
+            </details>
           </div>
         </section>
 

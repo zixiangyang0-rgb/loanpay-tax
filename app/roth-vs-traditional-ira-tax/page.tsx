@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "Roth vs. Traditional IRA 2026: Tax Guide | LoanPay Tax",
@@ -22,6 +24,7 @@ const CHECKLIST = [
 export default function RothVsTraditionalPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Roth vs. Traditional IRA 2026: Tax Guide | LoanPay Tax" description="Roth vs. traditional IRA for 2026: $7,500 limit, $153K/$242K phase-outs, deduction rules, conversion ladders, and which account wins at your income." url="https://tax.loanpaylogic.com/roth-vs-traditional-ira-tax" />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           IRAs 2026 &middot; $7,500 / $8,600
@@ -34,7 +37,10 @@ export default function RothVsTraditionalPage() {
           winner at each income &mdash; this guide matches your situation to the right account.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
+
+      <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -117,27 +123,31 @@ export default function RothVsTraditionalPage() {
           </p>
         </section>
 
+        <GuideInArticleAds />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I contribute to both in one year?</h3>
-              <p className="mt-1">Yes — but the $7,500 / $8,600 cap covers all IRAs combined, split however you like between Roth and traditional.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is the backdoor Roth?</h3>
-              <p className="mt-1">A nondeductible traditional contribution followed by conversion to Roth — legal at any income, but the pro-rata rule taxes pre-tax balances proportionally.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do Roth IRAs have RMDs?</h3>
-              <p className="mt-1">No for original owners — Roth balances grow untouched for life, a key estate-planning edge over traditional accounts.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should high earners use Roth 401(k)s instead?</h3>
-              <p className="mt-1">Often yes — Roth 401(k)s accept $24,500 with no income cap, and 2026 rules push high earners&rsquo; catch-ups into Roth automatically.</p>
-            </div>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I contribute to both in one year?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — but the $7,500 / $8,600 cap covers all IRAs combined, split however you like between Roth and traditional.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is the backdoor Roth?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">A nondeductible traditional contribution followed by conversion to Roth — legal at any income, but the pro-rata rule taxes pre-tax balances proportionally.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do Roth IRAs have RMDs?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No for original owners — Roth balances grow untouched for life, a key estate-planning edge over traditional accounts.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should high earners use Roth 401(k)s instead?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Often yes — Roth 401(k)s accept $24,500 with no income cap, and 2026 rules push high earners&rsquo; catch-ups into Roth automatically.</p>
+            </details>
           </div>
         </section>
+
+        <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>
