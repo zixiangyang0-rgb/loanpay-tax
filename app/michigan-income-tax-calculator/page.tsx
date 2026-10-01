@@ -1,0 +1,157 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import MichiganTaxCalculator from "./calculator";
+
+export const metadata: Metadata = {
+  title: "Michigan Income Tax Calculator 2026 (4.25% Flat) | LoanPay Tax",
+  description:
+    "Estimate 2026 Michigan tax at 4.25%, with personal exemptions, pension subtraction, city taxes, property-tax credit, and filing rules.",
+  alternates: {
+    canonical: "https://tax.loanpaylogic.com/michigan-income-tax-calculator",
+  },
+};
+
+export default function MichiganPage() {
+  return (
+    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+          Michigan Treasury &middot; 2026
+        </p>
+        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+          Michigan Income Tax Calculator
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+          A flat 4.25 percent with generous exemptions and a famous pension subtraction &mdash;
+          plus city taxes in Detroit, Grand Rapids, and beyond. Estimate Michigan&rsquo;s 2026
+          bill and learn where the real savings hide.
+        </p>
+        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+      </section>
+
+      <div className="mt-8">
+        <MichiganTaxCalculator />
+      </div>
+
+      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+        <section>
+          <h2 className="text-xl font-bold text-white">Flat rate, fat exemptions</h2>
+          <p className="mt-3">
+            Michigan taxes adjusted gross income at a flat 4.25 percent &mdash; no brackets, no
+            separate capital-gains rate &mdash; after subtracting a personal exemption of roughly
+            $6,000 per filer and dependent (indexed yearly; confirm the exact 2026 figure with
+            Treasury). A joint couple with two children therefore shields about $24,000 before
+            the rate applies: on $120,000 of AGI they pay on $96,000, or about $4,080 &mdash; a
+            3.4 percent effective rate. Additional exemptions for seniors, disability,
+            unemployment compensation, and military pay trim the base further. The structure
+            favors large families and modest earners while staying proportional at the top, a
+            deliberate contrast with graduated neighbors.
+          </p>
+          <p className="mt-3">
+            The pension subtraction is Michigan&rsquo;s signature break. Taxpayers born in 1946 or
+            later may subtract qualifying pension, 401(k), and IRA income up to scheduled limits
+            (about $64,000 single / $128,000 joint in recent years, indexed; older cohorts enjoy
+            larger or full subtractions), and Social Security is fully exempt for everyone.
+            Military pensions subtract without cap. Workers, by contrast, get no deduction for
+            401(k) contributions beyond the federal one &mdash; Michigan starts from federal AGI,
+            so pre-tax deferrals flow through automatically, then the subtraction rewards the
+            withdrawal decades later.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">City taxes and the property-tax credit</h2>
+          <p className="mt-3">
+            Twenty-plus Michigan cities levy their own income taxes: Detroit charges residents
+            2.4 percent (1.2 percent for nonresident workers), Grand Rapids, Flint, Lansing, and
+            Saginaw 1 percent resident (0.5 nonresident), with smaller cities at similar splits.
+            City tax is withheld at work and filed on city forms &mdash; it is not part of the
+            state return, and only partially creditable elsewhere. Property taxes average about
+            1.19 percent statewide, but the homestead property-tax credit refunds up to $1,700+
+            of the amount by which property tax (or 23 percent of rent) exceeds 3.5 percent of
+            household income for qualifying owners and renters. The home-heating credit adds up
+            to several hundred dollars for low-income households &mdash; both claimed on the
+            state return&rsquo;s credit forms, both frequently missed.
+          </p>
+          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+            <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
+              <caption className="px-4 py-3 text-left text-slate-400">
+                Combined state + city burden at $80,000 AGI, joint + 2 kids (~$24,000 exempt).
+              </caption>
+              <thead>
+                <tr className="border-b border-white/10 text-slate-200">
+                  <th className="px-4 py-3 font-semibold">City</th>
+                  <th className="px-4 py-3 font-semibold">State (4.25%)</th>
+                  <th className="px-4 py-3 font-semibold">City</th>
+                  <th className="px-4 py-3 font-semibold">Combined</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-white/5"><td className="px-4 py-2">No city tax</td><td className="px-4 py-2">$2,380</td><td className="px-4 py-2">$0</td><td className="px-4 py-2">$2,380</td></tr>
+                <tr className="border-b border-white/5"><td className="px-4 py-2">Grand Rapids resident</td><td className="px-4 py-2">$2,380</td><td className="px-4 py-2">$800</td><td className="px-4 py-2">$3,180</td></tr>
+                <tr><td className="px-4 py-2">Detroit resident</td><td className="px-4 py-2">$2,380</td><td className="px-4 py-2">$1,920</td><td className="px-4 py-2">$4,300</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Filing, reciprocity, and Great Lakes context</h2>
+          <p className="mt-3">
+            Michigan returns (Form MI-1040) are due April 15, 2027, with city returns on parallel
+            tracks and quarterly estimates on federal dates. Reciprocity is absent &mdash;
+            Michigan credits taxes paid to other states instead, so cross-border commuters to
+            Ohio or Indiana file both and claim the credit. Remote workers for Michigan employers
+            owe Michigan tax on Michigan workdays; keep a log when splitting time. Against{" "}
+            <Link href="/illinois-income-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              Illinois&rsquo; 4.95 percent
+            </Link>
+            ,{" "}
+            <Link href="/ohio-income-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              Ohio&rsquo;s ~2.8 percent effective
+            </Link>
+            , and{" "}
+            <Link href="/pennsylvania-income-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              Pennsylvania&rsquo;s 3.07 percent
+            </Link>
+            , Michigan sits mid-pack on income tax but wins for retirees through the pension
+            subtraction &mdash; the deciding factor for many relocation spreadsheets.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
+          <div className="mt-4 space-y-4">
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <h3 className="font-semibold text-white">Does Michigan tax pensions?</h3>
+              <p className="mt-1">Partially — qualifying pension/IRA income subtracts up to scheduled limits (~$64K single / ~$128K joint), and Social Security is fully exempt.</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <h3 className="font-semibold text-white">Do I owe Detroit city tax?</h3>
+              <p className="mt-1">Detroit residents pay 2.4% and nonresident workers 1.2%, withheld at work and filed on city forms separate from the state return.</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <h3 className="font-semibold text-white">What is the homestead property-tax credit?</h3>
+              <p className="mt-1">A state refund (up to ~$1,700+) when property tax — or 23% of rent — exceeds 3.5% of household income. Renters qualify too.</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <h3 className="font-semibold text-white">What is Michigan&rsquo;s personal exemption?</h3>
+              <p className="mt-1">Roughly $6,000 per filer and dependent for 2026 (indexed yearly) — a family of four shields about $24,000 before the 4.25% rate.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+          <p>
+            This is general education, not tax advice. Confirm exemption and subtraction limits
+            with Michigan Treasury. Read our full{" "}
+            <Link href="/disclaimer" className="underline underline-offset-2">
+              disclaimer
+            </Link>
+            .
+          </p>
+        </section>
+      </article>
+    </div>
+  );
+}

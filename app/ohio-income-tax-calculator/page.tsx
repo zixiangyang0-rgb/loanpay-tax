@@ -1,0 +1,151 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import OhioTaxCalculator from "./calculator";
+
+export const metadata: Metadata = {
+  title: "Ohio Income Tax Calculator 2026 | LoanPay Tax",
+  description:
+    "Estimate 2026 Ohio tax (first $26,050 exempt, 2.75%–3.125% above), municipal taxes, credits, and filing rules for residents and commuters.",
+  alternates: {
+    canonical: "https://tax.loanpaylogic.com/ohio-income-tax-calculator",
+  },
+};
+
+export default function OhioPage() {
+  return (
+    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+          Ohio Dept. of Taxation &middot; 2026
+        </p>
+        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+          Ohio Income Tax Calculator
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+          Ohio exempts the first $26,050 outright, then applies two gentle graduated rates
+          &mdash; but hundreds of cities layer their own taxes on top. Estimate the state piece
+          below and learn to navigate the municipal maze.
+        </p>
+        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+      </section>
+
+      <div className="mt-8">
+        <OhioTaxCalculator />
+      </div>
+
+      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+        <section>
+          <h2 className="text-xl font-bold text-white">Ohio&rsquo;s two-rate system</h2>
+          <p className="mt-3">
+            After years of cuts, Ohio&rsquo;s 2026 schedule is the simplest graduated system in
+            the Midwest: income at or below $26,050 is taxed at $0 regardless of filing status;
+            income from $26,051 to $100,000 owes $342 plus 2.75 percent of the excess; income
+            above $100,000 owes $2,394.32 plus 3.125 percent of the excess. An $80,000 earner thus
+            pays about $1,826 &mdash; a 2.28 percent effective rate that undercuts nearly every
+            neighboring state. Social Security is fully exempt, and retirees get a senior credit
+            ($50 per return) plus a retirement-income credit scaling with pension size. Business
+            owners should note Ohio has no traditional corporate income tax (a gross-receipts
+            Commercial Activity Tax applies instead), keeping pass-through math clean.
+          </p>
+          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+            <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
+              <caption className="px-4 py-3 text-left text-slate-400">
+                2026 Ohio tax at sample incomes (all filing statuses).
+              </caption>
+              <thead>
+                <tr className="border-b border-white/10 text-slate-200">
+                  <th className="px-4 py-3 font-semibold">Ohio taxable income</th>
+                  <th className="px-4 py-3 font-semibold">Tax</th>
+                  <th className="px-4 py-3 font-semibold">Effective rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-white/5"><td className="px-4 py-2">$26,050</td><td className="px-4 py-2">$0</td><td className="px-4 py-2">0%</td></tr>
+                <tr className="border-b border-white/5"><td className="px-4 py-2">$60,000</td><td className="px-4 py-2">$1,276</td><td className="px-4 py-2">2.13%</td></tr>
+                <tr className="border-b border-white/5"><td className="px-4 py-2">$100,000</td><td className="px-4 py-2">$2,394</td><td className="px-4 py-2">2.39%</td></tr>
+                <tr><td className="px-4 py-2">$200,000</td><td className="px-4 py-2">$5,519</td><td className="px-4 py-2">2.76%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">The municipal maze: where the real tax hides</h2>
+          <p className="mt-3">
+            Ohio&rsquo;s 600+ cities and villages impose their own income taxes &mdash; Columbus
+            2.5 percent, Cleveland and Cincinnati 2 percent (Cincinnati 2.1 percent in some
+            tallies &mdash; confirm locally), Toledo 2.25 percent &mdash; usually withheld at
+            work and credited against the residence city&rsquo;s levy. Live in a township without
+            a tax but work in a taxed city and the workplace keeps it; live and work in different
+            taxed cities and credits (often capped at 1&ndash;2 percent) decide the remainder.
+            School-district income taxes add another 0.25&ndash;2 percent in many districts,
+            collected on the state return. Combined, municipal plus school tax frequently exceeds
+            the state bill &mdash; a Columbus worker at $80,000 can owe $1,826 to Ohio but $2,000
+            to the city. Always ask HR which jurisdictions appear on your pay stub, and file each
+            city&rsquo;s return (many use the Regional Income Tax Agency, RITA, or the Central
+            Collection Agency).
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Credits, deductions, and filing basics</h2>
+          <p className="mt-3">
+            Ohio sweetens the low state bill with a $2,400 personal-plus-dependent exemption
+            credit, a joint-filing credit, a retirement-income credit up to $200, Social Security
+            and disability deductions, 529 contribution deductions ($4,000 per beneficiary yearly),
+            and small-business investor credits. Returns are due April 15, 2027 with federal-style
+            quarterly estimates, filed on Form IT 1040. Ohio taxes Daly City&ndash;style remote
+            work under post-pandemic rules that generally source wages to the employer&rsquo;s
+            location unless a refund claim proves otherwise &mdash; a live issue for
+            Cleveland-remote workers living elsewhere. Compare the full picture with{" "}
+            <Link href="/michigan-income-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              Michigan
+            </Link>
+            ,{" "}
+            <Link href="/pennsylvania-income-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              Pennsylvania
+            </Link>
+            , and{" "}
+            <Link href="/illinois-income-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              Illinois
+            </Link>{" "}
+            before a Great Lakes move.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
+          <div className="mt-4 space-y-4">
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <h3 className="font-semibold text-white">Do I pay Ohio tax on the first $26,050?</h3>
+              <p className="mt-1">No — the first $26,050 of taxable income is fully exempt for every filer in 2026.</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <h3 className="font-semibold text-white">Why is my city tax bigger than my state tax?</h3>
+              <p className="mt-1">Normal in Ohio — municipal rates of 1–2.5% with no exemption often exceed the gentle 2.75–3.125% state schedule.</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <h3 className="font-semibold text-white">Does Ohio tax Social Security?</h3>
+              <p className="mt-1">No. Social Security is fully exempt, and retirees get additional senior and retirement-income credits.</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <h3 className="font-semibold text-white">I live and work in different Ohio cities?</h3>
+              <p className="mt-1">Your residence city usually credits workplace withholding up to its own rate — file both city returns via RITA/CCA to reconcile.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+          <p>
+            This is general education, not tax advice. Municipal rates change by ordinance;
+            confirm with your city and the Ohio Department of Taxation. Read our full{" "}
+            <Link href="/disclaimer" className="underline underline-offset-2">
+              disclaimer
+            </Link>
+            .
+          </p>
+        </section>
+      </article>
+    </div>
+  );
+}
