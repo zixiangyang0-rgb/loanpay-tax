@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     description:
       "Estimate federal and state taxes, self-employment taxes, and crypto taxes with free educational tools and guides.",
   },
+  other: {
+    "google-adsense-account": "ca-pub-4906207495792820",
+  },
 };
 
 const navLinks = [
@@ -74,6 +77,14 @@ function Footer() {
       </div>
       <p className="mt-4">
         &copy; {new Date().getFullYear()} tax.loanpaylogic.com. Educational estimates only, not tax advice.
+      </p>
+      <p className="mt-2 text-xs text-slate-400">
+        LoanPay Logic Network:{" "}
+        <a href="https://loanpaylogic.com" className="underline hover:text-white">Mortgage &amp; Loan Calculators</a>{" "}
+        &middot; <a href="https://guides.loanpaylogic.com" className="underline hover:text-white">Finance Guides</a>{" "}
+        &middot; <a href="https://retire.loanpaylogic.com" className="underline hover:text-white">Retirement</a>{" "}
+        &middot; <a href="https://business.loanpaylogic.com" className="underline hover:text-white">Small Business</a>{" "}
+        &middot; <a href="https://save.loanpaylogic.com" className="underline hover:text-white">Savings</a>
       </p>
       <p className="mt-2 text-xs leading-relaxed text-slate-500">
         We use Google AdSense to show ads. Google may use cookies to personalize or measure ads.
