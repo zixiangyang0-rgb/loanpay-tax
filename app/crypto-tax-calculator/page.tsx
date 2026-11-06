@@ -71,7 +71,25 @@ export default function CryptoPage() {
             year or less face ordinary 10&ndash;37 percent rates. High earners add the 3.8 percent
             net investment income tax above $200,000 single / $250,000 joint MAGI. A $12,000 gain
             taxed at 15 percent costs $1,800; the same gain short-term at 24 percent costs $2,880
-            &mdash; timing literally prices at $1,080 here.
+            &mdash; timing literally prices at $1,080 here. Compare these bands against the full{" "}
+            <Link href="/federal-tax-brackets-2026" className="text-amber-200 underline underline-offset-2">
+              2026 federal tax brackets
+            </Link>{" "}
+            and our{" "}
+            <Link href="/capital-gains-tax-calculator-2026" className="text-amber-200 underline underline-offset-2">
+              2026 capital-gains rate table
+            </Link>
+            , which walk through the same 0/15/20% breakpoints with 2025-vs-2026 threshold
+            comparisons.
+          </p>
+          <p className="mt-3">
+            NFTs, DeFi swaps, and gas fees follow the same property logic with extra paperwork.
+            Minting or selling an NFT is a sale of property; swapping tokens inside a liquidity
+            pool or across chains is still a taxable swap even when no dollars touch your bank.
+            Gas fees paid to acquire coins add to basis, while gas paid to dispose of coins
+            reduces proceeds &mdash; either way, save the fee receipt. Airdrops you can freely
+            dispose of are income on receipt; locked or unclaimable drops generally wait until
+            you control them.
           </p>
         </section>
 
@@ -88,6 +106,19 @@ export default function CryptoPage() {
             rebuying &mdash; currently escapes crypto&rsquo;s version of wash-sale rules (stocks
             must wait 30 days; crypto proposals to close the gap keep circulating, so confirm
             current law before harvesting aggressively).
+          </p>
+          <p className="mt-3">
+            A concrete wash-sale contrast helps. Say you hold stock at a $9,000 loss and rebuy
+            the same shares 10 days later: the stock wash-sale rule disallows the loss this year
+            and folds it into the new shares&rsquo; basis instead. Do the same round-trip with
+            ETH today &mdash; sell at a $9,000 loss, rebuy the next morning &mdash; and the loss
+            generally stays deductible against gains plus $3,000 of ordinary income, because
+            crypto still sits outside the stock rule. Our{" "}
+            <Link href="/rsu-stock-options-tax-guide" className="text-amber-200 underline underline-offset-2">
+              RSU wash-sale example
+            </Link>{" "}
+            shows the stock side step by step, so you can see exactly which paperwork crypto
+            skips for now &mdash; and why Congress keeps proposing to close the gap.
           </p>
           <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
@@ -123,6 +154,21 @@ export default function CryptoPage() {
             agents&rdquo; demanding coin payments, dusting attacks, and phishing sites mimicking
             exchanges &mdash; the real IRS mails letters first and never takes crypto.
           </p>
+          <p className="mt-3">
+            Big gains also trigger estimated payments. Withholding does not cover coin profits,
+            so a five-figure sale in March usually means April, June, September, and January
+            estimated vouchers &mdash; miss them and the underpayment penalty accrues even if
+            you pay in full at filing. Use our{" "}
+            <Link href="/quarterly-estimated-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              quarterly estimated-tax calculator
+            </Link>{" "}
+            to size each voucher, and keep the trade-year file (exchange CSVs, wallet exports,
+            1099-DA forms) with your return per our{" "}
+            <Link href="/tax-filing-checklist" className="text-amber-200 underline underline-offset-2">
+              filing checklist
+            </Link>
+            .
+          </p>
         </section>
 
         <section>
@@ -143,6 +189,14 @@ export default function CryptoPage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">What if I lost money overall?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Net losses offset gains, then up to $3,000 of wages yearly, with the rest carried forward — never wasted, just deferred.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Are gas fees deductible?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">They adjust basis or proceeds rather than itemized deductions — acquisition gas raises basis, disposal gas lowers proceeds, so keep every fee receipt.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I owe estimated tax on a big coin sale?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Usually yes — no withholding applies to crypto gains, so size April, June, September, and January vouchers with our quarterly estimated-tax calculator to avoid penalties.</p>
             </details>
           </div>
         </section>
