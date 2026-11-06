@@ -222,6 +222,27 @@ export default function CapitalGainsPage() {
           </div>
         </section>
 
+        <section>
+          <h2 className="text-xl font-bold text-white">Official sources</h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              <a href="https://www.irs.gov/taxtopics/tc-409" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS Topic No. 409, Capital Gains and Losses
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/forms-pubs/about-schedule-d-form-1040" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS About Schedule D (Form 1040), Capital Gains and Losses
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/individuals/net-investment-income-tax" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS Net Investment Income Tax (3.8% NIIT)
+              </a>
+            </li>
+          </ul>
+        </section>
+
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>
             This is general education, not tax advice. Thresholds follow IRS Rev. Proc. 2025-32

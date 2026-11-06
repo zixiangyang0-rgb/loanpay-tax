@@ -267,6 +267,27 @@ export default function SelfEmploymentPage() {
           </div>
         </section>
 
+        <section>
+          <h2 className="text-xl font-bold text-white">Official sources</h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS Self-Employment Tax (Social Security and Medicare Taxes)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/forms-pubs/about-schedule-se-form-1040" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS About Schedule SE (Form 1040), Self-Employment Tax
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS Estimated Taxes (Form 1040-ES)
+              </a>
+            </li>
+          </ul>
+        </section>
+
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>
             This is general education, not tax advice. SE figures follow 2026 SSA and IRS
