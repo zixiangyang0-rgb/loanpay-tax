@@ -127,8 +127,11 @@ export default function PennsylvaniaPage() {
           <h2 className="text-xl font-bold text-white">Filing and reciprocity notes</h2>
           <p className="mt-3">
             PA returns are due April 15, 2027 (extension to October), with quarterly estimates on
-            the familiar federal dates. Reciprocal pacts with Indiana, Maryland, New Jersey, Ohio,
-            Virginia, and West Virginia mean cross-border commuters pay only their home state
+            the familiar federal dates. Reciprocal pacts with Indiana, Maryland, New Jersey, Ohio,{" "}
+            <Link href="/virginia-income-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              Virginia
+            </Link>
+            , and West Virginia mean cross-border commuters pay only their home state
             &mdash; file the exemption certificate with the work-state employer. New Jersey
             commuters get special attention: NJ taxes the wages while PA grants a resident credit,
             so file both and let the credit reconcile. Compare with{" "}
@@ -144,6 +147,18 @@ export default function PennsylvaniaPage() {
               New York
             </Link>{" "}
             before accepting a tri-state job offer.
+          </p>
+          <p className="mt-3">
+            Rate stability is part of the appeal: the 3.07 percent flat rate has held since 2004,
+            making Pennsylvania one of the lowest flat rate states and a predictable line item in
+            multi-year planning. Local EIT, by contrast, demands its own paperwork. Most
+            school-district and municipal EIT is collected through countywide collectors (such as
+            Keystone Collections or Berkheimer in many areas), and you must file an annual local
+            return even in years your state liability is fully forgiven. Philadelphia&rsquo;s wage
+            tax is filed separately through the city, with nonresident commuters owing the lower
+            rate only on Philadelphia-sourced wages. When in doubt, check the pay stub: state
+            withholding labeled PA and a separate local line confirm both layers are covered
+            before April.
           </p>
         </section>
 
@@ -165,6 +180,14 @@ export default function PennsylvaniaPage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">Do retirees pay PA income tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Generally no on retirement income — pensions, Social Security, and qualifying IRA/401(k) withdrawals are fully exempt.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I still file a local EIT return if my state tax is forgiven?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes. Tax Forgiveness erases state liability only — local EIT collectors require their own annual return, and employers withhold it on a separate pay-stub line.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Has the 3.07% rate changed recently?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Pennsylvania has held 3.07 percent since 2004, one of the longest unchanged flat rates in the country.</p>
             </details>
           </div>
         </section>
