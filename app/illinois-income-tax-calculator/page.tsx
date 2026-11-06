@@ -68,7 +68,28 @@ export default function IllinoisPage() {
             reputation. Unemployment compensation, investment income from U.S. government
             obligations, and qualifying business-expense reimbursements also subtract out.
             Gambling winnings, rental income, and capital gains stay in the base and face the
-            full 4.95 percent, with no preferential capital-gains rate.
+            full 4.95 percent, with no preferential capital-gains rate. If you sold stock or
+            crypto at a profit, our{" "}
+            <Link href="/capital-gains-tax-calculator-2026" className="text-amber-200 underline underline-offset-2">
+              capital-gains calculator
+            </Link>{" "}
+            estimates the federal side of that same gain.
+          </p>
+          <p className="mt-3">
+            The flat rate itself is constitutionally locked: Illinois voters rejected a
+            graduated-tax amendment in November 2020, so the single 4.95 percent rate survived
+            and any future progressive schedule would require another constitutional amendment.
+            That stability is a planning asset &mdash; a $50,000 earner and a $500,000 earner
+            face the identical marginal rate, which makes multi-year income shifting far less
+            valuable than in graduated states like{" "}
+            <Link href="/california-income-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              California
+            </Link>
+            . Pair this page with our{" "}
+            <Link href="/federal-income-tax-calculator-2026" className="text-amber-200 underline underline-offset-2">
+              federal income-tax calculator
+            </Link>{" "}
+            to see the combined marginal bite on each extra dollar you earn.
           </p>
         </section>
 
@@ -85,6 +106,25 @@ export default function IllinoisPage() {
             can carry a $6,500+ levy that dwarfs the income-tax line. Any move-to-Illinois math
             must weight both together, and the 2026 federal SALT cap of $40,400 now lets
             itemizers deduct far more of that combined load than the old $10,000 limit allowed.
+          </p>
+          <p className="mt-3">
+            A concrete Chicago example shows the imbalance. Take a $420,000 bungalow in Berwyn
+            taxed at an effective 2.1 percent: the annual levy is about $8,820, while the same
+            household earning $120,000 owes roughly $5,400 in state income tax after exemptions
+            &mdash; property tax is 60 percent larger than the income-tax bill. In Naperville
+            or Evanston the gap can be wider still, with total monthly escrow rivaling a car
+            payment. Ironically, no-income-tax states are not automatically cheaper: compare
+            the full picture with our{" "}
+            <Link href="/texas-no-income-tax-guide" className="text-amber-200 underline underline-offset-2">
+              Texas
+            </Link>{" "}
+            and{" "}
+            <Link href="/florida-no-income-tax-guide" className="text-amber-200 underline underline-offset-2">
+              Florida
+            </Link>{" "}
+            guides, where 1.6&ndash;1.8 percent effective property-tax rates plus insurance
+            can erase the income-tax savings. Renters are not exempt either &mdash; landlords
+            pass levies through in rent, so ask for the unit&rsquo;s tax history before signing.
           </p>
           <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
@@ -117,7 +157,16 @@ export default function IllinoisPage() {
             &mdash; file Form IL-W-5-E with your employer to stop Illinois withholding. Chicago
             adds no city income tax, but suburban earners should check for small municipal
             employer charges. Remote workers for Illinois employers generally owe Illinois tax on
-            Illinois-source days; keep a day log if you split time across state lines. Compare
+            Illinois-source days; keep a day log if you split time across state lines. If your
+            employer withholds too little, use our{" "}
+            <Link href="/w4-withholding-calculator" className="text-amber-200 underline underline-offset-2">
+              W-4 withholding calculator
+            </Link>{" "}
+            to fix it, and freelancers should check the{" "}
+            <Link href="/quarterly-estimated-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              quarterly estimated-tax calculator
+            </Link>{" "}
+            to avoid underpayment penalties. Compare
             total burdens with neighboring{" "}
             <Link href="/michigan-income-tax-calculator" className="text-amber-200 underline underline-offset-2">
               Michigan (4.25%)
@@ -152,6 +201,14 @@ export default function IllinoisPage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">Do I owe Illinois tax working remotely?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Illinois-source workdays are taxable here; reciprocal-state residents (IA, KY, MI, WI) are exempt via Form IL-W-5-E.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Why did Illinois keep a flat tax instead of graduated brackets?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Voters rejected the 2020 graduated-tax amendment, so the constitution still mandates one uniform rate — changing it requires another amendment, not just a bill.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How bad are Illinois property taxes really?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">About 1.88% of home value on average, second-highest in the U.S. A $420,000 Chicago-area home can face an $8,800+ annual levy — often bigger than the income-tax bill.</p>
             </details>
           </div>
         </section>
