@@ -202,6 +202,27 @@ export default function WashingtonPage() {
 
         <GuideBottomAds />
 
+        <section>
+          <h2 className="text-xl font-bold text-white">Official sources</h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              <a href="https://dor.wa.gov/" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                Washington Department of Revenue
+              </a>
+            </li>
+            <li>
+              <a href="https://dor.wa.gov/taxes-rates/capital-gains-tax" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                Washington DOR — Capital Gains Tax
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/forms-pubs/about-form-1040" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS About Form 1040, U.S. Individual Income Tax Return
+              </a>
+            </li>
+          </ul>
+        </section>
+
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>
             This is general education, not tax advice. Thresholds index yearly; confirm with the
