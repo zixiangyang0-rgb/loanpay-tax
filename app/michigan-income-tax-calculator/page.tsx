@@ -70,6 +70,19 @@ export default function MichiganPage() {
             so pre-tax deferrals flow through automatically, then the subtraction rewards the
             withdrawal decades later.
           </p>
+          <p className="mt-3">
+            Flat means flat: every taxable dollar faces the same 4.25 percent, so Michigan
+            planning centers on shrinking taxable income rather than shifting brackets. Start
+            from federal adjusted gross income, subtract exemptions and the pension
+            subtraction, then multiply. Because the state starts from federal AGI, federal
+            choices carry over automatically: pre-tax 401(k) deferrals, HSA contributions, and
+            student-loan interest adjustments lower Michigan income too. Compare a result with
+            our{" "}
+            <Link href="/federal-income-tax-calculator-2026" className="text-amber-200 underline underline-offset-2">
+              federal calculator
+            </Link>{" "}
+            to see the combined marginal bite before you adjust withholding.
+          </p>
         </section>
 
         <section>
@@ -106,6 +119,16 @@ export default function MichiganPage() {
               </tbody>
             </table>
           </div>
+          <p className="mt-3">
+            A concrete example shows why the city line matters. Take a Detroit resident earning
+            $80,000: after roughly $24,000 of family exemptions, state tax is about $2,380, but
+            Detroit adds 2.4 percent of gross compensation &mdash; roughly $1,920 &mdash; for a
+            combined $4,300. The same family in Grand Rapids pays about $800 in city tax for a
+            $3,180 combined bill, while a suburb without city tax pays only the $2,380 state
+            share. Commuters get the mirror image: work in Detroit but live elsewhere and you
+            still owe the 1.2 percent nonresident tax, so a move across Eight Mile Road can shift
+            the bill by four figures with no change in salary.
+          </p>
         </section>
 
         <section>
@@ -115,7 +138,13 @@ export default function MichiganPage() {
             tracks and quarterly estimates on federal dates. Reciprocity is absent &mdash;
             Michigan credits taxes paid to other states instead, so cross-border commuters to
             Ohio or Indiana file both and claim the credit. Remote workers for Michigan employers
-            owe Michigan tax on Michigan workdays; keep a log when splitting time. Against{" "}
+            owe Michigan tax on Michigan workdays; keep a log when splitting time. Self-employed
+            readers with lumpy income should run{" "}
+            <Link href="/quarterly-estimated-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              quarterly estimates
+            </Link>{" "}
+            alongside the state return so city and state underpayment penalties do not stack.
+            Against{" "}
             <Link href="/illinois-income-tax-calculator" className="text-amber-200 underline underline-offset-2">
               Illinois&rsquo; 4.95 percent
             </Link>
@@ -150,6 +179,14 @@ export default function MichiganPage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">What is Michigan&rsquo;s personal exemption?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Roughly $6,000 per filer and dependent for 2026 (indexed yearly) — a family of four shields about $24,000 before the 4.25% rate.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How do I avoid underpayment penalties?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Pay quarterly on federal due dates whenever withholding falls short — state and city penalties stack, so estimate both together.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Is Michigan good for retirees?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — Social Security is fully exempt and pension/IRA income subtracts up to scheduled limits, which beats most graduated neighbors for retirees.</p>
             </details>
           </div>
         </section>
