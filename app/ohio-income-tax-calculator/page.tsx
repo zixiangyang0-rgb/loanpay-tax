@@ -60,6 +60,18 @@ export default function OhioPage() {
             owners should note Ohio has no traditional corporate income tax (a gross-receipts
             Commercial Activity Tax applies instead), keeping pass-through math clean.
           </p>
+          <p className="mt-3">
+            Your starting point is federal adjusted gross income, minus Ohio adjustments such as
+            the personal-plus-dependent exemption credit and deductions for Social Security,
+            disability, and 529 contributions. That is why two workers with the same salary can owe
+            different state tax: a filer with three dependents and 529 contributions lands well below
+            the bracket thresholds, while a single filer with no adjustments feels the full 2.75
+            percent band sooner. If your pay stub shows Ohio withholding, reconcile it with the{" "}
+            <Link href="/w4-withholding-calculator" className="text-amber-200 underline underline-offset-2">
+              W-4 withholding estimator
+            </Link>{" "}
+            before year-end so you neither overpay all year nor face an April surprise.
+          </p>
           <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
@@ -101,13 +113,31 @@ export default function OhioPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-white">School-district income tax: Ohio&rsquo;s signature extra layer</h2>
+          <p className="mt-3">
+            Few states do this, but roughly one in four Ohio school districts levies its own income
+            tax &mdash; typically 0.25 to 2 percent &mdash; reported directly on your state return
+            using a four-digit district number. Each district picks one of two bases: the
+            traditional base taxes all Ohio-taxable income including pensions and interest, while
+            the earned-income-only base taxes just wages and self-employment earnings, sparing
+            retirees entirely. Moving even a few blocks can flip your bill, because district
+            boundaries ignore city lines: check the Ohio Department of Taxation&rsquo;s district
+            finder before you sign a lease, and confirm whether your employer withholds the school
+            tax &mdash; many do not, leaving a balance due every April.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-white">Credits, deductions, and filing basics</h2>
           <p className="mt-3">
             Ohio sweetens the low state bill with a $2,400 personal-plus-dependent exemption
             credit, a joint-filing credit, a retirement-income credit up to $200, Social Security
             and disability deductions, 529 contribution deductions ($4,000 per beneficiary yearly),
             and small-business investor credits. Returns are due April 15, 2027 with federal-style
-            quarterly estimates, filed on Form IT 1040. Ohio taxes Daly City&ndash;style remote
+            quarterly estimates, filed on Form IT 1040. Cross-border commuters get relief: Ohio holds
+            reciprocity agreements with Indiana, Kentucky, Michigan, Pennsylvania, and West Virginia,
+            so if you live in Ohio but work across one of those borders, file an exemption certificate
+            with your out-of-state employer and pay tax only to Ohio. Ohio taxes remote
             work under post-pandemic rules that generally source wages to the employer&rsquo;s
             location unless a refund claim proves otherwise &mdash; a live issue for
             Cleveland-remote workers living elsewhere. Compare the full picture with{" "}
@@ -144,6 +174,14 @@ export default function OhioPage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">I live and work in different Ohio cities?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Your residence city usually credits workplace withholding up to its own rate — file both city returns via RITA/CCA to reconcile.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is Ohio school-district income tax?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">An extra 0.25–2% levy in many districts, filed on your state return with a district number. Earned-income-only districts spare pensions; traditional-base districts tax them — check your district type before you move.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">I live in Ohio but work in another state?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Reciprocity with Indiana, Kentucky, Michigan, Pennsylvania, and West Virginia means you generally pay only Ohio tax — file an exemption certificate with your out-of-state employer to stop that state&apos;s withholding.</p>
             </details>
           </div>
         </section>
