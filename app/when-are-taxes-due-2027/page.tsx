@@ -128,6 +128,76 @@ export default function TaxesDuePage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-xl font-bold text-white">2027 quarterly estimates: pay as you earn</h2>
+          <p className="mt-3">
+            Employees settle tax through withholding every paycheck, but freelancers, landlords, and
+            anyone with large investment income must prepay in four vouchers: April 15, June 15, and
+            September 15, 2027, then January 15, 2028 for the final 2027 quarter. Each voucher should
+            carry roughly one quarter of the lesser of 90 percent of this year&apos;s tax or 100 percent
+            of last year&apos;s tax (110 percent at higher incomes) to dodge the underpayment penalty.
+            Miss a voucher and the penalty runs per quarter from its due date, so a June shortfall costs
+            more than a September one of the same size. A practical rhythm works best: reconcile income
+            at the end of March, May, August, and December, then size each payment with our{" "}
+            <Link href="/quarterly-estimated-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              quarterly estimated tax calculator
+            </Link>{" "}
+            before the deadline week rush.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">How to get an extension to October 15, 2027</h2>
+          <p className="mt-3">
+            Need more time for paperwork? File Form 4868 by April 15, 2027 and your individual
+            return moves to October 15, 2027 automatically &mdash; no reason required, no approval
+            letter to wait for. E-file the form through your software, have a preparer submit it,
+            or mail a paper 4868 postmarked by Tax Day. The catch that surprises people every year:
+            the extension covers filing only, never payment. You must still estimate the full 2026
+            balance and pay at least 90 percent by April 15 to avoid the late-payment penalty, then
+            settle the remainder when the return goes in. State extensions are separate &mdash; some
+            states grant them automatically with the federal form, others want their own request &mdash;
+            so check your state before assuming you are covered. Work through our{" "}
+            <Link href="/tax-filing-checklist" className="text-amber-200 underline underline-offset-2">
+              tax filing checklist
+            </Link>{" "}
+            before April so W-2s, 1099s, and receipts are already gathered when you estimate the payment.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Penalty example: what one month late really costs</h2>
+          <p className="mt-3">
+            Say you owe $4,000 for 2026 and miss April 15 by exactly one month without an extension.
+            The failure-to-file penalty hits 5 percent of the unpaid balance &mdash; $200 &mdash; and the
+            failure-to-pay penalty adds another 0.5 percent &mdash; $20 &mdash; plus daily interest on the
+            $4,000 until it clears. File the return on time but pay one month late instead, and the
+            $200 filing penalty disappears entirely; only the roughly $20 payment penalty plus interest
+            remains. That single comparison is why preparers repeat one rule: file on time even when you
+            cannot pay, then set up an installment plan. Estimated-tax shortfalls work the same way per
+            quarter, which is why freelancers track each voucher in our{" "}
+            <Link href="/freelancer-quarterly-tax-guide" className="text-amber-200 underline underline-offset-2">
+              freelancer quarterly tax guide
+            </Link>
+            .
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Missed a 2027 deadline? Act in this order</h2>
+          <p className="mt-3">
+            First, file the return or extension today &mdash; every extra day adds failure-to-file
+            penalty if a balance is due, while a refund-due return faces no penalty at all. Second,
+            pay whatever you can immediately, even a partial payment, because interest and the
+            failure-to-pay charge accrue only on the unpaid remainder. Third, open an IRS online
+            payment plan if the rest will take months; setup takes minutes and freezes collection
+            pressure while you catch up. Fourth, fix withholding or next quarter&apos;s estimate right
+            away so the same shortfall does not repeat in June or September. Keep every confirmation
+            number and certified-mail receipt &mdash; if penalty relief or first-time abatement applies
+            later, that paper trail decides the outcome.
+          </p>
+        </section>
+
         <GuideInArticleAds />
 
         <section>
@@ -148,6 +218,14 @@ export default function TaxesDuePage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">How long do I have to claim a refund?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Three years from the filing deadline — late but refund-due returns face no penalties, only a wait for the check.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What happens if I miss a quarterly estimated payment?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">The IRS adds an underpayment penalty per quarter on the shortfall plus interest. Pay online as soon as you can — each day you wait increases the charge, and raising withholding can help cover the gap.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do state deadlines match the federal April 15 date?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Most do, including California, New York, and Illinois for 2026 returns, but Louisiana and Virginia run May dates and disaster relief can shift any state. Confirm with your state revenue agency before filing.</p>
             </details>
           </div>
         </section>
