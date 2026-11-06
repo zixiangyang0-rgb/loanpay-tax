@@ -25,6 +25,7 @@ const ROUTES: { url: string; priority: number; changeFrequency: "weekly" | "mont
   { url: "/new-jersey-income-tax-calculator", priority: 0.8, changeFrequency: "monthly" },
   { url: "/washington-no-income-tax-guide", priority: 0.8, changeFrequency: "monthly" },
   { url: "/virginia-income-tax-calculator", priority: 0.8, changeFrequency: "monthly" },
+  { url: "/paycheck-tax-calculator-by-state-2026", priority: 0.9, changeFrequency: "monthly" },
   // Cluster C — freelance
   { url: "/self-employment-tax-calculator", priority: 0.9, changeFrequency: "monthly" },
   { url: "/w2-vs-1099-calculator", priority: 0.8, changeFrequency: "monthly" },
