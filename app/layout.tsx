@@ -108,9 +108,12 @@ export default function RootLayout({
       <body>
         <OrgJsonLd />
         <WebSiteJsonLd />
-        {/* Google Funding Choices CMP: paste the Funding Choices tag from
-            AdSense > Privacy & messaging here to enforce EEA/UK consent.
-            The ConsentBanner below stores NPA choice at loanpay-tax-consent. */}
+        {/* Google Funding Choices (CMP): consent message configured in the AdSense console for pub-4906207495792820 (EEA/UK + US). This tag loads the message choice framework. */}
+        <Script
+          id="funding-choices"
+          src="https://fundingchoicesmessages.google.com/i/pub-4906207495792820?ers=1"
+          strategy="afterInteractive"
+        />
         <Header />
         <main>{children}</main>
         <Footer />
