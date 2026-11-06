@@ -65,8 +65,18 @@ export default function GeorgiaPage() {
             $35,000 of retirement income, and those 65+ exclude up to $65,000 per person &mdash; a
             joint senior couple can shield $130,000 of pensions, IRA distributions, and
             investment income before the rate touches anything. Social Security stays fully
-            exempt at every age. Workers should note Georgia taxes capital gains as ordinary
-            income with no preference, while conforming to most federal business deductions.
+            exempt at every age. The exclusion covers earned income too within the cap, so a
+            63-year-old with $30,000 of part-time wages plus a $20,000 IRA withdrawal can exclude
+            the full $35,000 and pay the flat rate on only the remainder after deductions. Once
+            you turn 65 the cap nearly doubles, which is why many Georgia households time Roth
+            conversions and pension start dates around birthdays. Workers should note Georgia taxes capital gains as ordinary
+            income with no preference, while conforming to most federal business deductions. If
+            you itemize federally, compare carefully: Georgia allows its own itemized path, but
+            most filers still win with the state standard deduction, as our{" "}
+            <Link href="/standard-deduction-vs-itemized-2026" className="text-amber-200 underline underline-offset-2">
+              standard deduction vs. itemized guide
+            </Link>{" "}
+            explains.
           </p>
         </section>
 
@@ -106,6 +116,28 @@ export default function GeorgiaPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-white">Retiree and mover playbook</h2>
+          <p className="mt-3">
+            The flat 5.19 percent rate makes Georgia unusually easy to plan around: every extra
+            dollar of taxable income costs the same, so bunching deductions, timing bonuses, and
+            splitting Roth conversions across low-income years all pay off at a constant price.
+            New arrivals should set Georgia withholding (Form G-4) on day one, because the state
+            still assesses underpayment penalties on federal quarterly dates even though the rate
+            looks low. If you move midyear, keep a day count and utility or lease records &mdash;
+            Georgia prorates the standard deduction and exemptions for part-year residents, and
+            auditors ask for proof. Retirees relocating from high-tax states often keep their old
+            brokerage but change domicile paperwork fast: driver&rsquo;s license, voter
+            registration, and homestead filing together establish the move date that unlocks the
+            retirement exclusion. Pair that with federal bracket planning in our{" "}
+            <Link href="/federal-tax-brackets-2026" className="text-amber-200 underline underline-offset-2">
+              2026 federal brackets guide
+            </Link>{" "}
+            so a Roth conversion does not waste the exclusion by spilling into a higher federal
+            bracket.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-white">Filing and regional comparison</h2>
           <p className="mt-3">
             Georgia returns (Form 500) are due April 15, 2027, with Georgia estimates on federal
@@ -137,19 +169,27 @@ export default function GeorgiaPage() {
           <div className="mt-4 space-y-4">
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">Is Georgia&rsquo;s rate still falling?</summary>
-              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — 5.19% for 2026 with further 0.1-point annual cuts while revenue triggers are met, heading toward a much lower floor.</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — 5.19% for 2026 with further 0.1-point annual cuts while revenue triggers are met, heading toward a much lower floor. The cut applies automatically to all taxable income, so no action is needed beyond filing; each step saves about $100 per $100,000 of taxable income.</p>
             </details>
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">How are retirees treated in Georgia?</summary>
-              <p className="mt-2 text-sm leading-relaxed text-slate-300">Very well: up to $65,000 per person 65+ of retirement income excluded ($35,000 at 62–64), plus fully exempt Social Security.</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Very well: up to $65,000 per person 65+ of retirement income excluded ($35,000 at 62–64), plus fully exempt Social Security. A joint senior couple can shield $130,000 of pensions, IRA payouts, and investment income before deductions, which often zeroes out the state bill entirely.</p>
             </details>
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">Does Georgia tax capital gains specially?</summary>
-              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Gains face the same 5.19% as wages — there is no state-level 0/15/20% preference.</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Gains face the same 5.19% as wages — there is no state-level 0/15/20% preference. Harvest losses, hold periods, and entity elections still matter for the federal return, but Georgia simply multiplies net taxable income by the flat rate.</p>
             </details>
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">What sales tax will I pay in Georgia?</summary>
-              <p className="mt-2 text-sm leading-relaxed text-slate-300">4% state plus county add-ons — most metro Atlanta shoppers pay 7–8.9% combined at the register.</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">4% state plus county add-ons — most metro Atlanta shoppers pay 7–8.9% combined at the register. Groceries and local option taxes vary by county, so movers comparing Florida or Texas should weigh the higher checkout tax against the flat income rate.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How do I avoid Georgia estimated-tax penalties?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Pay evenly across the four federal estimate dates through Georgia Tax Center and keep withholding (Form G-4) current after raises or moves. Part-year residents prorate deductions on Schedule 3, so short-year filers should true up the final estimate rather than annualizing blindly.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should high earners still consider North Carolina?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Possibly: North Carolina&rsquo;s lower flat rate undercuts Georgia above roughly six-figure taxable income, while Florida and Texas charge zero. Run both states with identical deductions first, then add property tax and county sales tax before deciding a move purely on the income line.</p>
             </details>
           </div>
         </section>
