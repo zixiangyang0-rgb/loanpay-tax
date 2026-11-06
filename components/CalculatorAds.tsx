@@ -2,6 +2,18 @@
 
 import AdSlot from "./AdSlot";
 
+/**
+ * AdSense unit IDs for calculator pages.
+ * Fill in after creating the units in the AdSense dashboard (never click live ads).
+ * Empty string keeps the AdSlot guard active: prod reserves layout space
+ * without pushing to adsbygoogle, dev renders a dashed placeholder.
+ */
+const CALC_AD_SLOTS = {
+  sidebar: "",
+  inArticle: "",
+  anchor: "",
+} as const;
+
 /** Sticky sidebar ad for calculator pages (desktop only). */
 export function CalculatorSidebarAds() {
   return (
@@ -10,7 +22,7 @@ export function CalculatorSidebarAds() {
       aria-label="Sponsored content"
     >
       <div className="sticky top-6">
-        <AdSlot format="display" slot="TODO-tax-calc-sidebar" minHeight={300} label="Advertisement - sidebar" />
+        <AdSlot format="display" slot={CALC_AD_SLOTS.sidebar} minHeight={300} label="Advertisement - sidebar" />
       </div>
     </aside>
   );
@@ -21,7 +33,7 @@ export function CalculatorInArticleAds() {
   return (
     <AdSlot
       format="in-article"
-      slot="TODO-tax-calc-inarticle"
+      slot={CALC_AD_SLOTS.inArticle}
       minHeight={120}
       label="Advertisement - in article"
     />
@@ -30,5 +42,5 @@ export function CalculatorInArticleAds() {
 
 /** Closable anchor ad for calculator pages (mobile only). */
 export function CalculatorAnchorAds() {
-  return <AdSlot format="anchor" slot="TODO-tax-calc-anchor" minHeight={90} />;
+  return <AdSlot format="anchor" slot={CALC_AD_SLOTS.anchor} minHeight={90} />;
 }
