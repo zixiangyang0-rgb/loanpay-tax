@@ -105,6 +105,86 @@ export default function RothVsTraditionalPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-white">Two worked examples: same $7,500, different tax timing</h2>
+          <p className="mt-3">
+            Example A &mdash; early career Roth win: Maya, 25, earns $58,000 with no
+            workplace plan and contributes the full $7,500 to a Roth IRA. She pays 12
+            percent on that income today (about $900 of tax on the contributed dollars),
+            then the balance compounds for 35 years at 7 percent to roughly $80,000,
+            all withdrawable tax-free in retirement. Had she used a deductible
+            traditional IRA instead, she would have saved only $900 today and owed
+            ordinary income tax &mdash; likely 22 percent or more &mdash; on the full
+            $80,000 later. Check your current marginal band in our{" "}
+            <Link href="/federal-tax-brackets-2026" className="text-amber-200 underline underline-offset-2">
+              2026 federal tax brackets guide
+            </Link>{" "}
+            before locking in this trade.
+          </p>
+          <p className="mt-3">
+            Example B &mdash; peak-earning traditional win plus later conversion: Daniel,
+            48, earns $210,000, is covered by a 401(k), and contributes $7,500 to a
+            traditional IRA while in the 32 percent band. Because his income exceeds
+            the deduction phase-out, he cannot deduct it, so he runs a backdoor Roth
+            instead &mdash; nondeductible contribution, prompt conversion, Form 8606.
+            Alternatively, a colleague at $95,000 joint income with no workplace plan
+            takes the full $7,500 deduction at 22 percent (a $1,650 tax saving), invests
+            the refund, then converts $20,000 each year in early retirement at 12
+            percent. Model the conversion tax bill first with our{" "}
+            <Link href="/federal-income-tax-calculator-2026" className="text-amber-200 underline underline-offset-2">
+              2026 federal income tax calculator
+            </Link>
+            , pay the tax from cash outside the IRA, and keep each conversion inside
+            the target bracket.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Tax-rate assumption table: who wins at which rates</h2>
+          <p className="mt-3">
+            Use this table as your tiebreaker. Find your rate today (rows) and your
+            best guess of your retirement rate (columns) &mdash; the cell tells you
+            which account the math favors, before RMDs and estate goals. When rates
+            tie, Roth still wins on flexibility: no RMDs, tax-free inheritance for
+            heirs, and no tax spike on large one-time withdrawals.
+          </p>
+          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+            <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
+              <caption className="px-4 py-3 text-left text-slate-400">
+                Roth vs. traditional winner by tax-rate assumption (same $7,500 contribution).
+              </caption>
+              <thead>
+                <tr className="border-b border-white/10 text-slate-200">
+                  <th className="px-4 py-3 font-semibold">Today → Retirement</th>
+                  <th className="px-4 py-3 font-semibold">Lower later (e.g. 32% → 22%)</th>
+                  <th className="px-4 py-3 font-semibold">Same rate (e.g. 22% → 22%)</th>
+                  <th className="px-4 py-3 font-semibold">Higher later (e.g. 12% → 22%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-white/5"><td className="px-4 py-2">12% today (early career)</td><td className="px-4 py-2">Rough tie; Roth on flexibility</td><td className="px-4 py-2">Roth wins on RMDs</td><td className="px-4 py-2">Roth wins clearly</td></tr>
+                <tr className="border-b border-white/5"><td className="px-4 py-2">22% today (mid career)</td><td className="px-4 py-2">Traditional wins</td><td className="px-4 py-2">Tie; split or Roth</td><td className="px-4 py-2">Roth wins</td></tr>
+                <tr><td className="px-4 py-2">32–37% today (peak)</td><td className="px-4 py-2">Traditional wins clearly</td><td className="px-4 py-2">Traditional, convert later</td><td className="px-4 py-2">Rare; Roth if RMDs hurt</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3">
+            Self-employed readers comparing vehicles should also weigh contribution
+            room: IRAs cap at $7,500 / $8,600 while small-business plans allow far
+            more &mdash; see our{" "}
+            <Link href="/sep-ira-vs-solo-401k-tax" className="text-amber-200 underline underline-offset-2">
+              SEP IRA vs. Solo 401(k) comparison
+            </Link>
+            . And if you split Roth and traditional in one year, remember the cap is
+            shared &mdash; track the combined total against the April 15, 2027
+            deadline detailed in our{" "}
+            <Link href="/when-are-taxes-due-2027" className="text-amber-200 underline underline-offset-2">
+              2027 tax deadline guide
+            </Link>
+            .
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-white">Conversions, ladders, and coordination</h2>
           <p className="mt-3">
             Roth conversions &mdash; moving traditional dollars to Roth and paying income tax
@@ -143,6 +223,14 @@ export default function RothVsTraditionalPage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">Should high earners use Roth 401(k)s instead?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Often yes — Roth 401(k)s accept $24,500 with no income cap, and 2026 rules push high earners&rsquo; catch-ups into Roth automatically.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What if my tax rate stays exactly the same?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">The balances tie on pure math — a $7,500 deductible contribution growing at the same return equals a $5,850 Roth contribution grossed up. Pick Roth for no RMDs and tax-free heirs, or split 50/50 to hedge against rate uncertainty.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I split $7,500 between Roth and traditional?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — for example $3,750 to each. The combined total must stay within $7,500 ($8,600 at 50+), and you must track the deductible versus nondeductible portion on Form 8606 for the traditional side.</p>
             </details>
           </div>
         </section>
