@@ -107,6 +107,44 @@ export default function RsuPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-white">Worked examples: a $50,000 RSU vest and a $60,000 option spread</h2>
+          <p className="mt-3">
+            Take a $50,000 RSU vest for an employee in the 32 percent federal bracket living
+            in California (9.3 percent state). Federal withholding at the flat 22 percent rate
+            takes $11,000, plus Social Security, Medicare, and state withholding &mdash; but the
+            combined marginal bite on that vest is over 40 percent, so roughly $9,000&ndash;$10,000
+            of the liability arrives the following April unless estimated payments or extra
+            withholding close the gap. Check your real marginal rate with our{" "}
+            <Link href="/federal-tax-brackets-2026" className="text-amber-200 underline underline-offset-2">
+              2026 federal brackets guide
+            </Link>{" "}
+            and fix persistent shortfalls by adding a flat extra amount on{" "}
+            <Link href="/w4-withholding-calculator" className="text-amber-200 underline underline-offset-2">
+              Step 4(c) of Form W-4
+            </Link>
+            . Your basis in the net shares is the $50,000 vest value; selling a year later at
+            $58,000 produces an $8,000 capital gain only, not a second round of wage tax.
+          </p>
+          <p className="mt-3">
+            Now compare option exercises with identical economics: 1,000 shares, $20 strike,
+            $80 market value at exercise, $60,000 of spread. With NSOs the $60,000 is ordinary
+            wages in the exercise year &mdash; at 32 percent federal plus state, over $20,000 of
+            tax with no sale proceeds if you hold &mdash; and your basis steps up to $80 per
+            share, so a later sale at $95 yields a $15,000 capital gain. Model the full-year
+            impact with our{" "}
+            <Link href="/federal-income-tax-calculator-2026" className="text-amber-200 underline underline-offset-2">
+              federal income tax calculator
+            </Link>
+            . With ISOs the same $60,000 exercise triggers zero regular tax but adds $60,000 of
+            AMT income; a single filer already near the $90,100 exemption can owe thousands of
+            AMT on a paper gain, recoverable only as a future credit. Hold those ISO shares
+            two years from grant and one year from exercise and the whole run from $20 to the
+            sale price converts to long-term gain &mdash; sell a month early and the $60,000
+            spread reverts to ordinary income like an NSO.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-white">Withholding gaps, concentration, and state twists</h2>
           <p className="mt-3">
             Model every vest against your real marginal rate: at 32 percent federal plus 9.3
@@ -152,6 +190,14 @@ export default function RsuPage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">Why did my 1099-B basis look wrong?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Brokers often report sale proceeds without the vest-date basis already taxed as wages — adjust basis upward using your W-2/3921 records to avoid double tax.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How are double-trigger RSUs taxed at IPO?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Nothing is taxed until both triggers hit — time vesting plus the liquidity event. When the IPO or acquisition closes, the entire vested value becomes ordinary wages at once, often pushing you into a higher bracket for that year, so plan estimates early.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Sell-to-cover or pay cash for withholding?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Sell-to-cover is simplest: the employer liquidates enough shares for tax and you keep the rest. Paying cash preserves share count but concentrates more wealth in one stock — only do it as a deliberate investment call, not by default.</p>
             </details>
           </div>
         </section>
