@@ -144,6 +144,23 @@ export default function NorthCarolinaPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-white">Withholding, estimates, and the April 15 finish line</h2>
+          <p className="mt-3">
+            North Carolina follows the federal estimate calendar — April 15, June 15, September 15,
+            and January 15 — and under-withholding triggers the same kind of penalty math as the
+            IRS, computed on Form D-422. Employees should check the state line of a late-year
+            paystub, not just the federal one: because the flat rate applies from the first dollar
+            over the standard deduction, a mid-year raise or bonus can quietly push a household
+            from a small refund to a balance due. New residents get a part-year return (Form D-400
+            with Schedule PN) that prorates the standard deduction by months of residency, so a
+            July move from Georgia means roughly half the $25,500 joint deduction and a blended
+            first-year bill worth modeling in the calculator above. File Form D-400 by April 15,
+            2027, e-file through NCDOR for the fastest refund, and keep the confirmation — the
+            department matches state wages to federal transcripts and will notice a missing return.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
@@ -161,6 +178,14 @@ export default function NorthCarolinaPage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">Does NC tax Social Security?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Social Security benefits are fully excluded from North Carolina taxable income.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">I moved to NC mid-year — how am I taxed?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">As a part-year resident on Schedule PN: income earned while living in NC is taxed at 3.99%, and the standard deduction is prorated by months of residency.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">When are NC estimated payments due?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">April 15, June 15, September 15, and January 15 — the same calendar as federal estimates, with penalties for large underpayments via Form D-422.</p>
             </details>
           </div>
         </section>
