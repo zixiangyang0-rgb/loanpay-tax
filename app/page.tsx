@@ -260,7 +260,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <AdSlot format="display" slot="TODO-tax-home-top" minHeight={280} label="Advertisement - homepage" />
+      <AdSlot format="display" slot="" minHeight={280} label="Advertisement - homepage" />
 
       {clusters.map((cluster) => (
         <section key={cluster.id} className="mt-12">
