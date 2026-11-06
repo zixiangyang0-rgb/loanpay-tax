@@ -192,6 +192,27 @@ export default function PennsylvaniaPage() {
           </div>
         </section>
 
+        <section>
+          <h2 className="text-xl font-bold text-white">Official sources</h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              <a href="https://www.pa.gov/agencies/revenue/tax-types/personal-income-tax.html" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                PA Department of Revenue — Personal Income Tax
+              </a>
+            </li>
+            <li>
+              <a href="https://mypath.pa.gov/" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                myPATH — File and Pay PA Taxes Online
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/forms-pubs/about-form-1040" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS About Form 1040, U.S. Individual Income Tax Return
+              </a>
+            </li>
+          </ul>
+        </section>
+
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>
             This is general education, not tax advice. Class rules and local rates change by

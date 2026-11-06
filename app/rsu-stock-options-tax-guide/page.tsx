@@ -202,6 +202,27 @@ export default function RsuPage() {
           </div>
         </section>
 
+        <section>
+          <h2 className="text-xl font-bold text-white">Official sources</h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              <a href="https://www.irs.gov/taxtopics/tc-427" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS Topic No. 427, Stock Options
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/forms-pubs/about-publication-525" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS Publication 525, Taxable and Nontaxable Income
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/forms-pubs/about-form-6251" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS About Form 6251, Alternative Minimum Tax for Individuals
+              </a>
+            </li>
+          </ul>
+        </section>
+
         <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">

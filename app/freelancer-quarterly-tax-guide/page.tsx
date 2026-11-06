@@ -277,6 +277,27 @@ export default function FreelancerQuarterlyPage() {
           </div>
         </section>
 
+        <section>
+          <h2 className="text-xl font-bold text-white">Official sources</h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              <a href="https://www.irs.gov/forms-pubs/about-form-1040-es" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS About Form 1040-ES, Estimated Tax for Individuals
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS Estimated Taxes — Small Business and Self-Employed
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS Self-Employment Tax (Social Security and Medicare Taxes)
+              </a>
+            </li>
+          </ul>
+        </section>
+
         <GuideBottomAds />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
