@@ -186,6 +186,36 @@ export default function OhioPage() {
           </div>
         </section>
 
+        <nav aria-label="Related guides">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/michigan-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Michigan Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Great Lakes neighbor with reciprocity for Ohio commuters.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/pennsylvania-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Pennsylvania Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Flat-rate comparison across the eastern border.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/illinois-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Illinois Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Another flat-tax Midwest reference point.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/w4-withholding-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                W-4 Withholding Estimator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Tune withholding for Ohio plus school-district levies.</p>
+            </li>
+          </ul>
+        </nav>
+
         <section>
           <h2 className="text-xl font-bold text-white">Official sources</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">

@@ -202,6 +202,36 @@ export default function WashingtonPage() {
 
         <GuideBottomAds />
 
+        <nav aria-label="Related guides">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/texas-no-income-tax-guide" className="font-semibold text-amber-200 underline underline-offset-2">
+                Texas No-Income-Tax Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">How another no-income-tax state funds itself.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/florida-no-income-tax-guide" className="font-semibold text-amber-200 underline underline-offset-2">
+                Florida No-Income-Tax Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Compare Sunshine State trade-offs before relocating.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/capital-gains-tax-calculator-2026" className="font-semibold text-amber-200 underline underline-offset-2">
+                Capital-Gains Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Federal gains still apply — plus WA's 7 percent extra.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/standard-deduction-vs-itemized-2026" className="font-semibold text-amber-200 underline underline-offset-2">
+                Standard Deduction vs. Itemizing Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Maximize federal deductions with no state return.</p>
+            </li>
+          </ul>
+        </nav>
+
         <section>
           <h2 className="text-xl font-bold text-white">Official sources</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">

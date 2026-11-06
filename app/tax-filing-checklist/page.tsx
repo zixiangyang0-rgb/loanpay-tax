@@ -263,6 +263,36 @@ export default function FilingChecklistPage() {
 
         <GuideBottomAds />
 
+        <nav aria-label="Related guides">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/when-are-taxes-due-2027" className="font-semibold text-amber-200 underline underline-offset-2">
+                When Taxes Are Due in 2027
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Match each checklist item to its 2027 deadline.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/tax-refund-estimator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Tax Refund Estimator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">See the payoff once your documents are complete.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/standard-deduction-vs-itemized-2026" className="font-semibold text-amber-200 underline underline-offset-2">
+                Standard vs. Itemized Comparison
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Decide which deduction path your paperwork supports.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/w2-vs-1099-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                W-2 vs. 1099 Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Sort employee and contractor forms without mix-ups.</p>
+            </li>
+          </ul>
+        </nav>
+
         <section>
           <h2 className="text-xl font-bold text-white">Official sources</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">

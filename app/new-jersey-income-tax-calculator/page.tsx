@@ -235,6 +235,36 @@ export default function NewJerseyPage() {
           </div>
         </section>
 
+        <nav aria-label="Related guides">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/new-york-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                New York Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Estimate taxes across the Hudson if you live or work bistate.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/pennsylvania-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Pennsylvania Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Flat-rate neighbor comparison for NJ commuters.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/federal-tax-brackets-2026" className="font-semibold text-amber-200 underline underline-offset-2">
+                2026 Federal Brackets Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Layer federal brackets on top of your NJ estimate.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/w4-withholding-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                W-4 Withholding Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Dial in withholding so April brings no surprises.</p>
+            </li>
+          </ul>
+        </nav>
+
         <section>
           <h2 className="text-xl font-bold text-white">Official sources</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">

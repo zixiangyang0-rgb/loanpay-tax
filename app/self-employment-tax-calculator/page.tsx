@@ -267,6 +267,36 @@ export default function SelfEmploymentPage() {
           </div>
         </section>
 
+        <nav aria-label="Related guides">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/quarterly-estimated-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Quarterly Estimated Tax Planner
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Turn your SE bill into four on-time payments.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/w2-vs-1099-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                W-2 vs. 1099 Comparison
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Compare employee vs. contractor take-home before you switch.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/sep-ira-vs-solo-401k-tax" className="font-semibold text-amber-200 underline underline-offset-2">
+                SEP vs. Solo 401(k) Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Shelter self-employment income in the right retirement plan.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/freelancer-quarterly-tax-guide" className="font-semibold text-amber-200 underline underline-offset-2">
+                Freelancer Quarterly Tax Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Deadlines, safe harbors, and record-keeping for freelancers.</p>
+            </li>
+          </ul>
+        </nav>
+
         <section>
           <h2 className="text-xl font-bold text-white">Official sources</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">

@@ -232,6 +232,36 @@ export default function TaxesDuePage() {
 
         <GuideBottomAds />
 
+        <nav aria-label="Related guides">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/tax-filing-checklist" className="font-semibold text-amber-200 underline underline-offset-2">
+                Tax Filing Checklist
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Gather every form before the deadline rush.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/tax-refund-estimator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Tax Refund Estimator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Preview your refund once you know your filing date.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/quarterly-estimated-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Quarterly Estimated Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Catch the estimated dates tucked between annual deadlines.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/freelancer-quarterly-tax-guide" className="font-semibold text-amber-200 underline underline-offset-2">
+                Freelancer Quarterly Tax Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Quarterly rhythm for self-employed filers.</p>
+            </li>
+          </ul>
+        </nav>
+
         <section>
           <h2 className="text-xl font-bold text-white">Official sources</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">

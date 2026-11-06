@@ -237,6 +237,36 @@ export default function RothVsTraditionalPage() {
 
         <GuideBottomAds />
 
+        <nav aria-label="Related guides">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/sep-ira-vs-solo-401k-tax" className="font-semibold text-amber-200 underline underline-offset-2">
+                SEP IRA vs. Solo 401(k) Comparison
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Freelancer plans beyond the Roth-or-traditional choice.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/federal-tax-brackets-2026" className="font-semibold text-amber-200 underline underline-offset-2">
+                2026 Federal Tax Brackets Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Find your marginal rate before picking Roth vs. pre-tax.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/federal-income-tax-calculator-2026" className="font-semibold text-amber-200 underline underline-offset-2">
+                2026 Federal Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Model the deduction value of traditional contributions.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/when-are-taxes-due-2027" className="font-semibold text-amber-200 underline underline-offset-2">
+                2027 Tax Deadline Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Never miss the IRA contribution cutoff.</p>
+            </li>
+          </ul>
+        </nav>
+
         <section>
           <h2 className="text-xl font-bold text-white">Official sources</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">
