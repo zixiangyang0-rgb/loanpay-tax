@@ -83,6 +83,55 @@ export default function FreelancerQuarterlyPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-white">2026 quarterly deadline timetable</h2>
+          <p className="mt-3">
+            Estimated tax follows the federal pay-as-you-go timetable, not calendar quarters:
+            each voucher covers a specific income period and is due about two weeks after that
+            period ends. If a deadline lands on a weekend or federal holiday, it shifts to the
+            next business day. Put all four dates in your calendar now, and pair each one with
+            a bookkeeping reminder one week earlier so the numbers are ready before the money
+            moves. Our full{" "}
+            <Link href="/when-are-taxes-due-2027" className="text-amber-200 underline underline-offset-2">
+              2026 tax deadline schedule
+            </Link>{" "}
+            covers every federal date in one place.
+          </p>
+          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+            <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
+              <caption className="px-4 py-3 text-left text-slate-400">
+                2026 estimated-tax periods and payment due dates.
+              </caption>
+              <thead>
+                <tr className="border-b border-white/10 text-slate-200">
+                  <th className="px-4 py-3 font-semibold">Voucher</th>
+                  <th className="px-4 py-3 font-semibold">Income period</th>
+                  <th className="px-4 py-3 font-semibold">Due date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-white/5"><td className="px-4 py-2">Q1 2026</td><td className="px-4 py-2">Jan 1 – Mar 31</td><td className="px-4 py-2">Apr 15, 2026</td></tr>
+                <tr className="border-b border-white/5"><td className="px-4 py-2">Q2 2026</td><td className="px-4 py-2">Apr 1 – May 31</td><td className="px-4 py-2">Jun 15, 2026</td></tr>
+                <tr className="border-b border-white/5"><td className="px-4 py-2">Q3 2026</td><td className="px-4 py-2">Jun 1 – Aug 31</td><td className="px-4 py-2">Sep 15, 2026</td></tr>
+                <tr><td className="px-4 py-2">Q4 2026</td><td className="px-4 py-2">Sep 1 – Dec 31</td><td className="px-4 py-2">Jan 15, 2027</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3">
+            Note the uneven rhythm: Q2 covers only two months while Q4 stretches to four, which
+            is why a flat divide-by-four can overpay early quarters for seasonal freelancers.
+            Size each voucher from actual year-to-date profit with the{" "}
+            <Link href="/quarterly-estimated-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              quarterly estimated tax calculator
+            </Link>
+            , and double-check the full-year picture against our{" "}
+            <Link href="/tax-filing-checklist" className="text-amber-200 underline underline-offset-2">
+              tax filing checklist
+            </Link>{" "}
+            before January.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-white">Why quarterly exists and what it costs to skip</h2>
           <p className="mt-3">
             The tax code is pay-as-you-go: April&rsquo;s profit creates April&rsquo;s debt, and
@@ -95,6 +144,29 @@ export default function FreelancerQuarterlyPage() {
             under $1,000, and penalties vanish regardless of timing. First-year freelancers with
             no prior-year baseline should anchor on 90 percent of a conservative projection, then
             true up each quarter as the year clarifies.
+          </p>
+          <p className="mt-3">
+            A concrete penalty example makes the math visceral. Imagine you earn a steady
+            $2,000 of tax liability per quarter ($8,000 total) but prepay nothing: the IRS
+            treats each quarter as its own mini-deadline, so the Q1 shortfall accrues interest
+            from April 15 all the way to the following April, roughly $2,000 at 7 percent for a
+            full year, or about $140 for that quarter alone. Stacked across all four quarters,
+            the combined underpayment penalty lands in the $300–$400 range even before monthly
+            interest compounds it further. Now flip the scenario: prepay $1,500 per quarter
+            ($6,000 total) against the same $8,000 bill. You still owe $2,000 in April, but the
+            $1,000 safe-harbor cushion is gone, so a smaller penalty applies only to the
+            remaining quarterly gaps — often under $100. The lesson is asymmetric: every
+            prepaid dollar buys penalty relief at 7–8 percent, a guaranteed return no savings
+            account matches. Re-run your own numbers each quarter with the{" "}
+            <Link href="/quarterly-estimated-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              quarterly estimated tax calculator
+            </Link>
+            , and if the gap looks unmanageable, extra withholding from a part-time W-2 job (see
+            our{" "}
+            <Link href="/w2-vs-1099-calculator" className="text-amber-200 underline underline-offset-2">
+              W-2 vs 1099 comparison
+            </Link>
+            ) counts as evenly prepaid and can rescue the whole year retroactively.
           </p>
         </section>
 
@@ -138,6 +210,27 @@ export default function FreelancerQuarterlyPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-white">Uneven income playbook: the annualized method</h2>
+          <p className="mt-3">
+            Freelance income rarely arrives in neat quarters — a $20,000 Q1 followed by a dry
+            Q2 punishes anyone paying four equal vouchers. The annualized-income method (Form
+            2210, Schedule AI) fixes this: pay each quarter from actual year-to-date profit
+            instead of last year&apos;s average, so lean quarters owe little and windfall
+            quarters pay their share on time. It demands more bookkeeping — you must
+            annualize each period&apos;s income and deductions separately — but it legally
+            shrinks or erases penalties that equal installments would trigger. Hybrid workers
+            get an even simpler lever: bump W-4 withholding at a day job, because withholding
+            is deemed paid evenly throughout the year no matter when it was actually withheld.
+            Late-year freelancers should also compare{" "}
+            <Link href="/sep-ira-vs-solo-401k-tax" className="text-amber-200 underline underline-offset-2">
+              SEP IRA vs Solo 401(k)
+            </Link>{" "}
+            before December, since the larger Solo 401(k) limit can erase a whole quarter of
+            underpayment in one contribution.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-white">Records that survive an audit</h2>
           <p className="mt-3">
             The IRS wins most freelancer audits on substantiation, not law. Keep seven folders:
@@ -172,6 +265,14 @@ export default function FreelancerQuarterlyPage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">Can withholding from a day job cover freelance tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — extra W-4 withholding counts as evenly prepaid all year and can fully replace quarterly vouchers.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">I missed a quarterly deadline — what now?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Pay the missed voucher immediately rather than waiting for the next quarter — penalties accrue daily, so every week of delay costs real money. Then recheck the remaining vouchers against the full-year projection so one miss does not cascade.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">SEP IRA or Solo 401(k) for cutting the quarterly bill?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Solo 401(k) usually wins for solo earners — higher contribution limits and a Roth option — while SEP IRA suits employers with staff. Compare both in our SEP IRA vs Solo 401(k) guide before the December funding deadline.</p>
             </details>
           </div>
         </section>
