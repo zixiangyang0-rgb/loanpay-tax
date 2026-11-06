@@ -131,6 +131,90 @@ export default function FilingChecklistPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-white">Checklists by filer type: W-2, 1099, homeowners, parents</h2>
+          <p className="mt-3">
+            One master list misses real life. Use your lane below on top of the document
+            and filing-day checklists above, and open the linked guide to price the outcome
+            before you file.
+          </p>
+          <div className="mt-4 space-y-4">
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <h3 className="font-semibold text-white">W-2 employees: verify withholding first</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                Match every W-2 Box 1 against your final December pay stub, confirm employer
+                retirement and HSA codes in Boxes 12 and W, and check that federal withholding
+                tracks your W-4 target so you neither over-lend nor owe a penalty. If you held
+                two jobs, changed withholding mid-year, or earned a bonus taxed at a flat rate,
+                reconcile the combined withholding before filing. Compare employee versus
+                contractor treatment anytime with our{" "}
+                <Link href="/w2-vs-1099-calculator" className="text-amber-200 underline underline-offset-2">
+                  W-2 vs 1099 calculator
+                </Link>{" "}
+                and tune next year with the{" "}
+                <Link href="/w4-withholding-calculator" className="text-amber-200 underline underline-offset-2">
+                  W-4 withholding calculator
+                </Link>
+                .
+              </p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <h3 className="font-semibold text-white">1099 freelancers and gig workers: prove every dollar</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                List 1099-NEC, 1099-MISC, and 1099-K forms, then add platform earnings and direct
+                client payments that never generated a form, because all self-employment income
+                is taxable even without paperwork. Total business mileage, home-office square
+                footage, phone and software costs, and health premiums, then test the 20 percent
+                qualified business income deduction and quarterly estimated payments. Walk the
+                full quarterly workflow in our{" "}
+                <Link href="/freelancer-quarterly-tax-guide" className="text-amber-200 underline underline-offset-2">
+                  freelancer quarterly tax guide
+                </Link>{" "}
+                and price Social Security plus Medicare with the{" "}
+                <Link href="/self-employment-tax-calculator" className="text-amber-200 underline underline-offset-2">
+                  self-employment tax calculator
+                </Link>
+                .
+              </p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <h3 className="font-semibold text-white">Homeowners: stack SALT, interest, and energy</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                Pull the 1098 mortgage-interest statement, property-tax receipts, points paid on
+                purchase or refinance, and private mortgage insurance records, then measure the
+                bundle against the 2026 standard deduction of $16,100 single, $32,200 joint, and
+                $24,150 head of household. Add state and local taxes up to the $40,400 SALT cap,
+                qualifying energy upgrades under the 2026 phase-down rules, and any home sale
+                timing questions. Re-run the{" "}
+                <Link href="/standard-deduction-vs-itemized-2026" className="text-amber-200 underline underline-offset-2">
+                  standard-versus-itemized comparison
+                </Link>{" "}
+                before you commit to itemizing.
+              </p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <h3 className="font-semibold text-white">Parents: lock every dependent dollar</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                Confirm each child Social Security number, custody and support nights for
+                head-of-household and earned income credit tests, childcare provider EINs and
+                receipts, 1098-T tuition forms, and student-loan interest records. Only one
+                return can claim a dependent per year, so divorced parents should confirm the
+                release form before anyone files. Screen child tax credit, earned income credit,
+                education credits, and the saver credit together, then preview the refund with
+                our{" "}
+                <Link href="/tax-refund-estimator" className="text-amber-200 underline underline-offset-2">
+                  refund estimator
+                </Link>{" "}
+                and confirm the calendar in{" "}
+                <Link href="/when-are-taxes-due-2027" className="text-amber-200 underline underline-offset-2">
+                  when taxes are due in 2027
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-white">E-file errors, signatures, and storage</h2>
           <p className="mt-3">
             The top rejections are mechanical: transposed Social Security digits, a dependent
@@ -165,6 +249,14 @@ export default function FilingChecklistPage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">How long do I keep tax records?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Three years minimum from filing (six with large understatements, seven for bad debts) — digital copies are fine if legible.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">W-2 or 1099 — which checklist lane fits a side gig?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Use both: the W-2 lane for wages and withholding, plus the 1099 lane for freelance income, mileage, home office, and quarterly estimates.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Homeowner or parent — itemize or take the standard deduction?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Add mortgage interest, SALT to the $40,400 cap, gifts, and medical over 7.5 percent of AGI; itemize only when the total beats $16,100 single, $32,200 joint, or $24,150 head of household.</p>
             </details>
           </div>
         </section>
