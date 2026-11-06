@@ -190,6 +190,36 @@ export default function NorthCarolinaPage() {
           </div>
         </section>
 
+        <nav aria-label="Related guides">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/georgia-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Georgia Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Southeast neighbor holding a 5.19% flat rate for 2026.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/florida-no-income-tax-guide" className="font-semibold text-amber-200 underline underline-offset-2">
+                Florida No-Income-Tax Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Compare the 3.99% flat rate with Florida&rsquo;s zero income tax.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/federal-income-tax-calculator-2026" className="font-semibold text-amber-200 underline underline-offset-2">
+                2026 Federal Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Stack federal tax on top of North Carolina&rsquo;s flat rate.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/federal-tax-brackets-2026" className="font-semibold text-amber-200 underline underline-offset-2">
+                2026 Federal Tax Brackets Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">See which federal bracket your NC income lands in.</p>
+            </li>
+          </ul>
+        </nav>
+
         <section>
           <h2 className="text-xl font-bold text-white">Official sources</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">

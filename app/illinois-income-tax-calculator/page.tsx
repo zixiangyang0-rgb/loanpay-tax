@@ -213,6 +213,36 @@ export default function IllinoisPage() {
           </div>
         </section>
 
+        <nav aria-label="Related guides">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/michigan-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Michigan Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Great Lakes neighbor with Detroit city tax layering.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/ohio-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Ohio Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Midwest neighbor with graduated brackets and school-district levies.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/pennsylvania-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Pennsylvania Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Flat-rate comparison at 3.07% across eight income classes.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/federal-income-tax-calculator-2026" className="font-semibold text-amber-200 underline underline-offset-2">
+                2026 Federal Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Stack federal tax on top of Illinois&rsquo; 4.95% flat rate.</p>
+            </li>
+          </ul>
+        </nav>
+
         <section>
           <h2 className="text-xl font-bold text-white">Official sources</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">

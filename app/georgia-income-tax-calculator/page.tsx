@@ -194,6 +194,36 @@ export default function GeorgiaPage() {
           </div>
         </section>
 
+        <nav aria-label="Related guides">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/federal-income-tax-calculator-2026" className="font-semibold text-amber-200 underline underline-offset-2">
+                2026 Federal Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Stack federal tax on top of Georgia&rsquo;s 5.19% flat rate.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/federal-tax-brackets-2026" className="font-semibold text-amber-200 underline underline-offset-2">
+                2026 Federal Tax Brackets Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">See which federal bracket your Georgia income lands in.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/florida-no-income-tax-guide" className="font-semibold text-amber-200 underline underline-offset-2">
+                Florida No-Income-Tax Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Compare Georgia&rsquo;s flat tax with Florida&rsquo;s zero income tax.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/north-carolina-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                North Carolina Income Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Southeast rival now at a lower 3.99% flat rate.</p>
+            </li>
+          </ul>
+        </nav>
+
         <section>
           <h2 className="text-xl font-bold text-white">Official sources</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">

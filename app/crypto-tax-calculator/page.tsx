@@ -201,6 +201,36 @@ export default function CryptoPage() {
           </div>
         </section>
 
+        <nav aria-label="Related guides">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/capital-gains-tax-calculator-2026" className="font-semibold text-amber-200 underline underline-offset-2">
+                2026 Capital-Gains Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Long-term 0/15/20% bands that decide your coin-tax rate.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/rsu-stock-options-tax-guide" className="font-semibold text-amber-200 underline underline-offset-2">
+                RSU and Stock Options Tax Guide
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Stock-side wash-sale rules that crypto still skips.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/quarterly-estimated-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
+                Quarterly Estimated Tax Calculator
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Size vouchers after a five-figure coin sale.</p>
+            </li>
+            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <Link href="/tax-filing-checklist" className="font-semibold text-amber-200 underline underline-offset-2">
+                Tax Filing Checklist
+              </Link>
+              <p className="mt-1 text-sm leading-relaxed text-slate-300">Keep exchange CSVs and 1099-DA forms with your return.</p>
+            </li>
+          </ul>
+        </nav>
+
         <section>
           <h2 className="text-xl font-bold text-white">Official sources</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">
