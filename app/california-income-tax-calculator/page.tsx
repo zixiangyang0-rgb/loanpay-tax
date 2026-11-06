@@ -142,6 +142,75 @@ export default function CaliforniaPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-white">Movers, remote workers, and residency audits</h2>
+          <p className="mt-3">
+            Leaving California takes more than a U-Haul to{" "}
+            <Link href="/texas-no-income-tax-guide" className="text-amber-200 underline underline-offset-2">
+              Texas
+            </Link>{" "}
+            or{" "}
+            <Link href="/florida-no-income-tax-guide" className="text-amber-200 underline underline-offset-2">
+              Florida
+            </Link>
+            . The Franchise Tax Board applies the closest-connections test: where your home,
+            spouse and children, doctors, clubs, driver&rsquo;s license, voter registration, and
+            business ties sit. Keep a California house while renting in Austin and the auditor
+            will count nights, flight records, cell-phone pings, and even pet-vet visits. To
+            break residency cleanly, sell or lease out the California home, move licenses and
+            doctors, register to vote, join new community groups, and keep a contemporaneous
+            calendar of where you sleep each night. Part-year filers allocate wage, business,
+            and capital-gain income by California-source days and property situs, so a July move
+            still leaves January-through-June earnings fully taxable here.
+          </p>
+          <p className="mt-3">
+            Remote workers face the mirror trap. Days you perform services physically inside
+            California for an out-of-state employer are California-source wages, while days you
+            work from Denver for a San Jose company generally stay taxable in California as
+            source income with a credit on your home-state return. Stock compensation follows
+            the same day-count fractions between grant and vest, and equity-heavy tech workers
+            should track office, travel, and work-from-home days in writing. Nonresident landlords
+            and business owners with California rentals, partnerships, or real-estate sales file
+            here on that source income even after leaving, and underpayment draws interest from
+            each quarterly date.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">How to lower your California bill</h2>
+          <p className="mt-3">
+            Start with the filing choice that saves the most: run both the $5,706 single or
+            $11,412 joint standard deduction and a full itemized draft with mortgage interest,
+            capped state and local taxes, charitable gifts, and medical costs above 7.5 percent
+            of federal AGI. Because California&rsquo;s hurdle is so low, owners in Los Angeles,
+            the Bay Area, and San Diego often clear it with property tax plus donations alone.
+            Bunch two years of giving into one donor-advised fund, time elective medical work
+            into a single year, and harvest investment losses against ordinary-rate gains, which
+            hurt more here than federally since no preferential capital-gains rate exists.
+          </p>
+          <p className="mt-3">
+            Then stack credits and payroll planning. Low-income workers should claim CalEITC and
+            the Young Child Tax Credit through CalFile rather than assuming the federal return
+            covers them, renters should claim the renter&rsquo;s credit every eligible year, and
+            parents should coordinate 529, dependent-care, and education elections with the
+            federal side using our{" "}
+            <Link href="/standard-deduction-vs-itemized-2026" className="text-amber-200 underline underline-offset-2">
+              standard vs. itemized walkthrough
+            </Link>{" "}
+            and{" "}
+            <Link href="/federal-tax-brackets-2026" className="text-amber-200 underline underline-offset-2">
+              2026 federal brackets guide
+            </Link>
+            . Employees with lumpy bonuses or RSU vests should true up withholding with our{" "}
+            <Link href="/w4-withholding-calculator" className="text-amber-200 underline underline-offset-2">
+              W-4 withholding calculator
+            </Link>{" "}
+            and send quarterly estimates if bonuses push you $500 or more short, because both
+            the IRS and the FTB charge interest from the missed quarter even when April shows a
+            refund.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
@@ -161,6 +230,53 @@ export default function CaliforniaPage() {
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. California taxes capital gains as ordinary income at your regular bracket — there is no 0/15/20% preference like the federal code.</p>
             </details>
           </div>
+        </section>
+
+        <nav aria-label="Related guides">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              <Link href="/federal-income-tax-calculator-2026" className="text-amber-200 underline underline-offset-2">
+                2026 Federal Income Tax Calculator
+              </Link>
+            </li>
+            <li>
+              <Link href="/federal-tax-brackets-2026" className="text-amber-200 underline underline-offset-2">
+                2026 Federal Tax Brackets Explained
+              </Link>
+            </li>
+            <li>
+              <Link href="/texas-no-income-tax-guide" className="text-amber-200 underline underline-offset-2">
+                Texas No-Income-Tax Guide: Movers Compare Total Burdens
+              </Link>
+            </li>
+            <li>
+              <Link href="/standard-deduction-vs-itemized-2026" className="text-amber-200 underline underline-offset-2">
+                Standard Deduction vs. Itemized in 2026
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Official sources</h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              <a href="https://www.ftb.ca.gov/file/personal/tax-calculator/index.asp" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                Franchise Tax Board — California Tax Calculator and Filing Help
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ftb.ca.gov/forms/2026/2026-540-booklet.shtml" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                FTB 2026 Form 540 Booklet and Tax Tables
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/forms-pubs/about-form-1040" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS About Form 1040, U.S. Individual Income Tax Return
+              </a>
+            </li>
+          </ul>
         </section>
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
