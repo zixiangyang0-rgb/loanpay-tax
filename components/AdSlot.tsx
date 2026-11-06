@@ -25,6 +25,10 @@ const FORMAT_STYLE: Record<AdFormat, { format: string; layout?: string; defaultM
   anchor: { format: "anchor", defaultMinHeight: 90 },
 };
 
+function isPlaceholder(slot: string): boolean {
+  return slot.startsWith("TODO-") || slot.trim() === "";
+}
+
 function isNpa(): boolean {
   try {
     return window.localStorage.getItem("loanpay-tax-consent") === "npa";
@@ -35,6 +39,7 @@ function isNpa(): boolean {
 
 export default function AdSlot({ format, slot, className = "", minHeight, label }: AdSlotProps) {
   const insRef = useRef<HTMLElement | null>(null);
+  const pushedRef = useRef(false);
   const [closed, setClosed] = useState(false);
   const [npa, setNpa] = useState(false);
   const cfg = FORMAT_STYLE[format];
@@ -42,6 +47,9 @@ export default function AdSlot({ format, slot, className = "", minHeight, label 
 
   useEffect(() => {
     setNpa(isNpa());
+    if (isPlaceholder(slot)) return;
+    if (pushedRef.current) return;
+    pushedRef.current = true;
     if (process.env.NODE_ENV !== "production") return;
     try {
       window.adsbygoogle = window.adsbygoogle || [];
@@ -49,11 +57,22 @@ export default function AdSlot({ format, slot, className = "", minHeight, label 
     } catch {
       // AdSense may not be loaded yet (ad blocker / CMP); fail silently.
     }
-  }, []);
+  }, [slot]);
 
   if (closed) return null;
 
   const isDev = process.env.NODE_ENV !== "production";
+
+  if (isPlaceholder(slot) && !isDev) {
+    // Reserve layout space in prod without calling AdSense for TODO slots.
+    return (
+      <div
+        aria-hidden="true"
+        className={className}
+        style={{ minHeight: height, overflow: "hidden" }}
+      />
+    );
+  }
 
   if (format === "anchor") {
     return (
