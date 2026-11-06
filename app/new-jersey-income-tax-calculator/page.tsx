@@ -17,6 +17,15 @@ export const metadata: Metadata = {
   },
 };
 
+const CHECKLIST = [
+  "Confirm your 2026 NJ bracket: 1.4% to 10.75% across seven bands, with no state standard deduction.",
+  "Claim $1,000 personal exemptions per filer and dependent, plus retirement exclusions if 62+.",
+  "Deduct up to $15,000 of property tax against NJ income if you do not claim it federally.",
+  "File separately for ANCHOR relief each fall: up to $1,500 homeowners, $450 renters.",
+  "If you commute to NYC, file both states and claim the NJ resident credit for NY tax paid.",
+  "If you commute to Philadelphia, use PA reciprocity so wage tax lands in New Jersey only.",
+];
+
 export default function NewJerseyPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
@@ -47,8 +56,17 @@ export default function NewJerseyPage() {
       <CalculatorAnchorAds />
 
       <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
+        <section className="glass-card rounded-2xl p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-white">New Jersey arrival checklist</h2>
+          <ol className="mt-4 list-decimal space-y-2 pl-5">
+            {CHECKLIST.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+        </section>
+
         <section>
-          <h2 className="text-xl font-bold text-white">Seven bands, low floor, high ceiling</h2>
+          <h2 className="text-xl font-bold text-white">How New Jersey&rsquo;s 1.4%&ndash;10.75% brackets actually work</h2>
           <p className="mt-3">
             New Jersey&rsquo;s 2026 schedule starts at just 1.4 percent on the first $20,000
             single &mdash; the gentlest entry rate in the Northeast &mdash; then climbs 1.75
@@ -59,6 +77,22 @@ export default function NewJerseyPage() {
             deduction at all, only narrow carve-outs. A single $120,000 earner owes roughly
             $5,900 &mdash; about 4.9 percent effective &mdash; while a $1.5 million earner faces
             an 8.5+ percent effective rate before property tax enters the picture.
+          </p>
+          <p className="mt-3">
+            A concrete example shows why the low entry rate misleads newcomers. Take a single
+            Newark renter with $85,000 of New Jersey taxable income and one $1,000 exemption.
+            The first $20,000 is taxed at 1.4 percent (about $280), the next $15,000 at 1.75
+            percent (about $263), the next $5,000 at 3.5 percent ($175), the next $35,000 at
+            5.525 percent (about $1,934), and the remaining $10,000 at 6.37 percent ($637) for
+            a total near $3,289 before credits, or roughly a 3.9 percent effective rate. Push
+            that income to $600,000 and the 8.97 percent band dominates the upper dollars while
+            the top 10.75 percent band waits above $1 million. Capital gains get no preference:
+            they flow into gross income and face the same seven bands as wages. Compare the
+            federal side of every move with our{" "}
+            <Link href="/federal-tax-brackets-2026" className="text-amber-200 underline underline-offset-2">
+              2026 federal brackets guide
+            </Link>
+            .
           </p>
           <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
@@ -97,6 +131,20 @@ export default function NewJerseyPage() {
             plus the $50,000+ senior freeze (income-capped assessment freeze) further tilt the
             system toward longtime older owners.
           </p>
+          <p className="mt-3">
+            The property-tax deduction deserves special attention because New Jersey has no
+            standard deduction to fall back on. Homeowners who paid $13,000 in property tax on
+            a Bergen County house can deduct up to $15,000 of it directly against New Jersey
+            gross income, provided they do not claim the same tax as a federal SALT deduction.
+            Renters get a parallel benefit: 18 percent of rent paid is deemed property tax for
+            the deduction calculation. Beyond income tax, the Senior Freeze locks the assessed
+            value used for property-tax reimbursement for qualifying owners 65+ (or disabled)
+            with income under roughly $50,000+, while ANCHOR delivers cash back each fall
+            regardless of age. Low-income workers should also claim the state Earned Income
+            Credit worth 40 percent of the federal EIC as a refundable credit, plus the
+            Child and Dependent Care Credit, because these refundable credits are what turn
+            a small NJ liability into an actual refund check.
+          </p>
         </section>
 
         <section>
@@ -120,6 +168,41 @@ export default function NewJerseyPage() {
             </Link>{" "}
             before choosing which side of the Hudson or Delaware to live on.
           </p>
+          <p className="mt-3">
+            Timing matters as much as geography. ANCHOR applications typically open each fall
+            with payment the following season, so new movers should calendar it separately from
+            the April income-tax return or they leave $1,500 on the table. Remote workers follow
+            the physical-presence rule: days worked from a Hoboken home for a Manhattan employer
+            generally stay New Jersey income, while days physically in Manhattan remain
+            New York-source and claim a credit on the New Jersey return. Part-year movers
+            allocate with the part-year worksheet, and anyone whose withholding looks thin after
+            a move should true up with our{" "}
+            <Link href="/w4-withholding-calculator" className="text-amber-200 underline underline-offset-2">
+              W-4 withholding calculator
+            </Link>{" "}
+            and{" "}
+            <Link href="/quarterly-estimated-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              quarterly estimated tax planner
+            </Link>
+            .
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Who wins, who breaks even, and regional rivals</h2>
+          <p className="mt-3">
+            Clear winners in New Jersey: retirees 62+ pairing exempt Social Security with the
+            up-to-$75,000/$100,000 pension exclusion, longtime owners stacking the $15,000
+            property-tax deduction with Senior Freeze and ANCHOR, and low-income families whose
+            refundable state EIC exceeds their modest bracket bill. Break-even households are
+            Bergen and Essex commuters whose $12,000-plus property-tax bills consume what the
+            gentle 1.4 percent entry rate saves versus New York City, common in top school
+            districts with 2.4 percent-plus effective rates. Reconsider: single high earners
+            above $1 million facing 10.75 percent who would pay a 3.07 percent flat rate across
+            the river in Pennsylvania or a lower top rate in neighboring states; model five
+            years of housing plus commuting before signing. Returns for calendar 2026 are due
+            April 15, 2027, with quarterly estimates on federal dates if withholding falls short.
+          </p>
         </section>
 
         <section>
@@ -140,6 +223,14 @@ export default function NewJerseyPage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">I work in NYC but live in NJ?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">File both states; NJ grants a resident credit for NY tax paid on the same wages so the same dollar is not taxed twice.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How does the $15,000 property-tax deduction work?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Homeowners deduct up to $15,000 of NJ property tax against state income (renters use 18% of rent as deemed tax), as long as the same tax is not claimed federally.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can NJ tax turn into a refund?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes: refundable credits such as the 40%-of-federal state EIC plus ANCHOR relief can exceed a small bracket bill and pay out as a state refund.</p>
             </details>
           </div>
         </section>
