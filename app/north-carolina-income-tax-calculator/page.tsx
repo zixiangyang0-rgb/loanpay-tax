@@ -123,6 +123,27 @@ export default function NorthCarolinaPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-white">Worked example: $85,000 single filer in Raleigh</h2>
+          <p className="mt-3">
+            Take a single filer earning $85,000 in wages with no above-the-line adjustments.
+            Subtract the $12,750 standard deduction to get $72,250 of North Carolina taxable
+            income, then multiply by 3.99 percent: about $2,883 of state tax for 2026. The same
+            paycheck under the 2024 rate of 4.50 percent would have owed roughly $3,251, so the
+            scheduled cuts hand this filer nearly $370 a year without any planning. Add a second
+            earner and the math scales cleanly — a $150,000 joint household subtracts $25,500,
+            taxes $124,500 at 3.99 percent, and owes about $4,968. Because the rate is flat, the
+            marginal decision is simple: every extra $1,000 of deduction saves exactly $39.90,
+            which makes HSA contributions, 401(k) deferrals, and bunching itemized gifts unusually
+            easy to value. Run your own numbers in the calculator above, then compare the result
+            with{" "}
+            <Link href="/georgia-income-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              Georgia&rsquo;s higher flat rate
+            </Link>{" "}
+            to see why Charlotte keeps pulling cross-border movers.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
