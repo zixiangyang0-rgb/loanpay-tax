@@ -190,6 +190,27 @@ export default function NorthCarolinaPage() {
           </div>
         </section>
 
+        <section>
+          <h2 className="text-xl font-bold text-white">Official sources</h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              <a href="https://www.ncdor.gov/taxes-forms/individual-income-tax" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                NCDOR — Individual Income Tax
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/forms-pubs/about-form-1040" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS About Form 1040, U.S. Individual Income Tax Return
+              </a>
+            </li>
+            <li>
+              <a href="https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers" target="_blank" rel="noopener noreferrer" className="text-amber-200 underline underline-offset-2">
+                IRS Free Tax Return Preparation for Qualifying Taxpayers
+              </a>
+            </li>
+          </ul>
+        </section>
+
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>
             This is general education, not tax advice. Confirm the current-year rate and
