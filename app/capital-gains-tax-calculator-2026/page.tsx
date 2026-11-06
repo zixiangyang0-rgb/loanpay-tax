@@ -140,6 +140,55 @@ export default function CapitalGainsPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-white">Short-term vs long-term: the one-year line</h2>
+          <p className="mt-3">
+            The single most expensive line in this calculator is the one-year holding mark. Sell
+            on day 364 and your profit is short-term: it stacks onto wages and is taxed at your
+            ordinary marginal rate from 10 up to 37 percent. Sell on day 366 and the same profit
+            is long-term, taxed at 0, 15, or 20 percent instead. For a single filer in the 32
+            percent bracket, holding eleven extra days can cut the federal bill on a $50,000 gain
+            from $16,000 to $7,500 &mdash; a $8,500 reward for patience. Options, futures, RSUs,
+            and employer stock follow their own clocks (RSU vesting starts the clock; exercised
+            ISOs need two years from grant plus one from exercise for qualifying treatment), so
+            confirm your acquisition date before you click sell. Compare the ordinary-rate side
+            of every decision with our{" "}
+            <Link href="/federal-tax-brackets-2026" className="text-amber-200 underline underline-offset-2">
+              2026 federal brackets guide
+            </Link>{" "}
+            and{" "}
+            <Link href="/standard-deduction-vs-itemized-2026" className="text-amber-200 underline underline-offset-2">
+              standard vs. itemized walkthrough
+            </Link>
+            .
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Seller checklist: timing, withholding, and state moves</h2>
+          <p className="mt-3">
+            Clear winners this year: patient sellers whose gains land inside the 0 percent band
+            (low-income years, early retirement gaps, and students cashing out small positions pay
+            nothing federally), homeowners pairing a sale with the $250,000/$500,000 exclusion,
+            and harvesters who bank December losses against winners. Break-even sellers are
+            mid-band filers whose 15 percent federal bill plus state tax roughly matches what
+            quarterly payments already covered &mdash; common in California and New York where
+            the state adds another 9&ndash;13 percent. Reconsider: sellers bunching two
+            property closings or a big option exercise into one year and tripping NIIT at
+            $200,000/$250,000 MAGI; spreading closings across January often saves the full 3.8
+            percent. Before a large sale, true up withholding with our{" "}
+            <Link href="/w4-withholding-calculator" className="text-amber-200 underline underline-offset-2">
+              W-4 withholding calculator
+            </Link>{" "}
+            and{" "}
+            <Link href="/quarterly-estimated-tax-calculator" className="text-amber-200 underline underline-offset-2">
+              quarterly estimated tax planner
+            </Link>
+            , because a five-figure gain with no withholding draws underpayment penalties even
+            when you can pay in April.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
@@ -157,6 +206,18 @@ export default function CapitalGainsPage() {
             <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
               <summary className="cursor-pointer font-semibold text-white">How are inherited stocks taxed?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Heirs get a stepped-up basis to date-of-death value — prior appreciation escapes income tax entirely if sold promptly.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How long must I hold for the long-term rate?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">More than one year, counted from the day after purchase through the sale date. Selling on the one-year anniversary itself is still short-term — wait one extra day.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">When does the 3.8% NIIT hit my gain?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Once modified AGI exceeds $200,000 single or $250,000 joint, the 3.8% net investment income tax layers on top — making the realistic top federal rate 23.8%.</p>
+            </details>
+            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I owe estimated tax on a big sale?</summary>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Usually yes — a large gain with no withholding can trigger underpayment penalties. Cover it with quarterly payments or a mid-year W-4 update before January 15.</p>
             </details>
           </div>
         </section>
