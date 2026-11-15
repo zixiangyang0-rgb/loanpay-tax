@@ -7,6 +7,7 @@ import {
   CalculatorSidebarAds,
 } from "../../components/CalculatorAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
 
 export const metadata: Metadata = {
   title: "Crypto Tax Calculator 2026: Bitcoin & Coin Gains | LoanPay Tax",
@@ -20,20 +21,21 @@ export const metadata: Metadata = {
 export default function CryptoPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Crypto Tax Calculator 2026: Bitcoin & Coin Gains | LoanPay Tax" description="Estimate 2026 crypto tax on coin sales: short vs. long-term rates, cost-basis methods, staking and mining income, $3,000 loss limits, and record rules." url="https://tax.loanpaylogic.com/crypto-tax-calculator" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           digital assets &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Crypto Tax Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           Every swap, sale, and spend is a taxable event &mdash; but holding one extra day can
           halve the rate. Estimate your 2026 coin-tax bill below and learn the basis, loss, and
           record rules that decide it.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
@@ -46,7 +48,7 @@ export default function CryptoPage() {
       </div>
       <CalculatorAnchorAds />
 
-      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="tax-interior-body mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed">
         <section>
           <h2 className="text-xl font-bold text-white">What counts as taxable in crypto</h2>
           <p className="mt-3">
@@ -120,7 +122,7 @@ export default function CryptoPage() {
             shows the stock side step by step, so you can see exactly which paperwork crypto
             skips for now &mdash; and why Congress keeps proposing to close the gap.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 2026 long-term rates applied to crypto gains (compare with short-term 10–37%).
@@ -174,27 +176,27 @@ export default function CryptoPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Is swapping BTC for ETH taxable?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — every crypto-to-crypto trade is a sale of the first coin at market value, with gain or loss due that year.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do wash-sale rules apply to crypto?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Currently no for most crypto (unlike stocks) — but legislation keeps proposing to add them, so verify before harvesting losses.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Are staking rewards taxed twice?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">They are taxed as ordinary income on receipt, then again only on later appreciation when sold — not double-taxed on the same dollars.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What if I lost money overall?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Net losses offset gains, then up to $3,000 of wages yearly, with the rest carried forward — never wasted, just deferred.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Are gas fees deductible?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">They adjust basis or proceeds rather than itemized deductions — acquisition gas raises basis, disposal gas lowers proceeds, so keep every fee receipt.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do I owe estimated tax on a big coin sale?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Usually yes — no withholding applies to crypto gains, so size April, June, September, and January vouchers with our quarterly estimated-tax calculator to avoid penalties.</p>
             </details>
@@ -204,25 +206,25 @@ export default function CryptoPage() {
         <nav aria-label="Related guides">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/capital-gains-tax-calculator-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 2026 Capital-Gains Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Long-term 0/15/20% bands that decide your coin-tax rate.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/rsu-stock-options-tax-guide" className="font-semibold text-amber-200 underline underline-offset-2">
                 RSU and Stock Options Tax Guide
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Stock-side wash-sale rules that crypto still skips.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/quarterly-estimated-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Quarterly Estimated Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Size vouchers after a five-figure coin sale.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/tax-filing-checklist" className="font-semibold text-amber-200 underline underline-offset-2">
                 Tax Filing Checklist
               </Link>
@@ -252,7 +254,7 @@ export default function CryptoPage() {
           </ul>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Digital-asset rules evolve quickly;
             confirm wash-sale and reporting rules for 2026. Read our full{" "}
@@ -263,6 +265,7 @@ export default function CryptoPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

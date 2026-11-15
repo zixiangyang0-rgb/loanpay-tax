@@ -7,6 +7,7 @@ import {
   CalculatorSidebarAds,
 } from "../../components/CalculatorAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
 
 export const metadata: Metadata = {
   title: "Michigan Income Tax Calculator 2026 (4.25% Flat) | LoanPay Tax",
@@ -20,20 +21,21 @@ export const metadata: Metadata = {
 export default function MichiganPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Michigan Income Tax Calculator 2026 (4.25% Flat) | LoanPay Tax" description="Estimate 2026 Michigan tax at 4.25%, with personal exemptions, pension subtraction, city taxes, property-tax credit, and filing rules." url="https://tax.loanpaylogic.com/michigan-income-tax-calculator" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           Michigan Treasury &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Michigan Income Tax Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           A flat 4.25 percent with generous exemptions and a famous pension subtraction &mdash;
           plus city taxes in Detroit, Grand Rapids, and beyond. Estimate Michigan&rsquo;s 2026
           bill and learn where the real savings hide.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
@@ -46,7 +48,7 @@ export default function MichiganPage() {
       </div>
       <CalculatorAnchorAds />
 
-      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="tax-interior-body mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed">
         <section>
           <h2 className="text-xl font-bold text-white">Flat rate, fat exemptions</h2>
           <p className="mt-3">
@@ -99,7 +101,7 @@ export default function MichiganPage() {
             to several hundred dollars for low-income households &mdash; both claimed on the
             state return&rsquo;s credit forms, both frequently missed.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Combined state + city burden at $80,000 AGI, joint + 2 kids (~$24,000 exempt).
@@ -164,27 +166,27 @@ export default function MichiganPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Does Michigan tax pensions?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Partially — qualifying pension/IRA income subtracts up to scheduled limits (~$64K single / ~$128K joint), and Social Security is fully exempt.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do I owe Detroit city tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Detroit residents pay 2.4% and nonresident workers 1.2%, withheld at work and filed on city forms separate from the state return.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is the homestead property-tax credit?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">A state refund (up to ~$1,700+) when property tax — or 23% of rent — exceeds 3.5% of household income. Renters qualify too.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is Michigan&rsquo;s personal exemption?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Roughly $6,000 per filer and dependent for 2026 (indexed yearly) — a family of four shields about $24,000 before the 4.25% rate.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How do I avoid underpayment penalties?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Pay quarterly on federal due dates whenever withholding falls short — state and city penalties stack, so estimate both together.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Is Michigan good for retirees?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — Social Security is fully exempt and pension/IRA income subtracts up to scheduled limits, which beats most graduated neighbors for retirees.</p>
             </details>
@@ -194,25 +196,25 @@ export default function MichiganPage() {
         <nav aria-label="Related guides">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/ohio-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Ohio Income Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Great Lakes neighbor with graduated brackets and reciprocity.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/illinois-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Illinois Income Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Flat-tax Midwest reference at 4.95%.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/pennsylvania-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Pennsylvania Income Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Flat-rate comparison at 3.07% across eight income classes.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/federal-income-tax-calculator-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 2026 Federal Income Tax Calculator
               </Link>
@@ -242,7 +244,7 @@ export default function MichiganPage() {
           </ul>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Confirm exemption and subtraction limits
             with Michigan Treasury. Read our full{" "}
@@ -253,6 +255,7 @@ export default function MichiganPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

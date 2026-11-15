@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 
 export const metadata: Metadata = {
   title: "Freelancer Quarterly Tax Guide 2026 | LoanPay Tax",
@@ -33,27 +36,33 @@ const QUARTERLY = [
 export default function FreelancerQuarterlyPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Freelancer Quarterly Tax Guide 2026 | LoanPay Tax" description="A freelancer's 2026 playbook: quarterly deadlines, safe harbors, bookkeeping setup, deductions, and audit-proof record habits — with step-by-step checklists." url="https://tax.loanpaylogic.com/freelancer-quarterly-tax-guide" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           freelance playbook &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Freelancer Quarterly Tax Guide
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           No withholding, no problem &mdash; with a system. This guide builds your 2026
           bookkeeping setup, quarterly rhythm, deduction sweep, and audit-proof habits from
           first invoice to filed return.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
       <GuideTopAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mt-10 space-y-8 text-sm leading-relaxed">
+        <ToolIsland
+        islandId="freelancer-quarterly-tax-guide-checklist"
+        title="Freelancer quarterly ritual — filing workspace"
+        method="Setup, quarterly vouchers, deduction sweep, and audit-proof records."
+      >
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Setup checklist: before the first invoice</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {SETUP.map((step) => (
@@ -61,15 +70,16 @@ export default function FreelancerQuarterlyPage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Quarterly ritual checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {QUARTERLY.map((step) => (
               <li key={step}>{step}</li>
             ))}
           </ol>
-          <p className="mt-4 text-xs text-slate-500">
+          <p className="tax-interior-meta mt-4 text-xs">
             Size each voucher with the{" "}
             <Link href="/quarterly-estimated-tax-calculator" className="text-amber-200 underline underline-offset-2">
               quarterly estimated tax calculator
@@ -96,7 +106,8 @@ export default function FreelancerQuarterlyPage() {
             </Link>{" "}
             covers every federal date in one place.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="freelancer-quarterly-tax-guide — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 2026 estimated-tax periods and payment due dates.
@@ -115,6 +126,7 @@ export default function FreelancerQuarterlyPage() {
                 <tr><td className="px-4 py-2">Q4 2026</td><td className="px-4 py-2">Sep 1 – Dec 31</td><td className="px-4 py-2">Jan 15, 2027</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
           <p className="mt-3">
             Note the uneven rhythm: Q2 covers only two months while Q4 stretches to four, which
@@ -187,7 +199,8 @@ export default function FreelancerQuarterlyPage() {
             January only if cash-method deferral genuinely helps &mdash; deliberate manipulation
             invites scrutiny.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="freelancer-quarterly-tax-guide — comparison table 2 — educational comparison, same assumptions">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Habit strength vs. payoff for freelance tax practices.
@@ -206,6 +219,7 @@ export default function FreelancerQuarterlyPage() {
                 <tr><td className="px-4 py-2">December retirement funding</td><td className="px-4 py-2">One transfer</td><td className="px-4 py-2">Up to 24% back per dollar</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -250,27 +264,27 @@ export default function FreelancerQuarterlyPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How much per quarter if income swings?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Pay each quarter from actual year-to-date profit (annualized-income method) instead of four equal slices — it matches lumpy freelance reality.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do I need an LLC to deduct expenses?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Sole proprietors deduct identical expenses on Schedule C — form an LLC for liability, not tax savings.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What if a client never sends my 1099?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Report the income anyway from your invoices and deposits — your return must be complete with or without their form.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Can withholding from a day job cover freelance tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — extra W-4 withholding counts as evenly prepaid all year and can fully replace quarterly vouchers.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">I missed a quarterly deadline — what now?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Pay the missed voucher immediately rather than waiting for the next quarter — penalties accrue daily, so every week of delay costs real money. Then recheck the remaining vouchers against the full-year projection so one miss does not cascade.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">SEP IRA or Solo 401(k) for cutting the quarterly bill?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Solo 401(k) usually wins for solo earners — higher contribution limits and a Roth option — while SEP IRA suits employers with staff. Compare both in our SEP IRA vs Solo 401(k) guide before the December funding deadline.</p>
             </details>
@@ -280,25 +294,25 @@ export default function FreelancerQuarterlyPage() {
         <nav aria-label="Related guides">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/quarterly-estimated-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Quarterly Estimated Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Size each voucher from real profit and safe-harbor targets.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/self-employment-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Self-Employment Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">The 15.3% SE layer behind every freelance dollar.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/w2-vs-1099-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 W-2 vs. 1099 Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Compare job offers on an after-tax basis.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/sep-ira-vs-solo-401k-tax" className="font-semibold text-amber-200 underline underline-offset-2">
                 SEP IRA vs. Solo 401(k) Guide
               </Link>
@@ -330,7 +344,7 @@ export default function FreelancerQuarterlyPage() {
 
         <GuideBottomAds />
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Deadlines and rates reflect 2026 law;
             confirm with the IRS. Read our full{" "}
@@ -341,6 +355,7 @@ export default function FreelancerQuarterlyPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

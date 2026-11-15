@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 
 export const metadata: Metadata = {
   title: "Student Loan Interest Deduction 2026 (Up to $2,500) | LoanPay Tax",
@@ -24,27 +27,33 @@ const CHECKLIST = [
 export default function StudentLoanPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Student Loan Interest Deduction 2026 (Up to $2,500) | LoanPay Tax" description="How the 2026 student-loan interest deduction works: up to $2,500 above-the-line, income phase-outs, eligible loans, and coordination with credits." url="https://tax.loanpaylogic.com/student-loan-interest-deduction" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           Schedule 1 &middot; up to $2,500
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Student Loan Interest Deduction
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           Up to $2,500 of student-loan interest comes straight off your income &mdash; no
           itemizing required. Learn who qualifies, where the phase-outs bite, and how to pair
           the break with credits and repayment strategy.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
       <GuideTopAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mt-10 space-y-8 text-sm leading-relaxed">
+        <ToolIsland
+        islandId="student-loan-interest-deduction-checklist"
+        title="Student-loan interest — filing workspace"
+        method="Up to 2500 dollars above the line with phase-outs and credit stacking."
+      >
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Eligibility checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {CHECKLIST.map((step) => (
@@ -52,6 +61,7 @@ export default function StudentLoanPage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
         <section>
           <h2 className="text-xl font-bold text-white">How the $2,500 deduction works</h2>
@@ -67,7 +77,8 @@ export default function StudentLoanPage() {
             current law) arrives tax-free and does not reduce this deduction&rsquo;s interest
             base &mdash; the two stack when structured correctly.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="student-loan-interest-deduction — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Deduction value at sample marginal rates (full $2,500 claimed).
@@ -85,6 +96,7 @@ export default function StudentLoanPage() {
                 <tr><td className="px-4 py-2">24–32%</td><td className="px-4 py-2">$600–$800</td><td className="px-4 py-2">Higher earners (if eligible)</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -127,19 +139,19 @@ export default function StudentLoanPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do I need to itemize to claim it?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No — it is an above-the-line adjustment on Schedule 1, available with the standard deduction.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">My parents pay my loans — who deducts?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Whoever is legally obligated and meets the tests; payments by others on your behalf are generally treated as paid by you if you qualify — see Pub. 970.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Does refinancing kill eligibility?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Refinancing qualified education debt into another qualified loan preserves it; consolidating into non-education debt (credit cards, HELOCs) ends it.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Can I claim both a credit and this deduction?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — credits cover tuition and fees while the deduction covers interest: different expenses, same return, fully stackable.</p>
             </details>
@@ -148,7 +160,7 @@ export default function StudentLoanPage() {
 
         <GuideBottomAds />
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Confirm 2026 phase-out bands in IRS
             Publication 970. Read our full{" "}
@@ -159,6 +171,7 @@ export default function StudentLoanPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

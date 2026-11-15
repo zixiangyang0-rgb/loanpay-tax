@@ -7,6 +7,7 @@ import {
   CalculatorSidebarAds,
 } from "../../components/CalculatorAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
 
 export const metadata: Metadata = {
   title: "W-4 Withholding Calculator 2026 | LoanPay Tax",
@@ -20,20 +21,21 @@ export const metadata: Metadata = {
 export default function W4Page() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="W-4 Withholding Calculator 2026 | LoanPay Tax" description="Check 2026 paycheck withholding against real liability, learn every W-4 step, and fix over- or under-withholding before April." url="https://tax.loanpaylogic.com/w4-withholding-calculator" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           paycheck checkup &middot; Form W-4 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           W-4 Withholding Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           Your W-4 tells payroll how much federal tax to skim from each check. Run the numbers
           below, decode every step of the redesigned form, and dial withholding to land near zero
           &mdash; keeping your money during the year instead of waiting for April.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
@@ -46,7 +48,7 @@ export default function W4Page() {
       </div>
       <CalculatorAnchorAds />
 
-      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="tax-interior-body mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed">
         <section>
           <h2 className="text-xl font-bold text-white">What the W-4 actually controls</h2>
           <p className="mt-3">
@@ -85,7 +87,7 @@ export default function W4Page() {
             beyond the standard (useful for big itemizers), and 4(c) adds a flat extra dollars per
             paycheck &mdash; the simplest penalty shield available.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Which W-4 step fixes which symptom.
@@ -134,33 +136,38 @@ export default function W4Page() {
             <Link href="/tax-refund-estimator" className="text-amber-200 underline underline-offset-2">
               refund estimator
             </Link>{" "}
-            to see the April result of any tweak before you sign the form.
+            to see the April result of any tweak before you sign the form. For the
+            state-by-state take-home behind each check, see our{" "}
+            <Link href="/paycheck-tax-calculator-by-state-2026" className="text-amber-200 underline underline-offset-2">
+              paycheck tax calculator by state
+            </Link>
+            .
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Does the W-4 go to the IRS?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. It stays with your employer, who uses it only to compute withholding. File a new one anytime.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How do two-earner couples avoid owing?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Check the Step 2 multiple-jobs box on both forms or complete the worksheet — otherwise each job withholds as if it were the only income.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is Step 4(c) extra withholding?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">A flat extra dollar amount per paycheck — the simplest way to cover side income or reach a safe harbor without touching other steps.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">When does a new W-4 take effect?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">By the first payroll period ending on or after 30 days from submission — usually the next one or two paychecks.</p>
             </details>
           </div>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Withholding examples use simplified 2026
             figures; multi-job households should confirm with the IRS Tax Withholding Estimator.
@@ -172,6 +179,7 @@ export default function W4Page() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

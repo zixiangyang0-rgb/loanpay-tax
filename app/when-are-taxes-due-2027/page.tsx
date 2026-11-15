@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 
 export const metadata: Metadata = {
   title: "When Are Taxes Due in 2027? All Deadlines | LoanPay Tax",
@@ -26,27 +29,33 @@ const FEDERAL = [
 export default function TaxesDuePage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="When Are Taxes Due in 2027? All Deadlines | LoanPay Tax" description="Every 2027 tax deadline: April 15 filing day for 2026 returns, extension to October 15, quarterly estimates, IRA contributions, and state dates." url="https://tax.loanpaylogic.com/when-are-taxes-due-2027" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           2026 tax year &middot; filed in 2027
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           When Are Taxes Due in 2027?
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           One missed date can cost penalties, interest, or a lost deduction. Here is the complete
           2027 calendar &mdash; filing day, estimates, extensions, and retirement deadlines
           &mdash; so every obligation lands on time.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
       <GuideTopAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mt-10 space-y-8 text-sm leading-relaxed">
+        <ToolIsland
+        islandId="when-are-taxes-due-2027-checklist"
+        title="2027 deadlines — filing workspace"
+        method="April filing day, estimates, extensions, and IRA deadlines."
+      >
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">2027 federal deadline checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {FEDERAL.map((step) => (
@@ -54,6 +63,7 @@ export default function TaxesDuePage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
         <section>
           <h2 className="text-xl font-bold text-white">The headline date: April 15, 2027</h2>
@@ -69,7 +79,8 @@ export default function TaxesDuePage() {
             Calendar-year C-corps share the April 15 date; S-corps and partnerships file March
             16, 2027 so K-1s reach owners in time.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="when-are-taxes-due-2027 — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 2027 estimated-payment calendar for 2027 income.
@@ -88,6 +99,7 @@ export default function TaxesDuePage() {
                 <tr><td className="px-4 py-2">Q4 2027</td><td className="px-4 py-2">Sep–Dec 2027</td><td className="px-4 py-2">Jan 15, 2028</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -203,27 +215,27 @@ export default function TaxesDuePage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">When are 2026 taxes due?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">April 15, 2027 for most individuals — file, pay, request extension, fund IRAs, and submit Q1 2027 estimates by that date.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Does an extension delay payment?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Extensions grant paperwork time to October 15, 2027 — tax owed still accrues penalties and interest from April 15.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What if Tax Day falls on a weekend?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">The deadline shifts to the next business day. April 15, 2027 is a Thursday, so no shift is expected absent new holidays.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How long do I have to claim a refund?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Three years from the filing deadline — late but refund-due returns face no penalties, only a wait for the check.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What happens if I miss a quarterly estimated payment?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">The IRS adds an underpayment penalty per quarter on the shortfall plus interest. Pay online as soon as you can — each day you wait increases the charge, and raising withholding can help cover the gap.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do state deadlines match the federal April 15 date?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Most do, including California, New York, and Illinois for 2026 returns, but Louisiana and Virginia run May dates and disaster relief can shift any state. Confirm with your state revenue agency before filing.</p>
             </details>
@@ -235,25 +247,25 @@ export default function TaxesDuePage() {
         <nav aria-label="Related guides">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/tax-filing-checklist" className="font-semibold text-amber-200 underline underline-offset-2">
                 Tax Filing Checklist
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Gather every form before the deadline rush.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/tax-refund-estimator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Tax Refund Estimator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Preview your refund once you know your filing date.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/quarterly-estimated-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Quarterly Estimated Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Catch the estimated dates tucked between annual deadlines.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/freelancer-quarterly-tax-guide" className="font-semibold text-amber-200 underline underline-offset-2">
                 Freelancer Quarterly Tax Guide
               </Link>
@@ -283,7 +295,7 @@ export default function TaxesDuePage() {
           </ul>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Dates follow published IRS calendars;
             disaster relief can alter them. Read our full{" "}
@@ -294,6 +306,7 @@ export default function TaxesDuePage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

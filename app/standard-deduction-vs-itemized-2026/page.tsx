@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 
 export const metadata: Metadata = {
   title: "Standard Deduction vs. Itemized 2026: Which Wins? | LoanPay Tax",
@@ -24,27 +27,33 @@ const CHECKLIST = [
 export default function StandardVsItemizedPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Standard Deduction vs. Itemized 2026: Which Wins? | LoanPay Tax" description="Compare the 2026 standard deduction ($16,100 single, $32,200 joint) against itemizing SALT, mortgage interest, charity, and medical costs — with a decision checklist." url="https://tax.loanpaylogic.com/standard-deduction-vs-itemized-2026" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           deduction guide &middot; 2026 tax year
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Standard Deduction vs. Itemized 2026
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           Nine in ten filers take the standard deduction &mdash; but homeowners, generous givers,
           and high-tax-state residents often win by itemizing. Here is how to run the comparison
           in fifteen minutes with 2026 figures.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
       <GuideTopAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mt-10 space-y-8 text-sm leading-relaxed">
+        <ToolIsland
+        islandId="standard-deduction-vs-itemized-2026-checklist"
+        title="Deduction choice — filing workspace"
+        method="Compare standard amounts vs SALT, mortgage, charity, and medical."
+      >
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Itemizing decision checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {CHECKLIST.map((step) => (
@@ -52,6 +61,7 @@ export default function StandardVsItemizedPage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
         <section>
           <h2 className="text-xl font-bold text-white">The 2026 standard amounts</h2>
@@ -66,7 +76,8 @@ export default function StandardVsItemizedPage() {
             for a couple. Everyone else should take the standard amount and skip Schedule A
             entirely.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="standard-deduction-vs-itemized-2026 — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 2026 standard deduction by filing status.
@@ -84,6 +95,7 @@ export default function StandardVsItemizedPage() {
                 <tr><td className="px-4 py-2">Head of household</td><td className="px-4 py-2">$24,150</td><td className="px-4 py-2">+$2,000 unmarried</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -117,7 +129,8 @@ export default function StandardVsItemizedPage() {
             pattern is consistent: renters and modest givers standardize; mortgaged homeowners in
             higher-tax states itemize.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="standard-deduction-vs-itemized-2026 — comparison table 2 — educational comparison, same assumptions">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Side-by-side comparison of the two example households.
@@ -137,6 +150,7 @@ export default function StandardVsItemizedPage() {
                 <tr><td className="px-4 py-2">Winner</td><td className="px-4 py-2">Standard ($16,100)</td><td className="px-4 py-2">Itemized ($56,000)</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -175,19 +189,19 @@ export default function StandardVsItemizedPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Can I switch methods every year?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes. Choose fresh each return — standardize one year, itemize the next, or bunch deductions to alternate.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is the 2026 SALT cap?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">$40,400 for all filers, phasing out above $505,000 of income, rising 1% yearly through 2029 before reverting to $10,000 in 2030.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do I lose my charity deduction if I take the standard?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. A permanent $1,000 single / $2,000 joint above-the-line charity deduction is available to non-itemizers.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Is mortgage interest always deductible?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Only on up to $750,000 of acquisition debt on a first or second home, and only if you itemize. Home-equity interest counts only when used to buy, build, or improve the home.</p>
             </details>
@@ -196,7 +210,7 @@ export default function StandardVsItemizedPage() {
 
         <GuideBottomAds />
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Deduction figures reflect 2026 federal law
             including the One, Big, Beautiful Bill. Read our full{" "}
@@ -207,6 +221,7 @@ export default function StandardVsItemizedPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

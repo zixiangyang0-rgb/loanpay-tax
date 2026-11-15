@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 
 export const metadata: Metadata = {
   title: "Washington Has No Income Tax: 2026 Guide (But 7% on Gains) | LoanPay Tax",
@@ -24,27 +27,33 @@ const CHECKLIST = [
 export default function WashingtonPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Washington Has No Income Tax: 2026 Guide (But 7% on Gains) | LoanPay Tax" description="Washington levies no wage income tax in 2026 but taxes large capital gains at 7% — plus sales, property, B&O, and estate taxes explained for movers." url="https://tax.loanpaylogic.com/washington-no-income-tax-guide" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           no wage income tax &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Washington No-Income-Tax Guide
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           No tax on paychecks &mdash; but a 7 percent tax on big capital gains, steep sales taxes,
           and a low-threshold estate tax complicate the story. Here is Washington&rsquo;s full
           2026 ledger for movers, investors, and business owners.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
       <GuideTopAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mt-10 space-y-8 text-sm leading-relaxed">
+        <ToolIsland
+        islandId="washington-no-income-tax-guide-checklist"
+        title="Washington no-tax snapshot — filing workspace"
+        method="Zero wage tax; watch the 7% large-gains tax plus B&O and estate rules."
+      >
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Washington arrival checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {CHECKLIST.map((step) => (
@@ -52,6 +61,7 @@ export default function WashingtonPage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
         <section>
           <h2 className="text-xl font-bold text-white">Zero on wages, 7% on large gains</h2>
@@ -79,7 +89,8 @@ export default function WashingtonPage() {
             before timing exercises and sales around the threshold, because bunching two
             years&rsquo; vesting into one sale can push an otherwise exempt year over the line.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="washington-no-income-tax-guide — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Washington taxes at a glance, 2026.
@@ -98,6 +109,7 @@ export default function WashingtonPage() {
                 <tr><td className="px-4 py-2">Estate tax</td><td className="px-4 py-2">10&ndash;20% above ~$2.19M</td><td className="px-4 py-2">Larger estates</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -169,31 +181,31 @@ export default function WashingtonPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Does Washington tax my salary?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Wages, pensions, and Social Security face 0% — there is no individual return, withholding, or estimated system.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What gains does the 7% tax hit?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Net long-term capital gains above ~$270,000 yearly (indexed), after deductions for charity, qualifying business sales, and real estate.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is the B&O tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">A gross-receipts tax (0.13%–3.3% by activity) on Washington businesses — revenue is taxed even when the business loses money.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Does WA have an estate tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — 10–20% above roughly $2.19M, far below the $15M federal threshold. Mid-size estates need WA-specific planning.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">I moved to Washington mid-year — do I still owe my old state?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Usually yes, for the part of the year you lived or earned there. File a part-year return in the old state, keep lease and move-day records, and expect Washington itself to ask for nothing on your wages.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Are short-term gains, dividends, or RSU vesting hit by the 7% tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. The excise covers only net long-term capital gains above the threshold. Short-term gains, dividends, interest, and wages from RSU vesting are untouched — but selling those vested shares later at a long-term gain can count.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Can I deduct Washington sales tax on my federal return?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Itemizers can deduct state sales tax instead of state income tax, subject to the federal SALT cap. Track big purchases and compare against the standard deduction before assuming it pays off.</p>
             </details>
@@ -205,25 +217,25 @@ export default function WashingtonPage() {
         <nav aria-label="Related guides">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/texas-no-income-tax-guide" className="font-semibold text-amber-200 underline underline-offset-2">
                 Texas No-Income-Tax Guide
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">How another no-income-tax state funds itself.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/florida-no-income-tax-guide" className="font-semibold text-amber-200 underline underline-offset-2">
                 Florida No-Income-Tax Guide
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Compare Sunshine State trade-offs before relocating.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/capital-gains-tax-calculator-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 Capital-Gains Guide
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Federal gains still apply — plus WA's 7 percent extra.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/standard-deduction-vs-itemized-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 Standard Deduction vs. Itemizing Guide
               </Link>
@@ -253,7 +265,7 @@ export default function WashingtonPage() {
           </ul>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Thresholds index yearly; confirm with the
             Washington Department of Revenue. Read our full{" "}
@@ -264,6 +276,7 @@ export default function WashingtonPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

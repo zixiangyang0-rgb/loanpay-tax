@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 
 export const metadata: Metadata = {
   title: "Tax Filing Checklist 2027 (for 2026 Returns) | LoanPay Tax",
@@ -35,27 +38,33 @@ const STEPS = [
 export default function FilingChecklistPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Tax Filing Checklist 2027 (for 2026 Returns) | LoanPay Tax" description="A step-by-step 2027 filing checklist: documents to gather, W-2/1099 matching, deduction sweep, credit review, e-file error fixes, and audit-proof storage." url="https://tax.loanpaylogic.com/tax-filing-checklist" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           filing season 2027 &middot; 2026 returns
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Tax Filing Checklist
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           The average return takes 13 hours &mdash; most of it hunting paperwork. These two
           checklists compress the hunt into one organized afternoon, then walk the filing itself
           without errors or missed money.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
       <GuideTopAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mt-10 space-y-8 text-sm leading-relaxed">
+        <ToolIsland
+        islandId="tax-filing-checklist-checklist"
+        title="Filing checklist — filing workspace"
+        method="Documents, money sweep, e-file fixes, and storage for 2026 returns."
+      >
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Document roundup checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {DOCUMENTS.map((step) => (
@@ -63,8 +72,9 @@ export default function FilingChecklistPage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Filing-day checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {STEPS.map((step) => (
@@ -108,7 +118,8 @@ export default function FilingChecklistPage() {
             </Link>
             .
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="tax-filing-checklist — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Top missed items by filer type.
@@ -127,6 +138,7 @@ export default function FilingChecklistPage() {
                 <tr><td className="px-4 py-2">Homeowners</td><td className="px-4 py-2">SALT to $40,400 cap</td><td className="px-4 py-2">$1,000–$6,000</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -138,7 +150,7 @@ export default function FilingChecklistPage() {
             before you file.
           </p>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <div className="tax-interior-related rounded-xl p-4">
               <h3 className="font-semibold text-white">W-2 employees: verify withholding first</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">
                 Match every W-2 Box 1 against your final December pay stub, confirm employer
@@ -157,7 +169,7 @@ export default function FilingChecklistPage() {
                 .
               </p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <div className="tax-interior-related rounded-xl p-4">
               <h3 className="font-semibold text-white">1099 freelancers and gig workers: prove every dollar</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">
                 List 1099-NEC, 1099-MISC, and 1099-K forms, then add platform earnings and direct
@@ -176,7 +188,7 @@ export default function FilingChecklistPage() {
                 .
               </p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <div className="tax-interior-related rounded-xl p-4">
               <h3 className="font-semibold text-white">Homeowners: stack SALT, interest, and energy</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">
                 Pull the 1098 mortgage-interest statement, property-tax receipts, points paid on
@@ -191,7 +203,7 @@ export default function FilingChecklistPage() {
                 before you commit to itemizing.
               </p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <div className="tax-interior-related rounded-xl p-4">
               <h3 className="font-semibold text-white">Parents: lock every dependent dollar</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">
                 Confirm each child Social Security number, custody and support nights for
@@ -234,27 +246,27 @@ export default function FilingChecklistPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">When should I start gathering documents?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Early January — open one folder and file forms as they arrive; most W-2s and 1099s land by January 31, brokerages by mid-February.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">My 1099 never arrived — can I file?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes, and you must — report the income from invoices and deposits. Missing forms never excuse missing income.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">E-file rejected — what now?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Fix the flagged field (usually SSN, dependent, or prior-year AGI) and retransmit. Do not mail a duplicate return.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How long do I keep tax records?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Three years minimum from filing (six with large understatements, seven for bad debts) — digital copies are fine if legible.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">W-2 or 1099 — which checklist lane fits a side gig?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Use both: the W-2 lane for wages and withholding, plus the 1099 lane for freelance income, mileage, home office, and quarterly estimates.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Homeowner or parent — itemize or take the standard deduction?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Add mortgage interest, SALT to the $40,400 cap, gifts, and medical over 7.5 percent of AGI; itemize only when the total beats $16,100 single, $32,200 joint, or $24,150 head of household.</p>
             </details>
@@ -266,25 +278,25 @@ export default function FilingChecklistPage() {
         <nav aria-label="Related guides">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/when-are-taxes-due-2027" className="font-semibold text-amber-200 underline underline-offset-2">
                 When Taxes Are Due in 2027
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Match each checklist item to its 2027 deadline.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/tax-refund-estimator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Tax Refund Estimator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">See the payoff once your documents are complete.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/standard-deduction-vs-itemized-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 Standard vs. Itemized Comparison
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Decide which deduction path your paperwork supports.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/w2-vs-1099-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 W-2 vs. 1099 Calculator
               </Link>
@@ -314,7 +326,7 @@ export default function FilingChecklistPage() {
           </ul>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Forms and thresholds reflect 2026–27 law
             as published by the IRS. Read our full{" "}
@@ -325,6 +337,7 @@ export default function FilingChecklistPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

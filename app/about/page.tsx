@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
+import ToolIsland from "../../components/ToolIsland";
 
 export const metadata: Metadata = {
   title: "About LoanPay Tax",
   description:
     "Learn what tax.loanpaylogic.com covers: free educational US tax estimators and guides for employees, freelancers, and crypto holders.",
+  alternates: {
+    canonical: "https://tax.loanpaylogic.com/about",
+  },
 };
 
 export default function AboutPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ToolIsland islandId="about-workspace" title="About — filing workspace note" method="Editorial context: who writes LoanPay Tax and how pages are checked.">
       <h1 className="text-3xl font-bold">About tax.loanpaylogic.com</h1>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         LoanPay Tax is a small editorial project that explains United States personal taxes in
@@ -62,6 +67,7 @@ export default function AboutPage() {
         </p>
         <p className="mt-1">Last reviewed: November 2026.</p>
       </div>
+      </ToolIsland>
     </div>
   );
 }

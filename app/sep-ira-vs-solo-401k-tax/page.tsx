@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 
 export const metadata: Metadata = {
   title: "SEP IRA vs. Solo 401(k) 2026: Tax Comparison | LoanPay Tax",
@@ -24,27 +27,33 @@ const CHECKLIST = [
 export default function SepVsSoloPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="SEP IRA vs. Solo 401(k) 2026: Tax Comparison | LoanPay Tax" description="Compare 2026 SEP-IRA vs. Solo 401(k) contribution limits ($72,000 SEP max), deadlines, Roth options, and which freelance retirement plan saves more tax." url="https://tax.loanpaylogic.com/sep-ira-vs-solo-401k-tax" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           freelance retirement &middot; 2026 limits
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           SEP IRA vs. Solo 401(k) Tax Guide
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           The two freelance retirement giants both shelter tens of thousands yearly &mdash; but
           different contribution math, deadlines, and Roth rules favor different earners. Pick
           correctly once and the tax savings compound for decades.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
       <GuideTopAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mt-10 space-y-8 text-sm leading-relaxed">
+        <ToolIsland
+        islandId="sep-ira-vs-solo-401k-tax-checklist"
+        title="SEP vs Solo 401(k) — filing workspace"
+        method="$72,000 limits compared: Roth, loans, deadlines, and employees."
+      >
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Decision checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {CHECKLIST.map((step) => (
@@ -52,6 +61,7 @@ export default function SepVsSoloPage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
         <section>
           <h2 className="text-xl font-bold text-white">Contribution math: where Solo pulls ahead</h2>
@@ -67,7 +77,8 @@ export default function SepVsSoloPage() {
             saves your marginal rate (22&ndash;32 percent for most freelancers) plus, via lower
             AGI, potentially student-loan, credit, and surtax thresholds downstream.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="sep-ira-vs-solo-401k-tax — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Max 2026 deductible contributions by profit (under 50, simplified).
@@ -85,6 +96,7 @@ export default function SepVsSoloPage() {
                 <tr><td className="px-4 py-2">$200,000</td><td className="px-4 py-2">~$37,200</td><td className="px-4 py-2">~$61,700</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -125,19 +137,19 @@ export default function SepVsSoloPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Can I have both a SEP and a Solo 401(k)?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes, but combined employer contributions share one $72,000 cap per business — most people pick one and fund it fully.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Which is better under $50K profit?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Solo 401(k), by far — the $24,500 elective deferral shelters far more than the SEP&rsquo;s ~20% of profit at modest incomes.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do contributions reduce self-employment tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No — only income tax. Schedule C expenses cut both taxes; retirement contributions cut income tax alone.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What if I hire an employee mid-year?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Solo 401(k) eligibility ends (except spouse) — convert to a SEP, SIMPLE, or Safe Harbor 401(k) covering the new hire.</p>
             </details>
@@ -146,7 +158,7 @@ export default function SepVsSoloPage() {
 
         <GuideBottomAds />
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Limits reflect IRS 2026 figures ($24,500
             deferral, $72,000 SEP max, $7,500 IRA). Read our full{" "}
@@ -157,6 +169,7 @@ export default function SepVsSoloPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

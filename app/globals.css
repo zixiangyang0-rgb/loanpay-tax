@@ -3,6 +3,13 @@
 :root {
   --background: #07111f;
   --foreground: #f7f4ee;
+  --tax-paper: #F4F5F3;
+  --tax-card: #ffffff;
+  --tax-ink: #17211B;
+  --tax-muted: #55625B;
+  --tax-line: #D8DDD6;
+  --tax-accent: #245A4A;
+  --tax-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 @theme inline {
@@ -190,4 +197,320 @@ input[type="range"]::-moz-range-thumb {
 
 .recharts-tooltip-wrapper {
   outline: none;
+}
+
+/* Filing Workspace scoped paper chrome — home + header/footer only.
+   Tool islands (.glass-card/.glass-panel) stay dark for contrast. */
+.tax-shell {
+  background: var(--tax-paper);
+  color: var(--tax-ink);
+  border-bottom: 1px solid var(--tax-line);
+}
+.tax-shell-foot {
+  background: var(--tax-paper);
+  color: var(--tax-ink);
+  border-top: 1px solid var(--tax-line);
+}
+.tax-shell a,
+.tax-shell-foot a {
+  color: var(--tax-accent);
+}
+.tax-mono,
+.tax-mono-label {
+  font-family: var(--tax-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tax-muted);
+}
+.tax-home-shell {
+  background: var(--tax-paper);
+  color: var(--tax-ink);
+  border: 1px solid var(--tax-line);
+  border-radius: 16px;
+}
+.tax-home-shell h1,
+.tax-home-shell h2 {
+  color: var(--tax-ink);
+}
+.tax-workspace-grid {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+.tax-rules-rail {
+  background: var(--tax-card);
+  border: 1px solid var(--tax-line);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 13.5px;
+  color: var(--tax-ink);
+  position: sticky;
+  top: 12px;
+}
+.tax-rules-rail code {
+  font-family: var(--tax-mono);
+  font-size: 12.5px;
+  background: #EEF1ED;
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+.tax-home-card {
+  background: var(--tax-card);
+  border: 1px solid var(--tax-line);
+  border-radius: 12px;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.tax-home-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -18px rgba(0, 0, 0, 0.25);
+}
+.tax-figure img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.tax-shell a:focus-visible,
+.tax-shell-foot a:focus-visible,
+.tax-home-shell a:focus-visible,
+.tax-interior a:focus-visible {
+  outline: 2px solid var(--tax-accent);
+  outline-offset: 2px;
+}
+
+/* Tax interiors — opt-in filing/reading shell for actual content routes.
+   Tax identity: cold paper #F4F5F3, mono labels, rules-rail grammar.
+   NOT guides Palatino/Georgia. Dark calculator islands (.glass-card)
+   are explicitly retained and never bleached by the rules below. */
+.tax-interior {
+  min-width: 0;
+}
+.tax-interior-hero {
+  background: var(--tax-paper);
+  color: var(--tax-ink);
+  border: 1px solid var(--tax-line);
+  border-radius: 16px;
+}
+.tax-interior-kicker {
+  font-family: var(--tax-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--tax-muted);
+}
+.tax-interior-title {
+  color: var(--tax-ink);
+}
+.tax-interior-lede {
+  color: var(--tax-ink);
+}
+.tax-interior-meta {
+  color: var(--tax-muted);
+}
+.tax-interior-body {
+  background: var(--tax-paper);
+  color: var(--tax-ink);
+  border: 1px solid var(--tax-line);
+  border-radius: 16px;
+  padding: 28px;
+  font-size: 15px;
+  line-height: 1.75;
+}
+.tax-interior-body h2 {
+  color: var(--tax-ink);
+  font-size: 20px;
+  font-weight: 700;
+}
+.tax-interior-body p,
+.tax-interior-body li {
+  color: var(--tax-ink);
+}
+.tax-interior-body a {
+  color: var(--tax-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.tax-interior-body [class*="text-slate"],
+.tax-interior-body [class*="text-white"],
+.tax-interior-body [class*="text-amber"] {
+  color: var(--tax-ink);
+}
+.tax-interior-body a[class*="text-amber"],
+.tax-interior-body a[class*="text-slate"] {
+  color: var(--tax-accent);
+}
+.tax-interior-body [class*="border-white"] {
+  border-color: var(--tax-line);
+}
+.tax-interior-card {
+  background: var(--tax-card);
+  border: 1px solid var(--tax-line);
+  border-radius: 12px;
+  color: var(--tax-ink);
+}
+.tax-interior-card h2,
+.tax-interior-card h3 {
+  color: var(--tax-ink);
+}
+.tax-interior-card p,
+.tax-interior-card li {
+  color: var(--tax-ink);
+}
+.tax-interior-card a {
+  color: var(--tax-accent);
+}
+.tax-interior-table-wrap {
+  overflow-x: auto;
+  max-width: 100%;
+  background: var(--tax-card);
+  border: 1px solid var(--tax-line);
+  border-radius: 12px;
+}
+.tax-interior-table-wrap table {
+  font-variant-numeric: tabular-nums;
+  color: var(--tax-ink);
+}
+.tax-interior-table-wrap caption {
+  color: var(--tax-muted);
+}
+.tax-interior-table-wrap thead tr {
+  border-bottom: 1px solid var(--tax-line);
+}
+.tax-interior-table-wrap thead th {
+  color: var(--tax-ink);
+  background: var(--tax-card);
+  white-space: nowrap;
+}
+.tax-interior-table-wrap thead th:first-child,
+.tax-interior-table-wrap tbody td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--tax-card);
+  box-shadow: 1px 0 0 var(--tax-line);
+}
+.tax-interior-table-wrap tbody tr {
+  border-bottom: 1px solid var(--tax-line);
+}
+.tax-interior-table-wrap tbody tr:last-child {
+  border-bottom: 0;
+}
+.tax-interior-faq {
+  background: var(--tax-card);
+  border: 1px solid var(--tax-line);
+  border-radius: 12px;
+  color: var(--tax-ink);
+}
+.tax-interior-faq summary {
+  color: var(--tax-ink);
+  cursor: pointer;
+  font-weight: 600;
+}
+.tax-interior-faq p {
+  color: var(--tax-ink);
+}
+.tax-interior-related {
+  background: var(--tax-card);
+  border: 1px solid var(--tax-line);
+  border-radius: 12px;
+  color: var(--tax-ink);
+}
+.tax-interior-related a {
+  color: var(--tax-accent);
+}
+.tax-interior-related p {
+  color: var(--tax-ink);
+}
+.tax-interior-disclaimer {
+  background: var(--tax-card);
+  border: 1px solid var(--tax-line);
+  border-radius: 12px;
+  color: var(--tax-ink);
+}
+.tax-interior-disclaimer a {
+  color: var(--tax-accent);
+}
+/* Explicitly retained dark islands: calculator tools stay dark on paper. */
+.tax-interior .glass-card {
+  background: linear-gradient(180deg, rgba(8, 15, 28, 0.95), rgba(4, 9, 18, 0.86));
+  border-color: rgba(255, 248, 235, 0.1);
+  color: var(--foreground);
+}
+@media (max-width: 640px) {
+  .tax-interior-body {
+    padding: 20px;
+  }
+  .tax-interior-title {
+    font-size: 28px;
+  }
+}
+@media (max-width: 860px) {
+  .tax-workspace-grid {
+    grid-template-columns: 1fr;
+  }
+  .tax-rules-rail {
+    position: static;
+  }
+}
+/* Tax ToolIsland + LedgerTable — filing-workspace identity (append-only).
+   Tax-distinct: paper offset #F4F5F3, ink #17211B, muted #55625B,
+   hairline #D8DDD6, accent #245A4A focus. Dark island core retained
+   for contrast on paper interiors; NOT guides sand/Palatino. */
+.tax-tool {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  max-width: 100%;
+}
+.tax-tool:focus-visible {
+  outline: 2px solid #245A4A;
+  outline-offset: 2px;
+}
+.tax-ledger-block {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  max-width: 100%;
+  min-width: 0;
+}
+.tax-ledger-block .tax-ledger-wrap {
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  min-width: 0;
+}
+.tax-ledger-block .tax-ledger-wrap:focus-visible {
+  outline: 2px solid #245A4A;
+  outline-offset: 2px;
+}
+.tax-ledger-block .tax-ledger-wrap table {
+  font-variant-numeric: tabular-nums;
+}
+.tax-ledger-block .tax-ledger-wrap thead th {
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .tax-tool {
+    padding: 16px;
+  }
+  .tax-ledger-block .tax-ledger-wrap th,
+  .tax-ledger-block .tax-ledger-wrap td {
+    padding: 10px 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tax-tool,
+  .tax-ledger-block {
+    scroll-behavior: auto;
+  }
+  .tax-tool *,
+  .tax-ledger-block * {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tax-home-card {
+    transition: none;
+  }
 }

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
 import { ArticleJsonLd, Byline, FaqJsonLd } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 
 const FAQS = [
   {
@@ -47,39 +50,45 @@ const CHECKLIST = [
 export default function FederalBracketsPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd
         title="Federal Tax Brackets 2026: Full Tables & Examples | LoanPay Tax"
         description="Every 2026 federal tax bracket for single, joint, and head-of-household filers, with marginal-rate math, bracket-creep explainers, and worked examples."
         url="https://tax.loanpaylogic.com/federal-tax-brackets-2026"
       />
       <FaqJsonLd faqs={FAQS} />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           2026 tax year &middot; IRS Rev. Proc. 2025-32
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Federal Tax Brackets 2026
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           The complete 2026 rate tables for every filing status, translated into plain English
           with layered-math examples. Learn which bracket you are really in, why raises are always
           worth it, and how inflation adjustments protect part of each paycheck.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
       <GuideTopAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mt-10 space-y-8 text-sm leading-relaxed">
+      <ToolIsland
+        islandId="federal-tax-brackets-2026-checklist"
+        title="Federal brackets checklist — filing workspace"
+        method="Read status, subtract deductions, layer each band in order."
+      >
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Read-your-bracket checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {CHECKLIST.map((step) => (
               <li key={step}>{step}</li>
             ))}
           </ol>
-          <p className="mt-4 text-xs text-slate-500">
+          <p className="tax-interior-meta mt-4 text-xs">
             Want the math done for you? Try the{" "}
             <Link href="/federal-income-tax-calculator-2026" className="text-amber-200 underline underline-offset-2">
               2026 federal income tax calculator
@@ -87,6 +96,7 @@ export default function FederalBracketsPage() {
             .
           </p>
         </section>
+      </ToolIsland>
 
         <section>
           <h2 className="text-xl font-bold text-white">The 2026 rate structure at a glance</h2>
@@ -114,7 +124,8 @@ export default function FederalBracketsPage() {
 
         <section>
           <h2 className="text-xl font-bold text-white">Single filers: full 2026 table</h2>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="federal-tax-brackets-2026 — single-filers table">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Single and married filing separately, tax year 2026.
@@ -136,6 +147,7 @@ export default function FederalBracketsPage() {
                 <tr><td className="px-4 py-2">Over $640,600</td><td className="px-4 py-2">37%</td><td className="px-4 py-2">&mdash;</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -153,7 +165,8 @@ export default function FederalBracketsPage() {
             free money when you qualify: head of household beats single at every income level, and
             joint filing usually beats two single returns because of the wider bands.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="federal-tax-brackets-2026 — rate-starts table">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Where each top rate begins, 2026 taxable income.
@@ -174,6 +187,7 @@ export default function FederalBracketsPage() {
                 <tr><td className="px-4 py-2">37%</td><td className="px-4 py-2">$640,601</td><td className="px-4 py-2">$768,701</td><td className="px-4 py-2">$640,601</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -234,7 +248,7 @@ export default function FederalBracketsPage() {
             {FAQS.map((faq) => (
               <details
                 key={faq.question}
-                className="group rounded-xl border border-white/10 bg-white/[0.02] p-4"
+                className="tax-interior-faq group rounded-xl p-4"
               >
                 <summary className="cursor-pointer font-semibold text-white">
                   {faq.question}
@@ -247,7 +261,7 @@ export default function FederalBracketsPage() {
 
         <GuideBottomAds />
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Bracket figures follow IRS Revenue Procedure
             2025-32 for tax year 2026. Read our full{" "}
@@ -258,6 +272,7 @@ export default function FederalBracketsPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

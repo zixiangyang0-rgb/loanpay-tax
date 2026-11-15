@@ -7,6 +7,7 @@ import {
   CalculatorSidebarAds,
 } from "../../components/CalculatorAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
 
 export const metadata: Metadata = {
   title: "California Income Tax Calculator 2026 | LoanPay Tax",
@@ -20,20 +21,21 @@ export const metadata: Metadata = {
 export default function CaliforniaPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="California Income Tax Calculator 2026 | LoanPay Tax" description="Estimate 2026 California income tax across 1%–13.3% brackets, $5,706 standard deduction, renter's credit, and why Californians itemize more often." url="https://tax.loanpaylogic.com/california-income-tax-calculator" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           Franchise Tax Board &middot; 2026 tax year
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           California Income Tax Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           California runs the nation&rsquo;s highest top rate &mdash; yet most residents pay far
           less than the headline suggests. Estimate your 2026 FTB bill below and learn how the
           nine brackets, tiny standard deduction, and generous credits interact.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
@@ -46,7 +48,7 @@ export default function CaliforniaPage() {
       </div>
       <CalculatorAnchorAds />
 
-      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="tax-interior-body mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed">
         <section>
           <h2 className="text-xl font-bold text-white">How California taxes income</h2>
           <p className="mt-3">
@@ -73,7 +75,7 @@ export default function CaliforniaPage() {
 
         <section>
           <h2 className="text-xl font-bold text-white">2026 brackets and a $100,000 walkthrough</h2>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 2026 California single brackets (joint thresholds are double).
@@ -213,19 +215,19 @@ export default function CaliforniaPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Does California tax Social Security?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. California fully excludes Social Security benefits and unemployment compensation from taxable income.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Can I itemize for the state but not federal?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes. The two returns decide independently, and California&rsquo;s $5,706 / $11,412 standard amounts make state-only itemizing common.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is the 13.3% rate I keep hearing about?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">12.3% top bracket plus a 1% Mental Health Services Tax on income above $1 million — the highest marginal state rate in the nation.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Are capital gains taxed differently in CA?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. California taxes capital gains as ordinary income at your regular bracket — there is no 0/15/20% preference like the federal code.</p>
             </details>
@@ -279,7 +281,7 @@ export default function CaliforniaPage() {
           </ul>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Brackets reflect published 2026 FTB tables;
             confirm exact figures with the Franchise Tax Board. Read our full{" "}
@@ -290,6 +292,7 @@ export default function CaliforniaPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
+import ToolIsland from "../../components/ToolIsland";
 
 export const metadata: Metadata = {
   title: "Terms of Use | LoanPay Tax",
   description: "Terms of use for tax.loanpaylogic.com: permitted use, intellectual property, and limitations.",
+  alternates: {
+    canonical: "https://tax.loanpaylogic.com/terms",
+  },
 };
 
 export default function TermsPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ToolIsland islandId="terms-workspace" title="Terms — filing workspace note" method="Site terms framed for the filing workspace.">
       <h1 className="text-3xl font-bold">Terms of Use</h1>
       <p className="mt-2 text-xs text-slate-400">Last updated: October 1, 2026. Applies to tax.loanpaylogic.com.</p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -41,6 +46,7 @@ export default function TermsPage() {
       <p className="mt-3 text-sm leading-relaxed text-slate-300">
         Questions about these terms: support@loanpaylogic.com.
       </p>
+      </ToolIsland>
     </div>
   );
 }

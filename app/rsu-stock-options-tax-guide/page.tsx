@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 
 export const metadata: Metadata = {
   title: "RSU & Stock Options Tax Guide 2026 | LoanPay Tax",
@@ -24,27 +27,33 @@ const CHECKLIST = [
 export default function RsuPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="RSU & Stock Options Tax Guide 2026 | LoanPay Tax" description="How RSUs, NSOs, and ISOs are taxed in 2026: vest withholding, estimated payments, AMT, 83(b), and a selling checklist for tech employees." url="https://tax.loanpaylogic.com/rsu-stock-options-tax-guide" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           equity compensation &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           RSU &amp; Stock Options Tax Guide
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           Equity pay is taxed twice &mdash; as wages at vest or exercise, then as capital gains
           at sale. Master RSUs, NSOs, and ISOs with 2026 rates, withholding traps, and a
           sell-or-hold framework that survives volatile markets.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
       <GuideTopAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mt-10 space-y-8 text-sm leading-relaxed">
+        <ToolIsland
+        islandId="rsu-stock-options-tax-guide-checklist"
+        title="RSU & options — filing workspace"
+        method="Vest withholding, AMT, 83(b), and selling plans in plain English."
+      >
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Equity event checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {CHECKLIST.map((step) => (
@@ -52,6 +61,7 @@ export default function RsuPage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
         <section>
           <h2 className="text-xl font-bold text-white">RSUs: taxed as salary at vest</h2>
@@ -67,7 +77,8 @@ export default function RsuPage() {
             event is ~$0 &mdash; the &ldquo;sell-to-cover plus same-day sale&rdquo; default that
             treats RSUs as the cash bonus they economically are.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="rsu-stock-options-tax-guide — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 How the three equity types are taxed (2026 federal).
@@ -86,6 +97,7 @@ export default function RsuPage() {
                 <tr><td className="px-4 py-2">Sale</td><td className="px-4 py-2">Capital gain/loss</td><td className="px-4 py-2">Capital gain/loss</td><td className="px-4 py-2">Qualifying: all long-term; else ordinary + gain</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -175,27 +187,27 @@ export default function RsuPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Should I sell RSUs immediately?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Usually yes — at vest they are cash-equivalent wages; holding concentrates risk in your employer. Keep shares only as a deliberate investment decision.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What triggers ISO AMT?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">The exercise spread counts as AMT income — large exercises can owe thousands next April with no cash received. Model before exercising.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is an 83(b) election?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">A 30-day, no-extension election to tax early-exercised unvested shares at today&rsquo;s low value instead of at each future vest price.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Why did my 1099-B basis look wrong?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Brokers often report sale proceeds without the vest-date basis already taxed as wages — adjust basis upward using your W-2/3921 records to avoid double tax.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How are double-trigger RSUs taxed at IPO?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Nothing is taxed until both triggers hit — time vesting plus the liquidity event. When the IPO or acquisition closes, the entire vested value becomes ordinary wages at once, often pushing you into a higher bracket for that year, so plan estimates early.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Sell-to-cover or pay cash for withholding?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Sell-to-cover is simplest: the employer liquidates enough shares for tax and you keep the rest. Paying cash preserves share count but concentrates more wealth in one stock — only do it as a deliberate investment call, not by default.</p>
             </details>
@@ -205,25 +217,25 @@ export default function RsuPage() {
         <nav aria-label="Related guides">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/capital-gains-tax-calculator-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 2026 Capital-Gains Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Basis and holding-period math behind every equity sale.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/federal-tax-brackets-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 2026 Federal Tax Brackets Guide
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Which bracket your vest or exercise spread lands in.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/quarterly-estimated-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Quarterly Estimated Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Cover vest withholding gaps with estimated vouchers.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/crypto-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Crypto Tax Calculator
               </Link>
@@ -255,7 +267,7 @@ export default function RsuPage() {
 
         <GuideBottomAds />
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. AMT and withholding figures reflect 2026
             law; plan documents vary. Read our full{" "}
@@ -266,6 +278,7 @@ export default function RsuPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

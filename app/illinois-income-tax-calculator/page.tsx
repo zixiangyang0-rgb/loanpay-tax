@@ -7,6 +7,7 @@ import {
   CalculatorSidebarAds,
 } from "../../components/CalculatorAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
 
 export const metadata: Metadata = {
   title: "Illinois Income Tax Calculator 2026 (4.95% Flat) | LoanPay Tax",
@@ -20,20 +21,21 @@ export const metadata: Metadata = {
 export default function IllinoisPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Illinois Income Tax Calculator 2026 (4.95% Flat) | LoanPay Tax" description="Estimate 2026 Illinois income tax at the flat 4.95% rate, with exemptions, credits, property-tax reality, and Chicago-area comparisons." url="https://tax.loanpaylogic.com/illinois-income-tax-calculator" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           Illinois Dept. of Revenue &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Illinois Income Tax Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           One flat rate &mdash; 4.95 percent on nearly everything. Estimate your 2026 Illinois
           bill below, then learn which income escapes it, which credits shrink it, and why
           property tax dominates every Chicago budget conversation.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
@@ -46,7 +48,7 @@ export default function IllinoisPage() {
       </div>
       <CalculatorAnchorAds />
 
-      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="tax-interior-body mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed">
         <section>
           <h2 className="text-xl font-bold text-white">How the 4.95% flat tax works</h2>
           <p className="mt-3">
@@ -126,7 +128,7 @@ export default function IllinoisPage() {
             can erase the income-tax savings. Renters are not exempt either &mdash; landlords
             pass levies through in rent, so ask for the unit&rsquo;s tax history before signing.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Illinois examples at the flat 4.95% rate (before credits).
@@ -186,27 +188,27 @@ export default function IllinoisPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Does Illinois tax retirement income?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Pensions, 401(k)/IRA distributions, and Social Security are fully subtracted — retirees often owe $0 Illinois tax.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Is there a Chicago city income tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Chicago levies no income tax, but Cook County property taxes are among America&rsquo;s highest — budget for both.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is the Illinois personal exemption?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">About $2,775 per filer and dependent for 2026 (inflation-adjusted yearly) — a joint family of four shields roughly $11,100.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do I owe Illinois tax working remotely?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Illinois-source workdays are taxable here; reciprocal-state residents (IA, KY, MI, WI) are exempt via Form IL-W-5-E.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Why did Illinois keep a flat tax instead of graduated brackets?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Voters rejected the 2020 graduated-tax amendment, so the constitution still mandates one uniform rate — changing it requires another amendment, not just a bill.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How bad are Illinois property taxes really?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">About 1.88% of home value on average, second-highest in the U.S. A $420,000 Chicago-area home can face an $8,800+ annual levy — often bigger than the income-tax bill.</p>
             </details>
@@ -216,25 +218,25 @@ export default function IllinoisPage() {
         <nav aria-label="Related guides">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/michigan-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Michigan Income Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Great Lakes neighbor with Detroit city tax layering.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/ohio-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Ohio Income Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Midwest neighbor with graduated brackets and school-district levies.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/pennsylvania-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Pennsylvania Income Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Flat-rate comparison at 3.07% across eight income classes.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/federal-income-tax-calculator-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 2026 Federal Income Tax Calculator
               </Link>
@@ -264,7 +266,7 @@ export default function IllinoisPage() {
           </ul>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Confirm exemption amounts and credits with
             the Illinois Department of Revenue. Read our full{" "}
@@ -275,6 +277,7 @@ export default function IllinoisPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

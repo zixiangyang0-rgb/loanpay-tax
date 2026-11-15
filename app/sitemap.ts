@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 const BASE = "https://tax.loanpaylogic.com";
 
-const ROUTES: { url: string; priority: number; changeFrequency: "weekly" | "monthly" }[] = [
-  { url: "/", priority: 1.0, changeFrequency: "weekly" },
+const ROUTES: { url: string; priority: number; changeFrequency: "weekly" | "monthly"; images?: string[] }[] = [
+  { url: "/", priority: 1.0, changeFrequency: "weekly", images: [`${BASE}/photos/tax.webp`] },
   // Cluster A — federal
   { url: "/federal-income-tax-calculator-2026", priority: 0.9, changeFrequency: "monthly" },
   { url: "/federal-tax-brackets-2026", priority: 0.9, changeFrequency: "monthly" },
@@ -56,5 +56,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
+    ...(route.images ? { images: route.images } : {}),
   }));
 }

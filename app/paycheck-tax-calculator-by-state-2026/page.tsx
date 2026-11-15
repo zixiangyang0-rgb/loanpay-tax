@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
@@ -45,6 +47,11 @@ export default function PaycheckByStatePage() {
       <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+        <ToolIsland
+        islandId="paycheck-tax-calculator-by-state-2026-checklist"
+        title="Paycheck stack checklist — filing workspace"
+        method="Static worksheet: layer federal, FICA, state, and local on each paycheck."
+      >
         <section className="glass-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Take-home pay checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
@@ -53,6 +60,7 @@ export default function PaycheckByStatePage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
         <section>
           <h2 className="text-xl font-bold text-white">Why the same salary pays differently in every state</h2>
@@ -111,6 +119,7 @@ export default function PaycheckByStatePage() {
             in New York State before city tax, and over $5,000 in California.
           </p>
           <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+            <LedgerTable label="paycheck-tax-calculator-by-state-2026 — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Illustrative 2026 state tax on $80,000 single wages (state only, rounded).
@@ -129,6 +138,7 @@ export default function PaycheckByStatePage() {
                 <tr><td className="px-4 py-2">California</td><td className="px-4 py-2">1%–12.3% graduated</td><td className="px-4 py-2">~$5,100+</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 

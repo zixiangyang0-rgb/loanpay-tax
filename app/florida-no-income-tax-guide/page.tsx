@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 
 export const metadata: Metadata = {
   title: "Florida Has No Income Tax: 2026 Guide to the Real Costs | LoanPay Tax",
@@ -24,27 +27,33 @@ const CHECKLIST = [
 export default function FloridaPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Florida Has No Income Tax: 2026 Guide to the Real Costs | LoanPay Tax" description="Florida has no individual income tax in 2026 — see how sales, property, insurance, and homestead rules shape the true cost for movers and retirees." url="https://tax.loanpaylogic.com/florida-no-income-tax-guide" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           no individual income tax &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Florida No-Income-Tax Guide
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           Florida&rsquo;s constitution bans individual income tax &mdash; a magnet for retirees
           and remote workers. But insurance bills, property taxes, and tourist-driven sales taxes
           reshape the bargain. Here is the honest 2026 accounting.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
       <GuideTopAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mt-10 space-y-8 text-sm leading-relaxed">
+        <ToolIsland
+        islandId="florida-no-income-tax-guide-checklist"
+        title="Florida no-tax snapshot — filing workspace"
+        method="Zero wage tax; compare property, sales, and insurance costs side by side."
+      >
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Florida arrival checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {CHECKLIST.map((step) => (
@@ -52,6 +61,7 @@ export default function FloridaPage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
         <section>
           <h2 className="text-xl font-bold text-white">What Florida does and does not tax</h2>
@@ -92,7 +102,8 @@ export default function FloridaPage() {
             to $500,000 of accrued Save Our Homes benefit to a new Florida home &mdash; file the
             transfer form or leave money behind.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="florida-no-income-tax-guide — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Illustrative 2026 carrying costs: $500,000 Florida home vs. renting.
@@ -111,6 +122,7 @@ export default function FloridaPage() {
                 <tr><td className="px-4 py-2">Sales tax on spending</td><td className="px-4 py-2">6&ndash;7.5%</td><td className="px-4 py-2">6&ndash;7.5%</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -161,19 +173,19 @@ export default function FloridaPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Is there really zero Florida income tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes for individuals — wages, pensions, Social Security, and investment income all face 0%. Corporations separately pay 5.5%.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How do I prove Florida domicile?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">File a Declaration of Domicile, get a Florida license and plates within 30 days, register to vote, and spend 183+ days in-state.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is Save Our Homes?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">A cap limiting homestead assessed-value growth to 3% or CPI yearly — the longer you stay, the bigger the discount vs. market value.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Does Florida tax my 401(k) withdrawals?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. Withdrawals face only federal tax, which is why Florida hosts so many retirees drawing down large accounts.</p>
             </details>
@@ -182,7 +194,7 @@ export default function FloridaPage() {
 
         <GuideBottomAds />
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Insurance and property figures are 2026
             statewide approximations; counties vary widely. Read our full{" "}
@@ -193,6 +205,7 @@ export default function FloridaPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

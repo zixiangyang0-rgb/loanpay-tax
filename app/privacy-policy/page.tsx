@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ToolIsland from "../../components/ToolIsland";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | LoanPay Tax",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ToolIsland islandId="privacy-policy-workspace" title="Privacy — filing workspace note" method="Privacy context framed for the filing workspace.">
       <h1 className="text-3xl font-bold">Privacy Policy</h1>
       <p className="mt-2 text-xs text-slate-400">
         Last updated: October 1, 2026. Applies to tax.loanpaylogic.com (“LoanPay Tax”, “we”).
@@ -116,6 +118,7 @@ export default function PrivacyPolicyPage() {
         updated” date above will reflect the latest version. For privacy questions about
         tax.loanpaylogic.com, email support@loanpaylogic.com.
       </p>
+      </ToolIsland>
     </div>
   );
 }

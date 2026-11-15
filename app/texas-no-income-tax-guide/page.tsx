@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 
 export const metadata: Metadata = {
   title: "Texas Has No Income Tax: The Full 2026 Guide | LoanPay Tax",
@@ -24,27 +27,33 @@ const CHECKLIST = [
 export default function TexasPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Texas Has No Income Tax: The Full 2026 Guide | LoanPay Tax" description="Texas levies no individual income tax in 2026 — learn what replaces it (sales, property, franchise taxes), who still files, and the true cost-vs-California math." url="https://tax.loanpaylogic.com/texas-no-income-tax-guide" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           no individual income tax &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Texas No-Income-Tax Guide
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           Texas taxes neither wages nor retirement income &mdash; but the state still funds
           schools, roads, and hospitals somehow. This guide shows exactly what replaces the
           income tax, who still owes Texas business taxes, and whether moving pencils out.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
       <GuideTopAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mt-10 space-y-8 text-sm leading-relaxed">
+        <ToolIsland
+        islandId="texas-no-income-tax-guide-checklist"
+        title="Texas no-tax snapshot — filing workspace"
+        method="Zero wage tax; compare property, sales, and franchise-tax layers."
+      >
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">New Texan checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {CHECKLIST.map((step) => (
@@ -52,6 +61,7 @@ export default function TexasPage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
         <section>
           <h2 className="text-xl font-bold text-white">What &ldquo;no income tax&rdquo; really covers</h2>
@@ -92,7 +102,8 @@ export default function TexasPage() {
             Austin home can carry a $7,500&ndash;$8,500 annual bill &mdash; and Texas reassesses to
             market, so fast appreciation flows straight into the levy.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="texas-no-income-tax-guide — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Where Texas money comes from vs. a typical income-tax state (illustrative shares).
@@ -111,6 +122,7 @@ export default function TexasPage() {
                 <tr><td className="px-4 py-2">Business margin tax</td><td className="px-4 py-2">0.375&ndash;0.75%</td><td className="px-4 py-2">Corporate income tax varies</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -159,19 +171,19 @@ export default function TexasPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do I file a Texas tax return?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Individuals file nothing with Texas. Businesses above the franchise-tax threshold file margin-tax reports instead.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Are Texas property taxes the highest in the US?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Among the highest effective rates (~1.6% statewide, up to ~2.2% in big metros) — the direct trade for having no income tax.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do retirees benefit most from Texas?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Usually yes: pensions, 401(k) withdrawals, and Social Security face zero Texas tax, and homestead caps protect longtime owners.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is the Texas franchise tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">A 0.375%–0.75% tax on business margin above roughly $2.47M revenue. Employees, sole proprietors, and small firms generally owe nothing.</p>
             </details>
@@ -180,7 +192,7 @@ export default function TexasPage() {
 
         <GuideBottomAds />
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Texas tax figures reflect 2026 law as
             published by the Comptroller. Read our full{" "}
@@ -191,6 +203,7 @@ export default function TexasPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

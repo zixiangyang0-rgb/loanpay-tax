@@ -7,6 +7,7 @@ import {
   CalculatorSidebarAds,
 } from "../../components/CalculatorAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
 
 export const metadata: Metadata = {
   title: "Quarterly Estimated Tax Calculator 2026 | LoanPay Tax",
@@ -20,20 +21,21 @@ export const metadata: Metadata = {
 export default function QuarterlyPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Quarterly Estimated Tax Calculator 2026 | LoanPay Tax" description="Compute 2026 quarterly estimated payments from self-employment profit, with deadlines, safe harbors, penalties, and Form 1040-ES walkthrough." url="https://tax.loanpaylogic.com/quarterly-estimated-tax-calculator" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           Form 1040-ES &middot; 2026 deadlines
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Quarterly Estimated Tax Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           No employer withholds from freelance, rental, or investment income &mdash; so the IRS
           collects it quarterly instead. Estimate each 2026 voucher below and learn the safe
           harbors that erase penalties.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
@@ -46,7 +48,7 @@ export default function QuarterlyPage() {
       </div>
       <CalculatorAnchorAds />
 
-      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="tax-interior-body mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed">
         <section>
           <h2 className="text-xl font-bold text-white">Who must pay quarterly</h2>
           <p className="mt-3">
@@ -59,7 +61,7 @@ export default function QuarterlyPage() {
             paying on time. W-2 workers with only wage income are usually exempt because employer
             withholding already satisfies the schedule.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 2026 estimated-payment calendar (2026 income, filed in 2027).
@@ -146,26 +148,26 @@ export default function QuarterlyPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What if I miss a quarterly deadline?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Pay as soon as possible — penalties stop accruing on money once paid, and later vouchers cannot retroactively cover earlier quarters.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Can W-2 withholding cover freelance income?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes. Extra withholding via W-4 Step 4(c) counts as evenly prepaid all year and can replace vouchers entirely.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do I still file quarterly if income is uneven?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes, but use the annualized-income method (Form 2210 Schedule AI) so a late-year windfall does not inflate early vouchers — or pay each quarter from actual year-to-date profit.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Where do I actually send payment?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">IRS Direct Pay or EFTPS online (fastest, with receipts), or mail Form 1040-ES vouchers with a check labeled for the correct quarter.</p>
             </details>
           </div>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Deadlines shift when they fall on weekends
             or holidays, and disaster-area relief can extend them. Read our full{" "}
@@ -176,6 +178,7 @@ export default function QuarterlyPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

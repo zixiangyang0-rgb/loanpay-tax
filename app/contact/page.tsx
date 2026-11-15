@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
+import ToolIsland from "../../components/ToolIsland";
 
 export const metadata: Metadata = {
   title: "Contact Us | LoanPay Tax",
   description:
     "Contact the editors of tax.loanpaylogic.com for corrections, questions, or feedback at support@loanpaylogic.com.",
+  alternates: {
+    canonical: "https://tax.loanpaylogic.com/contact",
+  },
 };
 
 export default function ContactPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ToolIsland islandId="contact-workspace" title="Contact — filing workspace note" method="Editorial context: how to reach the LoanPay Tax team.">
       <h1 className="text-3xl font-bold">Contact us</h1>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Have a question about a guide on tax.loanpaylogic.com, found a number that looks outdated,
@@ -66,6 +71,7 @@ export default function ContactPage() {
         </p>
         <p className="mt-1">Last reviewed: November 2026.</p>
       </div>
+      </ToolIsland>
     </div>
   );
 }

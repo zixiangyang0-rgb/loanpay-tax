@@ -7,6 +7,7 @@ import {
   CalculatorSidebarAds,
 } from "../../components/CalculatorAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
 
 export const metadata: Metadata = {
   title: "Capital Gains Tax Calculator 2026 (0/15/20%) | LoanPay Tax",
@@ -20,20 +21,21 @@ export const metadata: Metadata = {
 export default function CapitalGainsPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Capital Gains Tax Calculator 2026 (0/15/20%) | LoanPay Tax" description="Estimate 2026 capital-gains tax with 0/15/20% stacking, NIIT, short-term rules, loss harvesting, and state treatment — with worked examples." url="https://tax.loanpaylogic.com/capital-gains-tax-calculator-2026" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           Schedule D &middot; 2026 thresholds
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Capital Gains Tax Calculator 2026
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           Patience is taxed less: gains held over a year face 0&ndash;20 percent, while quick
           flips face up to 37 percent. Stack your sale onto your income below and learn the
           harvesting, loss, and NIIT rules around it.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
@@ -46,7 +48,7 @@ export default function CapitalGainsPage() {
       </div>
       <CalculatorAnchorAds />
 
-      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="tax-interior-body mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed">
         <section>
           <h2 className="text-xl font-bold text-white">The stacking secret behind 0/15/20</h2>
           <p className="mt-3">
@@ -62,7 +64,7 @@ export default function CapitalGainsPage() {
             3.8 percent NIIT: $5,640. Identical sale, triple the tax &mdash; stacking explains
             every dollar of difference.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 2026 long-term capital-gains thresholds (taxable income).
@@ -191,31 +193,31 @@ export default function CapitalGainsPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Can a gain be taxed at two rates?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — a gain straddling a threshold is split: the part filling the lower band gets the lower rate, the rest the higher one.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do gains push me into a higher bracket?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Gains raise taxable income and MAGI — they can lift ordinary income&rsquo;s marginal band and trigger NIIT even when taxed at 0% themselves.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is the $3,000 loss limit?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Net capital losses beyond gains can offset up to $3,000 of ordinary income yearly ($1,500 separate); the rest carries forward.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How are inherited stocks taxed?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Heirs get a stepped-up basis to date-of-death value — prior appreciation escapes income tax entirely if sold promptly.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How long must I hold for the long-term rate?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">More than one year, counted from the day after purchase through the sale date. Selling on the one-year anniversary itself is still short-term — wait one extra day.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">When does the 3.8% NIIT hit my gain?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Once modified AGI exceeds $200,000 single or $250,000 joint, the 3.8% net investment income tax layers on top — making the realistic top federal rate 23.8%.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do I owe estimated tax on a big sale?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Usually yes — a large gain with no withholding can trigger underpayment penalties. Cover it with quarterly payments or a mid-year W-4 update before January 15.</p>
             </details>
@@ -225,25 +227,25 @@ export default function CapitalGainsPage() {
         <nav aria-label="Related guides">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/crypto-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Crypto Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">How digital-asset sales feed into your capital-gains math.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/federal-tax-brackets-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 2026 Federal Brackets Guide
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Where your gains stack on top of ordinary income.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/standard-deduction-vs-itemized-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 Standard vs. Itemized Walkthrough
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Which deduction route pairs best with a big gains year.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/quarterly-estimated-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Quarterly Estimated Tax Planner
               </Link>
@@ -273,7 +275,7 @@ export default function CapitalGainsPage() {
           </ul>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Thresholds follow IRS Rev. Proc. 2025-32
             for 2026. Read our full{" "}
@@ -284,6 +286,7 @@ export default function CapitalGainsPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

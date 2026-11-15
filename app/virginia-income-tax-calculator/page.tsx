@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 import { ArticleJsonLd, Byline } from "../../components/schema";
 
 export const metadata: Metadata = {
@@ -45,6 +47,11 @@ export default function VirginiaPage() {
       <GuideTopAds />
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+        <ToolIsland
+        islandId="virginia-income-tax-calculator-checklist"
+        title="Virginia worksheet — filing workspace"
+        method="Static worksheet: follow the checklist, run numbers in the federal estimator."
+      >
         <section className="glass-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Virginia arrival checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
@@ -53,6 +60,7 @@ export default function VirginiaPage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
         <section>
           <h2 className="text-xl font-bold text-white">How Virginia&apos;s 2%&ndash;5.75% brackets actually work</h2>
@@ -85,6 +93,7 @@ export default function VirginiaPage() {
             benefits from the age deduction rather than a separate gains rate.
           </p>
           <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+            <LedgerTable label="virginia-income-tax-calculator — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 2026 Virginia brackets (single, joint, and separate use the same thresholds).
@@ -103,6 +112,7 @@ export default function VirginiaPage() {
                 <tr><td className="px-4 py-2">Over $17,000</td><td className="px-4 py-2">5.75%</td><td className="px-4 py-2">$720 + 5.75% of excess</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 

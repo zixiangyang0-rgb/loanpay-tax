@@ -7,6 +7,7 @@ import {
   CalculatorSidebarAds,
 } from "../../components/CalculatorAds";
 import { ArticleJsonLd, Byline, FaqJsonLd } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
 
 const FAQS = [
   {
@@ -43,25 +44,26 @@ export const metadata: Metadata = {
 export default function FederalIncomeTaxCalculatorPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd
         title="Federal Income Tax Calculator 2026 | LoanPay Tax"
         description="Estimate your 2026 federal income tax with current IRS brackets, standard deductions of $16,100 single / $32,200 joint, and marginal vs effective rate explainers."
         url="https://tax.loanpaylogic.com/federal-income-tax-calculator-2026"
       />
       <FaqJsonLd faqs={FAQS} />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           2026 tax year &middot; filed in 2027
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Federal Income Tax Calculator 2026
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           Preview what the IRS would expect from your 2026 earnings before you file. This guide
           pairs a live estimator with the official 2026 brackets, standard deductions, and worked
           examples, so a pay stub stops feeling like a mystery and starts looking like a plan.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
@@ -74,7 +76,7 @@ export default function FederalIncomeTaxCalculatorPage() {
       </div>
       <CalculatorAnchorAds />
 
-      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="tax-interior-body mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed">
         <section>
           <h2 className="text-xl font-bold text-white">How federal income tax actually works</h2>
           <p className="mt-3">
@@ -109,7 +111,7 @@ export default function FederalIncomeTaxCalculatorPage() {
             rates snap back to pre-2018 levels. Thresholds rose roughly 2 to 4 percent from 2025,
             which quietly shields part of each raise from bracket creep.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[560px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 2026 marginal rates by taxable income (wages after deductions, before credits).
@@ -147,7 +149,7 @@ export default function FederalIncomeTaxCalculatorPage() {
             phases out above $75,000 of modified AGI ($150,000 joint). Our calculator uses the
             basic amounts; add any extra deduction you expect in the third input box.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Basic 2026 standard deduction vs. 2025 (after the One, Big, Beautiful Bill).
@@ -259,7 +261,7 @@ export default function FederalIncomeTaxCalculatorPage() {
             {FAQS.map((faq) => (
               <details
                 key={faq.question}
-                className="group rounded-xl border border-white/10 bg-white/[0.02] p-4"
+                className="tax-interior-faq group rounded-xl p-4"
               >
                 <summary className="cursor-pointer font-semibold text-white">
                   {faq.question}
@@ -270,7 +272,7 @@ export default function FederalIncomeTaxCalculatorPage() {
           </div>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Figures reflect IRS Revenue Procedure
             2025-32 for tax year 2026 (returns filed in 2027). Read our full{" "}
@@ -281,6 +283,7 @@ export default function FederalIncomeTaxCalculatorPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

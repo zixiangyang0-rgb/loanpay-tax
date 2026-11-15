@@ -7,6 +7,7 @@ import {
   CalculatorSidebarAds,
 } from "../../components/CalculatorAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
 
 export const metadata: Metadata = {
   title: "W-2 vs. 1099 Calculator 2026: Employee or Contractor? | LoanPay Tax",
@@ -20,20 +21,21 @@ export const metadata: Metadata = {
 export default function W2Vs1099Page() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="W-2 vs. 1099 Calculator 2026: Employee or Contractor? | LoanPay Tax" description="Compare 2026 W-2 vs. 1099 take-home pay with SE tax, benefits value, QBI deduction, and the 15–20% contractor premium rule — plus misclassification risks." url="https://tax.loanpaylogic.com/w2-vs-1099-calculator" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           job-offer math &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           W-2 vs. 1099 Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           A $90,000 salary and a $90,000 contract are not the same money. Compare true take-home
           below &mdash; taxes, benefits, and expenses included &mdash; before you sign either
           offer letter.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
@@ -46,7 +48,7 @@ export default function W2Vs1099Page() {
       </div>
       <CalculatorAnchorAds />
 
-      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="tax-interior-body mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed">
         <section>
           <h2 className="text-xl font-bold text-white">The tax wedge between the two checks</h2>
           <p className="mt-3">
@@ -61,7 +63,7 @@ export default function W2Vs1099Page() {
             columns honestly and the contractor typically needs 15&ndash;20 percent more gross to
             break even &mdash; the estimator above shows your exact gap.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 $90,000 offer compared (single, 2026 standard deduction, simplified).
@@ -145,26 +147,26 @@ export default function W2Vs1099Page() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How much more should a contractor charge?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Roughly 15–20% above equivalent salary — covering the 7.65-point tax wedge, lost benefits, and unpaid admin time.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Can I be both W-2 and 1099?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — common and legal. Wages use up the $184,500 Social Security base first; freelance profit fills the remainder.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do contractors get the QBI deduction?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Usually — 20% of qualified business income off income tax (not SE tax), within income thresholds and service-business rules.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What if my employer forces 1099 status?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Status follows control, not paperwork. File SS-8 for a ruling and Form 8919 to pay only the employee tax share meanwhile.</p>
             </details>
           </div>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Comparison uses simplified 2026 figures;
             benefits and state taxes vary widely. Read our full{" "}
@@ -175,6 +177,7 @@ export default function W2Vs1099Page() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

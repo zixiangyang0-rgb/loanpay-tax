@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
+import ToolIsland from "../../components/ToolIsland";
 
 export const metadata: Metadata = {
   title: "Disclaimer | LoanPay Tax",
   description:
     "Disclaimer for tax.loanpaylogic.com: educational estimates only, not professional tax advice.",
+  alternates: {
+    canonical: "https://tax.loanpaylogic.com/disclaimer",
+  },
 };
 
 export default function DisclaimerPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ToolIsland islandId="disclaimer-workspace" title="Disclaimer — filing workspace note" method="Education only: confirm decisions with the IRS or a licensed professional.">
       <h1 className="text-3xl font-bold">Disclaimer</h1>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Everything published on tax.loanpaylogic.com is for general education and illustration
@@ -26,6 +31,7 @@ export default function DisclaimerPage() {
         We work to keep guides accurate, but we make no warranty of completeness or timeliness. If
         you spot an error, please tell us at support@loanpaylogic.com so we can correct it.
       </p>
+      </ToolIsland>
     </div>
   );
 }

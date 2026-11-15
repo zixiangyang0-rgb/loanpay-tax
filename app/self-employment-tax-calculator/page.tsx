@@ -7,6 +7,7 @@ import {
   CalculatorSidebarAds,
 } from "../../components/CalculatorAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
 
 export const metadata: Metadata = {
   title: "Self-Employment Tax Calculator 2026 (15.3%) | LoanPay Tax",
@@ -20,20 +21,21 @@ export const metadata: Metadata = {
 export default function SelfEmploymentPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Self-Employment Tax Calculator 2026 (15.3%) | LoanPay Tax" description="Estimate 2026 self-employment tax: 12.4% Social Security to $184,500, 2.9% Medicare, 0.9% surtax, half-SE deduction, and quarterly payment setup." url="https://tax.loanpaylogic.com/self-employment-tax-calculator" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           Schedule SE &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Self-Employment Tax Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           Freelancers pay both halves of Social Security and Medicare &mdash; 15.3 percent before
           income tax even starts. Estimate your 2026 SE tax below, then learn the deductions and
           quarterly rhythm that keep it manageable.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
@@ -46,8 +48,8 @@ export default function SelfEmploymentPage() {
       </div>
       <CalculatorAnchorAds />
 
-      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed">
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Self-employment tax checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             <li>Confirm you owe Schedule SE: $400+ in 2026 net earnings triggers the tax.</li>
@@ -89,7 +91,7 @@ export default function SelfEmploymentPage() {
             </Link>
             , because SE tax and income tax interact through that half-SE deduction.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 SE tax components at sample 2026 profits (no W-2 wages).
@@ -240,27 +242,27 @@ export default function SelfEmploymentPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Is SE tax on gross or net income?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Net profit after business expenses, multiplied by 92.35% — every legitimate deduction lowers SE tax directly.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do I owe SE tax with a full-time job too?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes on freelance profit — wages use up the $184,500 Social Security base first, so side income mostly faces the 12.4% piece only below the cap.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Does an S-corp eliminate SE tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Only on distributions — owners still owe payroll tax on reasonable W-2 salary. Below ~$60–80K profit the extra admin rarely pays.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What if I lose money?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No SE tax on a net loss — and the loss can offset other income (within limits), cutting income tax too. Keep filing Schedule C so the loss is documented and carryover rules apply cleanly.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How do quarterly penalties work for SE tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">SE tax rides inside estimated tax: owe $1,000+ beyond withholding without hitting a safe harbor and penalties accrue per quarter. Start vouchers in your first profitable quarter or raise W-2 withholding to stay covered.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Does the half-SE deduction really save income tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — half your SE tax deducts from income tax on Form 1040 even if you take the standard deduction. At a 22% marginal rate, a $10,600 SE bill shelters about $5,300 of income and saves roughly $1,166.</p>
             </details>
@@ -270,25 +272,25 @@ export default function SelfEmploymentPage() {
         <nav aria-label="Related guides">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/quarterly-estimated-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Quarterly Estimated Tax Planner
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Turn your SE bill into four on-time payments.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/w2-vs-1099-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 W-2 vs. 1099 Comparison
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Compare employee vs. contractor take-home before you switch.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/sep-ira-vs-solo-401k-tax" className="font-semibold text-amber-200 underline underline-offset-2">
                 SEP vs. Solo 401(k) Guide
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Shelter self-employment income in the right retirement plan.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/freelancer-quarterly-tax-guide" className="font-semibold text-amber-200 underline underline-offset-2">
                 Freelancer Quarterly Tax Guide
               </Link>
@@ -318,7 +320,7 @@ export default function SelfEmploymentPage() {
           </ul>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. SE figures follow 2026 SSA and IRS
             publications. Read our full{" "}
@@ -329,6 +331,7 @@ export default function SelfEmploymentPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

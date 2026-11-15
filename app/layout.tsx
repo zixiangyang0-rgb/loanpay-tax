@@ -47,53 +47,57 @@ const navLinks = [
 
 function Header() {
   return (
-    <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-5">
-      <Link href="/" className="text-lg font-bold tracking-tight">
-        LoanPay <span className="text-gradient">Tax</span>
-      </Link>
-      <nav className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
-        {navLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="transition hover:text-white">
-            {link.label}
-          </Link>
-        ))}
-      </nav>
+    <header className="tax-shell">
+      <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center gap-x-6 gap-y-2 px-6 py-5">
+        <Link href="/" className="text-lg font-bold tracking-tight">
+          LoanPay <span>Tax</span> <span className="tax-mono">Filing Workspace · 2026 refs</span>
+        </Link>
+        <nav aria-label="Primary" className="flex flex-wrap items-center gap-4 text-sm">
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="transition hover:underline">
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 }
 
 function Footer() {
   return (
-    <footer className="mx-auto w-full max-w-5xl px-6 pb-10 pt-6 text-sm text-slate-400">
-      <div className="flex flex-wrap items-center gap-4 border-t border-white/10 pt-6">
-        {navLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="transition hover:text-white">
-            {link.label}
+    <footer className="tax-shell-foot">
+      <div className="mx-auto w-full max-w-5xl px-6 pb-10 pt-6 text-sm">
+        <div className="flex flex-wrap items-center gap-4 border-t border-[#D8DDD6] pt-6">
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="transition hover:underline">
+              {link.label}
+            </Link>
+          ))}
+          <Link href="/privacy-policy" className="transition hover:underline">
+            Privacy Policy
           </Link>
-        ))}
-        <Link href="/privacy-policy" className="transition hover:text-white">
-          Privacy Policy
-        </Link>
+        </div>
+        <p className="mt-4">
+          &copy; {new Date().getFullYear()} tax.loanpaylogic.com. Educational estimates only, not tax advice.
+        </p>
+        <p className="mt-2 text-xs">
+          LoanPay Logic Network:{" "}
+          <a href="https://loanpaylogic.com" className="underline hover:underline">Mortgage &amp; Loan Calculators</a>{" "}
+          &middot; <a href="https://guides.loanpaylogic.com" className="underline hover:underline">Finance Guides</a>{" "}
+          &middot; <a href="https://retire.loanpaylogic.com" className="underline hover:underline">Retirement</a>{" "}
+          &middot; <a href="https://business.loanpaylogic.com" className="underline hover:underline">Small Business</a>{" "}
+          &middot; <a href="https://save.loanpaylogic.com" className="underline hover:underline">Savings</a>
+        </p>
+        <p className="mt-2 text-xs leading-relaxed">
+          We use Google AdSense to show ads. Google may use cookies to personalize or measure ads.
+          Manage your choice via the cookie banner or Google Ads Settings. See our{" "}
+          <Link href="/privacy-policy" className="underline underline-offset-2">
+            Privacy Policy
+          </Link>
+          .
+        </p>
       </div>
-      <p className="mt-4">
-        &copy; {new Date().getFullYear()} tax.loanpaylogic.com. Educational estimates only, not tax advice.
-      </p>
-      <p className="mt-2 text-xs text-slate-400">
-        LoanPay Logic Network:{" "}
-        <a href="https://loanpaylogic.com" className="underline hover:text-white">Mortgage &amp; Loan Calculators</a>{" "}
-        &middot; <a href="https://guides.loanpaylogic.com" className="underline hover:text-white">Finance Guides</a>{" "}
-        &middot; <a href="https://retire.loanpaylogic.com" className="underline hover:text-white">Retirement</a>{" "}
-        &middot; <a href="https://business.loanpaylogic.com" className="underline hover:text-white">Small Business</a>{" "}
-        &middot; <a href="https://save.loanpaylogic.com" className="underline hover:text-white">Savings</a>
-      </p>
-      <p className="mt-2 text-xs leading-relaxed text-slate-500">
-        We use Google AdSense to show ads. Google may use cookies to personalize or measure ads.
-        Manage your choice via the cookie banner or Google Ads Settings. See our{" "}
-        <Link href="/privacy-policy" className="underline underline-offset-2">
-          Privacy Policy
-        </Link>
-        .
-      </p>
     </footer>
   );
 }

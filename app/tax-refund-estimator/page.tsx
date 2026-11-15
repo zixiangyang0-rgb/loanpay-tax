@@ -7,6 +7,7 @@ import {
   CalculatorSidebarAds,
 } from "../../components/CalculatorAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
 
 export const metadata: Metadata = {
   title: "Tax Refund Estimator 2026: Will You Get a Refund? | LoanPay Tax",
@@ -20,20 +21,21 @@ export const metadata: Metadata = {
 export default function RefundEstimatorPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Tax Refund Estimator 2026: Will You Get a Refund? | LoanPay Tax" description="Estimate your 2026 federal tax refund or balance due from withholding, income, and credits — plus refund timelines, tracking, and adjustment tips." url="https://tax.loanpaylogic.com/tax-refund-estimator" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           refund preview &middot; 2026 tax year
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Tax Refund Estimator
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           A refund is simply the IRS returning your own overpayment. Enter withholding and credits
           below to preview whether 2026 ends with a check &mdash; or a bill &mdash; and learn how
           to steer next year&rsquo;s result on purpose.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
@@ -46,7 +48,7 @@ export default function RefundEstimatorPage() {
       </div>
       <CalculatorAnchorAds />
 
-      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="tax-interior-body mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed">
         <section>
           <h2 className="text-xl font-bold text-white">Where refunds come from</h2>
           <p className="mt-3">
@@ -82,7 +84,7 @@ export default function RefundEstimatorPage() {
             raises that lifted the marginal rate without lifting per-paycheck withholding. Each is
             fixable with a fresh W-4 rather than dread.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Typical refund timelines once a 2026 return is accepted.
@@ -144,26 +146,26 @@ export default function RefundEstimatorPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How fast do 2026 refunds arrive?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Most e-filed refunds with direct deposit arrive within 21 days; paper returns take 6–8 weeks or more.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Is a big refund good?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">It is safe but interest-free forced savings. A small refund or modest balance due means your money worked for you all year.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Why did my refund shrink after a raise?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Higher income raises liability faster than flat withholding keeps up, especially with bonuses withheld at 22% or a second job.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What if I cannot pay the balance due?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">File on time anyway, pay what you can, then request an IRS installment plan — penalties for not filing dwarf penalties for not paying.</p>
             </details>
           </div>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Refund timing follows historical IRS
             guidance and can shift with volume or law changes. Read our full{" "}
@@ -174,6 +176,7 @@ export default function RefundEstimatorPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

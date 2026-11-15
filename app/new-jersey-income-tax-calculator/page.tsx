@@ -7,6 +7,7 @@ import {
   CalculatorSidebarAds,
 } from "../../components/CalculatorAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
 
 export const metadata: Metadata = {
   title: "New Jersey Income Tax Calculator 2026 (1.4%–10.75%) | LoanPay Tax",
@@ -29,20 +30,21 @@ const CHECKLIST = [
 export default function NewJerseyPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="New Jersey Income Tax Calculator 2026 (1.4%–10.75%) | LoanPay Tax" description="Estimate 2026 NJ tax across 7 brackets, with retirement exclusions, property-tax deduction, ANCHOR relief, and NYC-commuter guidance." url="https://tax.loanpaylogic.com/new-jersey-income-tax-calculator" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           NJ Division of Taxation &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           New Jersey Income Tax Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           Seven brackets from 1.4 to 10.75 percent, stingy deductions, and the nation&rsquo;s
           highest property taxes &mdash; softened by standout retirement exclusions. Estimate
           your 2026 NJ bill and learn the relief programs that actually move the needle.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
@@ -55,8 +57,8 @@ export default function NewJerseyPage() {
       </div>
       <CalculatorAnchorAds />
 
-      <article className="mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mx-auto mt-10 max-w-3xl space-y-8 text-sm leading-relaxed">
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">New Jersey arrival checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {CHECKLIST.map((step) => (
@@ -94,7 +96,7 @@ export default function NewJerseyPage() {
             </Link>
             .
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 2026 NJ single brackets (joint bands are wider — confirm tables).
@@ -208,27 +210,27 @@ export default function NewJerseyPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Is there a NJ standard deduction?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No. New Jersey offers no standard deduction — only personal exemptions and narrow exclusions, so nearly everyone pays from dollar one.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is ANCHOR?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Direct state relief of up to $1,500 for homeowners ($450 renters) at qualifying incomes, applied for separately each fall.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do retirees pay NJ income tax?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Often $0: up to $75K/$100K of retirement income excluded at 62+ under $100K total income, and Social Security always exempt.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">I work in NYC but live in NJ?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">File both states; NJ grants a resident credit for NY tax paid on the same wages so the same dollar is not taxed twice.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">How does the $15,000 property-tax deduction work?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Homeowners deduct up to $15,000 of NJ property tax against state income (renters use 18% of rent as deemed tax), as long as the same tax is not claimed federally.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Can NJ tax turn into a refund?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes: refundable credits such as the 40%-of-federal state EIC plus ANCHOR relief can exceed a small bracket bill and pay out as a state refund.</p>
             </details>
@@ -238,25 +240,25 @@ export default function NewJerseyPage() {
         <nav aria-label="Related guides">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/new-york-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 New York Income Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Estimate taxes across the Hudson if you live or work bistate.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/pennsylvania-income-tax-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 Pennsylvania Income Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Flat-rate neighbor comparison for NJ commuters.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/federal-tax-brackets-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 2026 Federal Brackets Guide
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Layer federal brackets on top of your NJ estimate.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/w4-withholding-calculator" className="font-semibold text-amber-200 underline underline-offset-2">
                 W-4 Withholding Calculator
               </Link>
@@ -286,7 +288,7 @@ export default function NewJerseyPage() {
           </ul>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Confirm brackets, exclusions, and ANCHOR
             amounts with NJ Division of Taxation. Read our full{" "}
@@ -297,6 +299,7 @@ export default function NewJerseyPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }

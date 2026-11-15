@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideBottomAds, GuideInArticleAds, GuideTopAds } from "../../components/GuideAds";
 import { ArticleJsonLd, Byline } from "../../components/schema";
+import TaxFilingShell from "../../components/tax-filing-shell";
+import ToolIsland from "../../components/ToolIsland";
+import LedgerTable from "../../components/LedgerTable";
 
 export const metadata: Metadata = {
   title: "Roth vs. Traditional IRA 2026: Tax Guide | LoanPay Tax",
@@ -24,26 +27,32 @@ const CHECKLIST = [
 export default function RothVsTraditionalPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <TaxFilingShell>
       <ArticleJsonLd title="Roth vs. Traditional IRA 2026: Tax Guide | LoanPay Tax" description="Roth vs. traditional IRA for 2026: $7,500 limit, $153K/$242K phase-outs, deduction rules, conversion ladders, and which account wins at your income." url="https://tax.loanpaylogic.com/roth-vs-traditional-ira-tax" />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+      <section className="tax-interior-hero px-8 py-12 text-center">
+        <p className="tax-interior-kicker">
           IRAs 2026 &middot; $7,500 / $8,600
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="tax-interior-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
           Roth vs. Traditional IRA Tax Guide
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="tax-interior-lede mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
           Pay tax now or pay later? The 2026 limits, phase-outs, and conversion rules pick the
           winner at each income &mdash; this guide matches your situation to the right account.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <p className="tax-interior-meta mt-4 text-xs">Updated: October 2026</p>
         <Byline updated="October 2026" />
       </section>
 
       <GuideTopAds />
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="tax-interior-body mt-10 space-y-8 text-sm leading-relaxed">
+        <ToolIsland
+        islandId="roth-vs-traditional-ira-tax-checklist"
+        title="Roth vs Traditional — filing workspace"
+        method="$7,500 limits, phase-outs, backdoor Roth, and conversions."
+      >
+        <section className="tax-interior-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">IRA decision checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {CHECKLIST.map((step) => (
@@ -51,6 +60,7 @@ export default function RothVsTraditionalPage() {
             ))}
           </ol>
         </section>
+      </ToolIsland>
 
         <section>
           <h2 className="text-xl font-bold text-white">The core trade in one paragraph</h2>
@@ -66,7 +76,8 @@ export default function RothVsTraditionalPage() {
             large immediate deductions with traditional &mdash; then often convert in low-income
             gap years after retiring.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="roth-vs-traditional-ira-tax — comparison table 1 — educational comparison, same assumptions">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Roth vs. traditional at a glance (2026 rules).
@@ -85,6 +96,7 @@ export default function RothVsTraditionalPage() {
                 <tr><td className="px-4 py-2">Income limits</td><td className="px-4 py-2">Deduction phases out</td><td className="px-4 py-2">Contributions phase out</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
         </section>
 
@@ -147,7 +159,8 @@ export default function RothVsTraditionalPage() {
             tie, Roth still wins on flexibility: no RMDs, tax-free inheritance for
             heirs, and no tax spike on large one-time withdrawals.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="tax-interior-table-wrap mt-4 overflow-x-auto">
+            <LedgerTable label="roth-vs-traditional-ira-tax — comparison table 2 — educational comparison, same assumptions">
             <table className="w-full min-w-[520px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Roth vs. traditional winner by tax-rate assumption (same $7,500 contribution).
@@ -166,6 +179,7 @@ export default function RothVsTraditionalPage() {
                 <tr><td className="px-4 py-2">32–37% today (peak)</td><td className="px-4 py-2">Traditional wins clearly</td><td className="px-4 py-2">Traditional, convert later</td><td className="px-4 py-2">Rare; Roth if RMDs hurt</td></tr>
               </tbody>
             </table>
+            </LedgerTable>
           </div>
           <p className="mt-3">
             Self-employed readers comparing vehicles should also weigh contribution
@@ -208,27 +222,27 @@ export default function RothVsTraditionalPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Can I contribute to both in one year?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — but the $7,500 / $8,600 cap covers all IRAs combined, split however you like between Roth and traditional.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What is the backdoor Roth?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">A nondeductible traditional contribution followed by conversion to Roth — legal at any income, but the pro-rata rule taxes pre-tax balances proportionally.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Do Roth IRAs have RMDs?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">No for original owners — Roth balances grow untouched for life, a key estate-planning edge over traditional accounts.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Should high earners use Roth 401(k)s instead?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Often yes — Roth 401(k)s accept $24,500 with no income cap, and 2026 rules push high earners&rsquo; catch-ups into Roth automatically.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">What if my tax rate stays exactly the same?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">The balances tie on pure math — a $7,500 deductible contribution growing at the same return equals a $5,850 Roth contribution grossed up. Pick Roth for no RMDs and tax-free heirs, or split 50/50 to hedge against rate uncertainty.</p>
             </details>
-            <details className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <details className="tax-interior-faq group rounded-xl p-4">
               <summary className="cursor-pointer font-semibold text-white">Can I split $7,500 between Roth and traditional?</summary>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">Yes — for example $3,750 to each. The combined total must stay within $7,500 ($8,600 at 50+), and you must track the deductible versus nondeductible portion on Form 8606 for the traditional side.</p>
             </details>
@@ -240,25 +254,25 @@ export default function RothVsTraditionalPage() {
         <nav aria-label="Related guides">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/sep-ira-vs-solo-401k-tax" className="font-semibold text-amber-200 underline underline-offset-2">
                 SEP IRA vs. Solo 401(k) Comparison
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Freelancer plans beyond the Roth-or-traditional choice.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/federal-tax-brackets-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 2026 Federal Tax Brackets Guide
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Find your marginal rate before picking Roth vs. pre-tax.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/federal-income-tax-calculator-2026" className="font-semibold text-amber-200 underline underline-offset-2">
                 2026 Federal Income Tax Calculator
               </Link>
               <p className="mt-1 text-sm leading-relaxed text-slate-300">Model the deduction value of traditional contributions.</p>
             </li>
-            <li className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <li className="tax-interior-related rounded-xl p-4">
               <Link href="/when-are-taxes-due-2027" className="font-semibold text-amber-200 underline underline-offset-2">
                 2027 Tax Deadline Guide
               </Link>
@@ -288,7 +302,7 @@ export default function RothVsTraditionalPage() {
           </ul>
         </section>
 
-        <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
+        <section className="tax-interior-disclaimer rounded-xl p-5 text-xs leading-relaxed">
           <p>
             This is general education, not tax advice. Limits follow IRS 2026 figures; confirm
             phase-outs in Publication 590-A. Read our full{" "}
@@ -299,6 +313,7 @@ export default function RothVsTraditionalPage() {
           </p>
         </section>
       </article>
+      </TaxFilingShell>
     </div>
   );
 }
